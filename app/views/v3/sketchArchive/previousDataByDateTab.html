@@ -1,0 +1,306 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  previous-data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }} -->
+{% endblock %}
+
+{% block content %}
+
+
+ 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Check previous Cold Weather Payment data</h1>
+        <!-- <p class="govuk-body">You can also <a href="{{statusToday}}" class="govuk-link">see today's Cold Weather Payment data.</a></p> -->
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-third">
+        <div class="moj-filter">
+
+          <div class="moj-filter__header">
+        
+            <div class="moj-filter__header-title">
+              <h2 class="govuk-heading-m">Search</h2>
+            </div>
+        
+            <div class="moj-filter__header-action">
+        
+            </div>
+        
+          </div>
+        
+          <div class="moj-filter__content">
+        
+            <div class="moj-filter__selected">
+        
+              <div class="moj-filter__selected-heading">
+        
+                <!-- <div class="moj-filter__heading-title">
+                  <h2 class="govuk-heading-m">Selected filters</h2>
+                </div> -->
+        
+              </div>
+        
+              <!-- <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Postcode</h3>
+        
+              <ul class="moj-filter-tags">
+        
+                <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span>BN5</a></li>
+        
+              </ul> -->
+        
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Date range</h3>
+        
+              <ul class="moj-filter-tags">
+        
+                <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> 10 February 2023 to 16 February 2023</a></li>
+        
+              </ul>
+
+              <br>
+
+              <div class="moj-filter__heading-action">
+                <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear search</a></p>
+              </div>
+        
+            </div>
+        
+            <div class="moj-filter__options">
+        
+              <button class="govuk-button" data-module="govuk-button">
+                Search
+              </button>
+
+              <!-- <p class="govuk-body">[instructions]</p> -->
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h1 class="govuk-fieldset__heading">
+                      Location
+                    </h1>
+                  </legend>
+                  <!-- <div id="contact-hint" class="govuk-hint">
+                    Select one option.
+                  </div> -->
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                        Postcode
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-by-email">
+                          Enter postcode
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="contact-2">
+                       Weather station
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-by-phone">
+                          Enter weather station
+                        </label>
+                        <input class="govuk-input govuk-!-width-full" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>      
+            </div>       
+          </div>     
+        </div>
+      </div>
+
+
+
+      <div class="govuk-grid-column-two-thirds">
+<!--TAB View-->
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#totals">
+               Results by totals
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#triggerDay">
+                Results by Trigger day
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="totals">
+            <h2 class="govuk-heading-l">Totals</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">2</h2>
+                    <p class="govuk-body">Days triggered</p>
+                  </section>
+                </article>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">2</h2>
+                    <p class="govuk-body">Cold weather periods (1 forecast and 2 recorded)</p>
+                  </section>
+                </article>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">32,800</h2>
+                  <p class="govuk-body">Estimated payments to citizens (except UC)</p>
+                </section>
+              </article>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£820,000</h2>
+                    <p class="govuk-body">Estimated total amount paid to citizens (except UC)</p>
+                  </section>
+                </article>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">7</h2>
+                    <p class="govuk-body">Weather stations triggered</p>
+                  </section>
+                </article>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">22</h2>
+                    <p class="govuk-body">Postcodes affected</p>
+                  </section>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="triggerDay">
+            <h2 class="govuk-heading-l">By trigger day</h2>
+            {% include "v2/includes/example-summary-card.html" %}
+    
+            {% include "v2/includes/example-summary-card2.html" %}
+          </div>
+        </div>
+
+        <!-- <h2 class="govuk-heading-m">Search result totals</h2> -->
+
+<!-- TOTALS CARDS-->
+        <!-- <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">2</h2>
+                <p class="govuk-body">Days triggered</p>
+              </section>
+            </article>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">2</h2>
+                <p class="govuk-body">Cold weather periods</p>
+              </section>
+            </article>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">32,800</h2>
+              <p class="govuk-body">Estimated payments to citizens (except UC)</p>
+            </section>
+          </article>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">£820,000</h2>
+                <p class="govuk-body">Estimated total amount paid to citizens (except UC)</p>
+              </section>
+            </article>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">7</h2>
+                <p class="govuk-body">Weather stations triggered</p>
+              </section>
+            </article>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">22</h2>
+                <p class="govuk-body">Postcodes affected</p>
+              </section>
+            </article>
+          </div>
+        </div>
+
+
+
+
+
+
+          
+      
+
+
+
+
+    
+
+
+
+        
+
+<br>
+        <h2 class="govuk-heading-m">Search results by trigger day</h2>
+        {% include "v2/includes/example-summary-card.html" %}
+
+        {% include "v2/includes/example-summary-card2.html" %}
+
+      </div> -->
+
+
+
+
+
+
+    </div>
+  
+
+
+
+
+{% endblock %}

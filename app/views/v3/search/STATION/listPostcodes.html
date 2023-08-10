@@ -1,0 +1,357 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+List postcodes – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<nav id="app-navigation" class="app-navigation js-app-navigation govuk-clearfix" role="navigation" aria-labelledby="app-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
+  <ul class="app-navigation__list app-width-container  nav-left">
+      <li class="app-navigation__list-item ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{daily}}">
+          Today
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-0" aria-expanded="false" aria-controls="js-mobile-nav__subnav-0">
+            Today
+          </button>
+      </li>
+      <li class="app-navigation__list-item  ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{weekly}}">
+          Thursday weekly summary
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-1" aria-expanded="false" aria-controls="js-mobile-nav__subnav-1">
+            Thursday weekly summary
+          </button>
+      </li>
+
+      <li class="app-navigation__list-item nav-active ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{search}}">
+          Search all data
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-3" aria-expanded="false" aria-controls="js-mobile-nav__subnav-3">
+            Search all data
+          </button>
+
+      </li>
+  </ul>
+</nav>
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Postcode districts linked to Heathrow
+    </h1>
+    
+
+    <!-- <p class="govuk-body">View the triggered postcodes below or <a href="https://dwpgovuk.sharepoint.com.mcas.ms/:x:/r/sites/ext-rbc/_layouts/15/Doc.aspx?sourcedoc=%7B7780F0AA-43CD-4602-B62C-9A766576D492%7D&file=cwp-test.xlsx&action=default&mobileredirect=true" target="blank" class="govuk-link">download the data</a> (CSV, 800 KB).</p> -->
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>BR1</li>
+      <li>BR2</li>
+      <li>BR3</li>
+      <li>BR4</li>
+      <li>CR0</li>
+      <li>CR2</li>
+      <li>CR3</li>
+      <li>CR4</li>
+      <li>CR5</li>
+      <li>CR6</li>
+      <li>CR7</li>
+      <li>CR8</li>
+      <li>E1</li>
+      <li>E10</li>
+      <li>E11</li>
+      <li>E12</li>
+      <li>E13</li>
+      <li>E14</li>
+      <li>E15</li>
+      <li>E16</li>
+      <li>E17</li>
+      <li>E18</li>
+      <li>E1W</li>
+      <li>E2</li>
+      <li>E20</li>
+      <li>E3</li>
+      <li>E4</li>
+      <li>E5</li>
+      <li>E6</li>
+      <li>E7</li>
+      <li>E8</li>
+      <li>E9</li>
+      <li>EC1A</li>
+      <li>EC1M</li>
+      <li>EC1N</li>
+      <li>EC1R</li>
+      <li>EC1V</li>
+      <li>EC1Y</li>
+      <li>EC2A</li>
+      <li>EC2M</li>
+      <li>EC2N</li>
+      <li>EC2R</li>
+      <li>EC2V</li>
+      <li>EC2Y</li>
+      <li>EC3A</li>
+      <li>EC3M</li>
+      <li>EC3N</li>
+      <li>EC3R</li>
+      <li>EC3V</li>
+      <li>EC4A</li>
+      <li>EC4M</li>
+      <li>EC4N</li>
+      <li>EC4R</li>
+      <li>EC4V</li>
+      <li>EC4Y</li>
+      <li>EN1</li>
+      <li>EN10</li>
+      <li>EN11</li>
+      <li>EN2</li>
+      <li>EN3</li>
+      <li>EN4</li>
+      <li>EN5</li>
+      <li>EN7</li>
+      <li>EN8</li>
+      <li>EN9</li>
+      <li>HA0</li>
+      <li>HA1</li>
+      <li>HA2</li>
+      <li>HA3</li>
+      <li>HA4</li>
+      <li>HA5</li>
+      <li>HA6</li>
+      <li>HA7</li>
+      <li>HA8</li>
+      <li>HA9</li>
+      <li>IG1</li>
+      <li>IG10</li>
+      <li>IG11</li>
+      <li>IG2</li>
+      <li>IG3</li>
+      <li>IG4</li>
+      <li>IG5</li>
+      <li>IG6</li>
+      <li>IG7</li>
+      <li>IG8</li>
+      <li>IG9</li>
+      <li>KT1</li>
+      <li>KT10</li>
+      <li>KT11</li>
+      <li>KT12</li>
+      <li>KT13</li>
+      <li>KT14</li>
+      <li>KT15</li>
+      <li>KT16</li>
+      <li>KT17</li>
+      <li>KT18</li>
+      <li>KT19</li>
+      <li>KT2</li>
+      <li>KT20</li>
+      <li>KT21</li>
+      <li>KT22</li>
+      <li>KT23</li>
+      <li>KT24</li>
+      <li>KT3</li>
+      <li>KT4</li>
+      <li>KT5</li>
+      <li>KT6</li>
+      <li>KT7</li>
+      <li>KT8</li>
+      <li>KT9</li>
+      <li>N1</li>
+      <li>N10</li>
+      <li>N11</li>
+      <li>N12</li>
+      <li>N13</li>
+      <li>N14</li>
+      <li>N15</li>
+      <li>N16</li>
+      <li>N17</li>
+      <li>N18</li>
+      <!-- N19
+      N1C
+      N2
+      N20
+      N21
+      N22
+      N3
+      N4
+      N5
+      N6
+      N7
+      N8
+      N9
+      NW1
+      NW10
+      NW11
+      NW2
+      NW3
+      NW4
+      NW5
+      NW6
+      NW7
+      NW8
+      NW9
+      SE1
+      SE10
+      SE11
+      SE12
+      SE13
+      SE14
+      SE15
+      SE16
+      SE17
+      SE18
+      SE19
+      SE2
+      SE20
+      SE21
+      SE22
+      SE23
+      SE24
+      SE25
+      SE26
+      SE27
+      SE28
+      SE3
+      SE4
+      SE5
+      SE6
+      SE7
+      SE8
+      SE9
+      SL0
+      SL3
+      SM1
+      SM2
+      SM3
+      SM4
+      SM5
+      SM6
+      SM7
+      SW10
+      SW11
+      SW12
+      SW13
+      SW14
+      SW15
+      SW16
+      SW17
+      SW18
+      SW19
+      SW1A
+      SW1E
+      SW1H
+      SW1P
+      SW1V
+      SW1W
+      SW1X
+      SW1Y
+      SW2
+      SW20
+      SW3
+      SW4
+      SW5
+      SW6
+      SW7
+      SW8
+      SW9
+      TW1
+      TW10
+      TW11
+      TW12
+      TW13
+      TW14
+      TW15
+      TW16
+      TW17
+      TW18
+      TW19
+      TW2
+      TW20
+      TW3
+      TW4
+      TW5
+      TW6
+      TW7
+      TW8
+      TW9
+      UB1
+      UB10
+      UB11
+      UB2
+      UB3
+      UB4
+      UB5
+      UB6
+      UB7
+      UB8
+      UB9
+      W10
+      W11
+      W12
+      W13
+      W14
+      W1B
+      W1C
+      W1D
+      W1F
+      W1G
+      W1H
+      W1J
+      W1K
+      W1S
+      W1T
+      W1U
+      W1W
+      W2
+      W3
+      W4
+      W5
+      W6
+      W7
+      W8
+      W9
+      WC1A
+      WC1B
+      WC1E
+      WC1H
+      WC1N
+      WC1R
+      WC1V
+      WC1X
+      WC2A
+      WC2B
+      WC2E
+      WC2H
+      WC2N
+      WC2R -->
+    </ul>
+
+
+  </div>
+</div>
+
+{% endblock %}

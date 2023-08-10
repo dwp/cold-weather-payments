@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  view-list-weather-stations – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Today's data",
+      href: "/v2/viewDailyOneTrigger"
+    },
+    {
+      text: "Weather stations"
+    }
+  ]
+}) }}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Weather stations triggered today ({{trigDay1}})
+      </h1>
+
+      <p class="govuk-body">View the triggered weather stations below or <a href="#" class="govuk-link">download the data</a> (CSV, 800 KB).</p>
+
+      <div class="govuk-summary-card ">
+        <div class="govuk-summary-card__title-wrapper ">
+          <h2 class="govuk-summary-card__title">Bingley</h2>
+        </div>
+        <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Cold weather period and trigger type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                14 Feb 2023 to 20 Feb 2023 (forecasted)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Weather station code
+              </dt>
+              <dd class="govuk-summary-list__value">
+                59
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated payments to citizens (except UC)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5,800
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Postcodes affected
+              </dt>
+              <dd class="govuk-summary-list__value">
+                BB10, BB11, BB12, BB18
+              </dd>
+            </div>
+          </dl> 
+        </div>
+      </div>
+
+      <div class="govuk-summary-card ">
+        <div class="govuk-summary-card__title-wrapper ">
+          <h2 class="govuk-summary-card__title">Dyce</h2>
+        </div>
+        <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Cold weather period and trigger type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                14 Feb 2023 to 20 Feb 2023 (forecasted)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Weather station code
+              </dt>
+              <dd class="govuk-summary-list__value">
+                01
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated payments to citizens (except UC)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5,000
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Postcodes affected
+              </dt>
+              <dd class="govuk-summary-list__value">
+                AB21, AB22, AB23
+              </dd>
+            </div>
+          </dl> 
+        </div>
+      </div>
+
+
+   
+
+      <!-- <h3 class="govuk-heading-s">Weather stations in England</h3>
+
+      <h3 class="govuk-heading-s">Weather stations in Wales</h3>
+
+      <h3 class="govuk-heading-s">Weather stations in Northern Ireland</h3> -->
+
+
+     
+    </div>
+  </div>
+
+{% endblock %}

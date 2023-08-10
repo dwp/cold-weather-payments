@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Search results – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<nav id="app-navigation" class="app-navigation js-app-navigation govuk-clearfix" role="navigation" aria-labelledby="app-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
+  <ul class="app-navigation__list app-width-container  nav-left">
+      <li class="app-navigation__list-item ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{daily}}">
+          Today
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-0" aria-expanded="false" aria-controls="js-mobile-nav__subnav-0">
+            Today
+          </button>
+      </li>
+      <li class="app-navigation__list-item  ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{weekly}}">
+          Thursday weekly summary
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-1" aria-expanded="false" aria-controls="js-mobile-nav__subnav-1">
+            Thursday weekly summary
+          </button>
+      </li>
+
+      <li class="app-navigation__list-item nav-active ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{search}}">
+          Search all data
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-3" aria-expanded="false" aria-controls="js-mobile-nav__subnav-3">
+            Search all data
+          </button>
+
+      </li>
+  </ul>
+</nav>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">[additional qualifying days relating to trigger on tuesday 14 febraury 2023]</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              [original cold weather period]
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              14 Feb 2023 to 20 Feb 2023 (forecasted) 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              [additional qualifying period]
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              21 Feb 2023 <br> <br>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              [new cold weather period]
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              14 Feb 2023 to 21 Feb 2023 
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              [weather stations affected?]
+            </dt>
+            <dd class="govuk-summary-list__value">
+                2
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{listStations}}">
+                View list<span class="govuk-visually-hidden"> of weather stations</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode districts affected
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{listPostcodes}}">
+                View list<span class="govuk-visually-hidden"> of postcodes</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+        <!-- <h2 class="govuk-heading-m">[Trigger day: Tueday 9 January 2023]</h2>  
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              [original cold weather period]
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              9 Jan 2023 to 15 Jan 2023 (forecasted) 
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              [additional qualifying period]
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              7 Jan 2023 to 8 Jan 2023 <br> <br>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              [new cold weather period]
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              7 Jan 2023 to 15 Jan 2023
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Weather stations triggered
+            </dt>
+            <dd class="govuk-summary-list__value">
+                2
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{listStations}}">
+                View list<span class="govuk-visually-hidden"> of weather stations</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode districts affected
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{listPostcodes}}">
+                View list<span class="govuk-visually-hidden"> of postcodes</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl> -->
+        
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

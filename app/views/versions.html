@@ -1,0 +1,567 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "index"
+}) }} 
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
+
+
+    
+  
+    
+  
+      <nav class="sticky-div">
+
+
+        <div class="govuk-grid-column-one-third">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint9" >Sprint 9</a>
+          </li>
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint8" >Sprint 8</a>
+          </li>
+  
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint7" >Sprint 7</a>
+          </li>
+  
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint6" >Sprint 6</a>
+          </li>
+
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint5" >Sprint 5</a>
+          </li>
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint4" >Sprint 4</a>
+          </li>
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint3" >Sprint 3</a>
+          </li>
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint2" >Sprint 2</a>
+          </li>
+          <li class="moj-side-navigation__item ">
+            <a href="#sprint1" >Sprint 1</a>
+          </li>
+        </ul>
+      </div>
+      </nav>
+  
+
+  
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-xl">
+      Previous versions of this prototype
+    </h1>
+
+    <h2 class="govuk-heading-l" id="sprint9">Sprint 9</h2>
+    <p class="govuk-body">26 July to 9 Aug 2023</p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        No usability testing took place this sprint
+      </strong>
+    </div>
+    <p class="govuk-body"><strong>Sprint goal:</strong> Continue Service configuration, de-scoped for Season 1, plus UCD backlog washup activities </p>
+
+    <p class="govuk-body"> 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>         
+          <a href="/v9/A1-about" class="govuk-link"> A1: About this service (landing page) </a> 
+        </li>    
+        <li>         
+          <a href="/v9/notifications/E3-change-email-upload-only" class="govuk-link">  E3: Change emails, Upload only  </a> 
+        </li>   
+        <li>         
+          <a href="/v9/notifications/E6-change-email-problem" class="govuk-link">  E6: There is a problem (with the file) </a> 
+        </li>     
+     
+      </ul>
+    </p>
+
+    <h2 class="govuk-heading-l" id="sprint8">Sprint 8</h2>
+    <h3 class="govuk-heading-s">
+      Usability testing ROUND 5
+    </h3>
+    <p class="govuk-body">12 July to 25 July 2023</p>
+
+
+
+    <p class="govuk-body"><strong>Sprint goal:</strong> First iteration of the service configuration journeys. User research into the search function and non-working day notification preferences. </p>
+
+
+
+    <p class="govuk-body"> 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>         
+          <a href="/v8/A1-about" class="govuk-link"> A1: About this service (landing page) </a> 
+        </li>   
+        <li>
+          <a href="/v8/notifications/N1-manage-subscriptions" class="govuk-link"> N1: Manage subscriptions (anytime) </a> 
+        </li>          
+      </ul>
+    </p>
+
+    <h3 class="govuk-heading-s">
+      Quick journey links
+    </h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="/v8/daily-views/D1-daily-no-trigger" class="govuk-link">"No triggers today" </a> (ref: D1)
+      </li>
+      <li>
+        <a href="/v8/daily-views/D2a-daily-forecasted" class="govuk-link">"There are forecasted triggers today" </a> (ref: D2a)
+      </li>
+      <li>
+        <a href="/v8/daily-views/D2a-daily-forecasted" class="govuk-link">"There are forecasted and recorded triggers today" </a> (ref: D2b)
+      </li>
+      <li>
+        <a href="/v8/weekly-views/w1-weekly-no-triggers" class="govuk-link">"There were no triggers this week" </a> (ref: W1)
+      </li>
+      <li>
+        <a href="/v8/weekly-views/w2-week-with-triggers" class="govuk-link">"There were triggers this week" </a> (ref: W2)
+      </li>
+      <li>
+        <a href="/v8/search/S-search-journey-select" class="govuk-link">"I want to search for trigger data"</a> (ref: S)           
+      </li>
+    </ul>
+
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+    <h2 class="govuk-heading-l" id="sprint7">Sprint 7</h2>
+        <p class="govuk-body">28 June to 12 July 2023</p>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            No usability testing took place this sprint
+          </strong>
+        </div>
+
+
+        <p class="govuk-body"><strong>Sprint goal:</strong> Baseline full MVP service. Identify needs for Service Configuration </p>
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/wiki/spaces/CWP/pages/133300192174/Change+log+sprint+7" target=blank class="govuk-link">Change log</a> on Confluence</p>
+
+        <h3 class="govuk-heading-s">
+          Journeys
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Today (ref: D1) <a href="/v7/daily-views/D1-daily-no-trigger" class="govuk-link">"No triggers today" </a>
+            </li>
+            <li>
+              Today (ref: D2a) <a href="/v7/daily-views/D2a-daily-forecasted" class="govuk-link">"Forecasted triggers today" </a>
+            </li>
+            <li>
+              Today (ref: D2b) <a href="/v7/daily-views/D2b-daily-forecasted-and-recorded" class="govuk-link">"Forecasted and recorded triggers today"</a>
+            </li>
+            <li>
+              Thursday weekly summary (ref: W2) <a href="/v7/weekly-views/w2-week-with-triggers" class="govuk-link">"Triggers last week":</a>
+            </li>
+            <li>
+              Start search (ref: S) <a href="/v7/search/S-search-journey-select" class="govuk-link">"Search previous data":</a>           
+            </li>
+          </ul>
+        </p>
+
+        <h3 class="govuk-heading-s">
+          Quick links
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Additoinal qualifying days (ref: ADQ) <a href="/v7/search/A1-aqd-summary-UR" class="govuk-link">Summary page</a>
+            </li>
+            <li>
+              Result page (ref: SR1) <a href="/v7/search/SR1-citizen-postcode" class="govuk-link">Citizen eligibility by postcode</a>
+            </li>
+            <li>
+              Result page (ref: SR2) <a href="/v7/search/SR2-single-day-all-locations" class="govuk-link">Single day, all locations (with AQDs)</a>
+            </li>
+            <li>
+              Result page (ref: SR3a) <a href="/v7/search/SR3a-range-all-locations" class="govuk-link">Date range, all locations</a>
+            </li>
+            <li>
+              Result page (ref: SR4a) <a href="/v7/search/SR4a-range-weather-station" class="govuk-link">Date range, weather station</a>
+            </li>
+            <li>
+              Result page (ref: SR5a) <a href="/v7/search/SR5a-range-postcode" class="govuk-link">Date range, postcode</a>
+            </li>
+            <li>
+              Result page (ref: SR6) <a href="/v7/search/SR6-no-results" class="govuk-link">No results</a>
+            </li>
+
+
+ 
+          </ul>
+        </p>
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+        <h2 class="govuk-heading-l" id="sprint6">Sprint 6</h2>
+        <h3 class="govuk-heading-s">
+          Usability testing ROUND 4
+        </h3>
+        <p class="govuk-body">14 June to 27 June 2023</p>
+
+
+        <p class="govuk-body"><strong>Sprint goal:</strong> Baseline designs for weekly products and location lists ready for development. Speak to users about additional qualifying days </p>
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/wiki/spaces/CWP/pages/133287084095" target=blank class="govuk-link">Change log</a> on Confluence</p>
+
+        <h3 class="govuk-heading-s">
+          Journeys
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              "There are forecasted triggers today": <a href="/v6/daily-views/D2a-daily-forecasted" class="govuk-link">D2a: Today</a>
+            </li>
+            <li>
+              "There are forecasted and recorded triggers today": <a href="/v6/daily-views/D2b-daily-forecasted-and-recorded" class="govuk-link">D2b: Today</a>
+            </li>
+            <li>
+              "There were triggers last week": <a href="/v6/weekly-views/w2-week-with-triggers" class="govuk-link">W2: Thursday weekly summary</a>
+            </li>
+            <li>
+              "Search previous data": <a href="/v6/search/S-search-journey-select" class="govuk-link">S: Start search</a>           
+            </li>
+          </ul>
+        </p>
+
+        <h3 class="govuk-heading-s">
+          Quick links
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v6/search/A1-aqd-summary-UR2" class="govuk-link">Additional qualifying days summary (Postcode and range journey)</a>
+            </li>
+            <li>
+              <a href="/v6/search/A1-aqd-summary-UR" class="govuk-link">Additional qualifying days summary (Heathrow example)</a>
+            </li>
+            <li>
+              Result page: <a href="/v6/search/SR2-single-day-all-locations" class="govuk-link">Single day, all locations (with AQDs)</a>
+            </li>
+            <li>
+              Result page: <a href="/v6/search/SR5-range-all-locations" class="govuk-link">Date range, all locations (with AQDs)</a>
+            </li>
+            <li>
+              Result page: <a href="/v6/search/SR1-no-results" class="govuk-link">No results</a>
+            </li>
+
+
+          </ul>
+        </p>
+
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+        <h2 class="govuk-heading-l" id="sprint5">Sprint 5</h2>
+        <p class="govuk-body">31 May to 14 June 2023</p>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            No usability testing took place this sprint
+          </strong>
+        </div>
+
+        <p class="govuk-body"><strong>Sprint goal:</strong> Complete end to end BAU journey and edge cases & Baseline daily views </p>
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/wiki/spaces/CWP/pages/133268602950/Change+log+Round+5" target=blank class="govuk-link">Change log</a> on Confluence</p>
+
+
+
+
+        <h3 class="govuk-heading-s">
+          Search pages
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v5/search/S1-new-search" class="govuk-link">Search all data</a>
+            </li>
+            <li>
+              Result page: <a href="/v5/search/SR1-result-single-day" class="govuk-link">Single day, all locations (with AQDs)</a>
+            </li>
+            <li>
+              Result page: <a href="/v5/search/SR2-result-multiple-days" class="govuk-link">Date range, all locations (with AQDs)</a>
+            </li>
+            <li>
+              <a href="/v5/search/A1-aqd-summary" class="govuk-link">Additional qualifying days summary </a>
+            </li>
+          </ul>
+        </p>
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+        <h2 class="govuk-heading-l" id="sprint4">Sprint 4</h2>
+        <p class="govuk-body">17 May to 31 May 2023</p>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            No usability testing took place this sprint
+          </strong>
+        </div>
+        <p class="govuk-body"><strong>Sprint goal:</strong> Design our approach to notifying users there have been Additional qualifying days, and allow them to view and understand the corresponding data </p>
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/wiki/spaces/CWP/pages/133259559092/Change+log%3A+Round+4" target=blank class="govuk-link">Change log</a> on Confluence</p>
+
+
+
+
+        <h3 class="govuk-heading-s">
+          Additional qualifying days
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Search results: <a href="/v4/aqd/aqd-search-result-single-day" class="govuk-link">Single day with Additional qualifying days  </a>
+            </li>
+            <li>
+              Link from notification email: <a href="/v4/aqd/aqd-summary" class="govuk-link">Additional qualifying days summary </a>
+            </li>
+            <li>
+              Search results: <a href="/v4/aqd/aqd-search-result-multiple-days" class="govuk-link">Multiple days result, with Additional qualifying days  </a>
+            </li>
+          </ul>
+        </p>
+
+        <h3 class="govuk-heading-s">
+          Iterations to previous views
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Daily view: <a href="/v4/daily/viewDailyTwoTriggers" class="govuk-link">Trigger day (forecasted AND recorded) </a>
+            </li>
+            <li>
+              Weekly summary: <a href="/v4/weekly/viewWeeklyTriggers" class="govuk-link">Legacy week with triggers</a>
+            </li>
+            <li>
+              Search: <a href="/v4/search/searchNewDateAndLocation" class="govuk-link">By location and date</a>
+            </li>
+          </ul>
+        </p>
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+        <h2 class="govuk-heading-l" id="sprint3">Sprint 3</h2>
+        <h3 class="govuk-heading-s">
+          Usability testing ROUND 3
+        </h3>
+        <p class="govuk-body">3 May to 17 May 2023</p>
+        <p class="govuk-body"><strong>Sprint goal:</strong> Usability test iterations to daily and weekly design solutions to prove effectiveness when compared to current appendices.  </p>
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/wiki/spaces/CWP/pages/133250582035/Change+log%3A+Round+3" target=blank class="govuk-link">Change log</a> on Confluence</p>
+
+
+
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              Daily view: <a href="/v3/daily/viewDailyTwoTriggers" class="govuk-link">Trigger day (forecasted AND recorded) </a>
+            </li>
+            <li>
+              Weekly summary: <a href="/v3/weekly/viewWeeklyTriggers" class="govuk-link">Legacy week with triggers</a>
+            </li>
+            <li>
+              Search: <a href="/v3/search/searchNewDateAndLocation" class="govuk-link">By location and date</a>
+            </li>
+          </ul>
+        </p>
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+        <h2 class="govuk-heading-l" id="sprint2">Sprint 2</h2>
+        <h3 class="govuk-heading-s">
+          Usability testing ROUND 2
+        </h3>
+        <p class="govuk-body">19 April to 3 May 2023</p>
+        <p class="govuk-body"><strong>Sprint goal:</strong> 2nd Iteration designs for Daily notification and views, and develop first iteration for weekly notifications and actions </p>
+
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/l/cp/mXcVMVRe" target=blank class="govuk-link">Change log</a> on Confluence</p>
+
+
+        <h3 class="govuk-heading-s">
+          Daily views
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v2/viewDailyOneTrigger" class="govuk-link">Trigger day (forecasted)</a>
+            </li>
+            <li>
+              <a href="/v2/viewDailyTwoTriggers" class="govuk-link">Trigger day (forecasted AND recorded) </a>
+            </li>
+            <li>
+              <a href="/v2/viewDailyNoTrigger" class="govuk-link">No Trigger day </a>
+            </li>
+            <li>
+              <a href="/v2/viewDailyNotReady" class="govuk-link">Data not ready yet </a>
+            </li>
+          </ul>
+        </p>
+    
+    
+        <h3 class="govuk-heading-s">
+          Search
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v2/searchBlank" class="govuk-link">Blank search page (no routing or validation)</a>
+            </li>
+            <li>
+              Scenario 1: <a href="/v2/searchNewDateOnly" class="govuk-link">Search by date only (Week)</a>
+            </li>
+            <li>
+              Scenario 2: <a href="/v2/searchNewDateAndStation" class="govuk-link">Search by date and weather station (Heathrow)</a>
+            </li>
+
+          </ul>
+        </p>
+
+        <h3 class="govuk-heading-s">
+          Weekly summary
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v2/viewWeeklyTriggers" class="govuk-link">Week with triggers</a>
+            </li>
+          </ul>
+        </p>
+
+        <h3 class="govuk-heading-s">
+          Miscellaneous
+        </h3>
+
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Location list views
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>
+                <a href="/v2/viewDailyListStationsOneTrigger" class="govuk-link">View weather stations (Daily - forecasted)</a>
+              </li>
+              <li>
+                <a href="/v2/viewDailyListStationsTwoTriggers" class="govuk-link">View weather stations (Daily - forecasted AND recorded)</a>
+              </li>
+              <li>
+                <a href="/v2/viewDailyListPostcodesOneTrigger" class="govuk-link">View postcodes (Daily - forecasted)</a>
+              </li>
+              <li>
+                <a href="/v2/viewDailyListPostcodesTwoTriggers" class="govuk-link">View postcodes (Daily - forecasted AND recorded)</a>
+              </li>
+            </ul>
+          </div>
+        </details>
+
+
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+        <h2 class="govuk-heading-l" id="sprint1">Sprint 1</h2>
+        <h3 class="govuk-heading-s">
+          Usability testing ROUND 1
+        </h3>
+        <p class="govuk-body">5 April to 19 April 2023</p>
+        <p class="govuk-body"><strong>Sprint goal:</strong> Design and test our first iteration of daily trigger communications to internal colleagues (MVP Notifications and Data view).</p>
+
+
+        <p class="govuk-body"><a href="https://dwpdigital.atlassian.net/wiki/spaces/CWP/pages/133237866606/Change+log%3A+Round+1" target=blank class="govuk-link">Change log</a> on Confluence</p>
+        <h3 class="govuk-heading-s">
+          Daily views
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v1/viewDaily-option1" class="govuk-link">Trigger day - Option 1</a>
+            </li>
+            <li>
+              <a href="/v1/viewDaily-option2" class="govuk-link">Trigger day - Option 2</a>
+            </li>
+            <li>
+              <a href="/v1/viewDaily-noTrigger" class="govuk-link">No Trigger day </a>
+            </li>
+            <li>
+              <a href="/v1/viewDaily-notReady" class="govuk-link">Data not ready yet </a>
+            </li>
+          </ul>
+        </p>
+    
+        <h3 class="govuk-heading-s">
+          Location list views
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v1/view-list-weather-stations" class="govuk-link">View weather stations (Daily)</a>
+            </li>
+            <li>
+              <a href="/v1/view-list-postcodes" class="govuk-link">View postcodes (Daily)</a>
+            </li>
+          </ul>
+        </p>
+    
+        <h3 class="govuk-heading-s">
+          Filter data views
+        </h3>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v1/previous-data" class="govuk-link">Previous data view</a>
+            </li>
+          </ul>
+        </p>
+
+  </div>
+  </div>
+</div>
+
+{% endblock %}

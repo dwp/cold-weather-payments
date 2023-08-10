@@ -1,0 +1,178 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+About this service – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      About this service
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Overview
+    </h2>
+
+    <p class="govuk-body">Use this service to check Cold Weather Payment trigger data. You can view data from:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>today</li>
+  <li>the previous week, every Thursday</li>
+  <li>any previous day this season</li>
+</ul>
+
+
+
+    <p class="govuk-body">The Cold Weather Payment season runs annually from <strong>1 November to March 31.</strong> Citizens get a <strong>£25</strong> Cold Weather Payment every time 
+      the mean temperature at a weather station is recorded as, or forecasted to be, zero degrees celsius or below for over 7 consecutive days.
+    </p>
+
+    <p class="govuk-body"><a href="https://www.gov.uk/cold-weather-payment" target="blank" class="govuk-link">Read more about Cold Weather Payments on GOV.UK</a> </p>
+
+
+    <p class="govuk-body"><a href="#" class="govuk-link">View how citizens postcodes are linked to 72 weather stations across England and Wales.</a> </p>
+
+
+    <h2 class="govuk-heading-m">
+      Manage your email subscriptions
+    </h2>
+
+    <p class="govuk-body">You can get email updates about Cold Weather Payment triggers.    </p>
+    <p class="govuk-body">You can <a href="{{changeNotifications}}" class="govuk-link">subscribe or unsubscribe to email subscriptions</a> at any time</p>
+
+
+
+
+
+
+    <h2 class="govuk-heading-m">
+      Manage the service
+    </h2>
+
+    <p class="govuk-body">
+      You have until 5:30pm on 31 October 2023 to make changes. After that, you cannot change the service data until the
+      end of the 2023 to 2024 season.
+    </p>
+
+
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Location data
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="{{changeLocations}}">
+            Change<span class="govuk-visually-hidden"> location data</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if standard %}
+          £25
+          {% else %}
+          £{{amount}}
+          {% endif %}
+
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="{{payment}}">
+            Change<span class="govuk-visually-hidden"> payment amount</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Season start and end dates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{length}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="{{seasonLength}}">
+            Change<span class="govuk-visually-hidden"> Season start and end dates</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <p class="govuk-body govuk-!-font-size-16">Last updated 18 July 2023 - <a class="govuk-link" href="#">See all
+          updates</a></p>
+
+    <h2 class="govuk-heading-m">
+      Service updates
+    </h2>
+
+    <p class="govuk-body">
+      The service is operating normally.
+    </p>
+
+    <p class="govuk-body govuk-!-font-size-16">Latest error reported 1 January 2023 - <a class="govuk-link" href="#">See
+          all previous errors</a></p>
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+href: "/manage-prototype/clear-data",
+text: "Clear prototype data"
+},
+
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+}
+]
+}
+}) }}
+{% endblock %}
