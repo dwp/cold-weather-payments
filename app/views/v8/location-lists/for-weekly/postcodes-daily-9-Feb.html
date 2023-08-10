@@ -1,0 +1,52 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Postcode districts affected – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-l">
+        Postcodes triggered on Thursday 9 February 2023
+      </h1>
+
+      <h2 class="govuk-heading-m" id="C">
+        9 February 2023 to 15 February 2023 (forecasted)
+      </h2>
+      <p class="govuk-body">
+        CH41, CH42, CH43, CH44, CH45, CH46, CH47, CH48, CH49, CH60, CH61, CH62, CH63, CH64, CH65, CH66, FY1, FY2, FY3, FY4, FY5, FY6, FY7, FY8, L1, L10, L11, L12, L13, L14, L15, L16, L17, L18, L19, L2, L20, L21, L22, L23, L24, L25, L26, L27, L28, L29, L3, L30, L31, L32, L33, L34, L35, L36, L37, L38, L39, L4, L40, L5, L6, L7, L8, L9, PR1, PR2, PR25, PR26, PR3, PR4, PR5, PR8, PR9
+      </p>
+     
+    </div>
+
+
+  </div>
+
+{% endblock %}

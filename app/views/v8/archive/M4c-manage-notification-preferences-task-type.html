@@ -1,0 +1,159 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Manage this service – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<nav id="app-navigation" class="app-navigation js-app-navigation govuk-clearfix" role="navigation"
+  aria-labelledby="app-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
+  <ul class="app-navigation__list app-width-container nav-left ">
+    <li class="app-navigation__list-item  ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{today}}">
+        Today
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-0"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-0">
+        Today
+      </button>
+    </li>
+    <li class="app-navigation__list-item  ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{weekly}}">
+        Thursday weekly summary
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-1"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-1">
+        Thursday weekly summary
+      </button>
+    </li>
+
+    <li class="app-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{search}}">
+        Search all data
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-3"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-3">
+        Search all data
+      </button>
+
+    </li>
+    <!-- <li class="app-navigation__list-item">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{manage}}">
+        Manage this service
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-2"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-2">
+        Manage this service
+      </button>
+
+    </li> -->
+  </ul>
+</nav>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What do you need to do with the trigger data file?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user-task" name="user-task" type="radio" value="UC">
+              <label class="govuk-label govuk-radios__label" for="user-task">
+                Run the Universal Credit (UC) scan
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user-task-2" name="user-task" type="radio" value="ISCS">
+              <label class="govuk-label govuk-radios__label" for="user-task-2">
+                Run the Income Support Computer System (ISCS) scan
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user-task-3" name="user-task" type="radio" value="JSAPS">
+              <label class="govuk-label govuk-radios__label" for="user-task-3">
+                Run the Jobseeker's Allowance Payment System (JSAPS) scan
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user-task-4" name="user-task" type="radio" value="postcode">
+              <label class="govuk-label govuk-radios__label" for="user-task-4">
+                Update the GOV.UK postcode checker
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+  href: "/v8/manage/M4a-manage-notification-preferences",
+  text: "Notification preferences"
+  },
+
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+}
+]
+}
+}) }}
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Search results – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check previous Cold Weather Payment data</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body-l govuk-!-margin-bottom-3">Results for <strong>Heathrow </strong> for <strong>9 December 2023 to 15 December 2023</strong>.</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">You can <a href="{{search}}" class="govuk-link">clear your search</a>
+      and start again.</p>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="Section 1">
+              <h2 class="govuk-heading-m ">2 Cold weather periods</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Saturday 10 Dec to Friday 16 Dec 2023 (forecasted)</li>
+                <li>Friday 2 Dec to Thursday 8 Dec 2023 (recorded)</li>
+              </ul>
+            </section>
+          </article>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="Section 1">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-3">32,800</h2>
+              <p class="govuk-body">Estimated payments to citizens (except UC)</p>
+            </section>
+          </article>
+        </div>
+
+        
+
+        <div class="govuk-grid-column-one-third">
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="Section 1">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-3">£820,000</h2>
+              <p class="govuk-body">Estimated total amount paid to citizens (except UC)</p>
+            </section>
+          </article>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="Section 1">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-0">278</h2>
+              <p class="govuk-body">Postcode areas linked to Heathrow</p>
+              <a href="{{listPostcodes}}" class="govuk-link">View list</a>
+            </section>
+          </article>
+        </div>
+
+
+
+
+      
+      </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+

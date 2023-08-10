@@ -1,1 +1,1 @@
-# prototype-cold-weather-payments-UI
+# Prototype template

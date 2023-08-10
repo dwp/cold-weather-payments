@@ -1,0 +1,52 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Postcode districts affected – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-l">
+        Postcodes triggered on Monday 6 February 2023
+      </h1>
+
+      <h2 class="govuk-heading-m" id="C">
+        30 January 2023 to 5 February 2023 (recorded)
+      </h2>
+      <p class="govuk-body">
+        CA1, CA2, CA3, CA4, CA5, CA6, CA7, CA8, DG12, DG16, DT3, DT4, DT5
+      </p>
+     
+    </div>
+
+
+  </div>
+
+{% endblock %}

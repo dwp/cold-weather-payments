@@ -1,0 +1,87 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+What do you want to do? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" action="" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="journey-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What do you want to do? 
+                </h1>
+              </legend>
+              <!-- <div id="journey-hint" class="govuk-hint">
+              optional
+              </div> -->
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journey-select" name="journey-select" type="radio" value="agent" aria-describedby="journey-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="journey-select">
+                    Find out if a citizen is eligible for payments
+                  </label>
+                  <!-- <div id="journey-item-hint" class="govuk-hint govuk-radios__hint">
+                    optional
+                  </div> -->
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="other" aria-describedby="journey-2-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
+                    Something else
+                  </label>
+                  <div id="journey-2-item-hint" class="govuk-hint govuk-radios__hint">
+                    You can search all data by location and date.
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button govuk-body" data-module="govuk-button">
+            Continue
+          </button>
+
+          
+          
+    
+            </form>
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

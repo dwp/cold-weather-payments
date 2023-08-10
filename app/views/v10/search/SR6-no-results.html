@@ -1,0 +1,47 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Search previous data</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body-l govuk-!-margin-bottom-3">There are no results for <strong>[Date range]</strong>, in <strong> [Location]</strong>.</p>
+
+
+    <p class="govuk-body">You can <a href="{{search}}" class="govuk-link">clear your search</a> and start again.</p>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  List postcodes – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search results",
+      href: "/v2/searchResultDateOnly#triggerDay"
+    },
+    {
+      text: "Postcodes"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Postcodes triggered on Monday 13 February 2023
+      </h1>
+
+      <!-- <p class="govuk-body">View the triggered postcodes below or <a href="https://dwpgovuk.sharepoint.com.mcas.ms/:x:/r/sites/ext-rbc/_layouts/15/Doc.aspx?sourcedoc=%7B7780F0AA-43CD-4602-B62C-9A766576D492%7D&file=cwp-test.xlsx&action=default&mobileredirect=true" target="blank" class="govuk-link">download the data</a> (CSV, 800 KB).</p> -->
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Postcodes and corresponding weather stations
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Weather station</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">BD23</th>
+            <td class="govuk-table__cell">90 Bainbridge</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">BD24</th>
+            <td class="govuk-table__cell">90 Bainbridge</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DL8</th>
+            <td class="govuk-table__cell">90 Bainbridge</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DL11</th>
+            <td class="govuk-table__cell">90 Bainbridge</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DL12</th>
+            <td class="govuk-table__cell">90 Bainbridge</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">DL13</th>
+            <td class="govuk-table__cell">90 Bainbridge</td>
+          </tr>
+ 
+
+        </tbody>
+      </table>
+     
+    </div>
+  </div>
+
+{% endblock %}

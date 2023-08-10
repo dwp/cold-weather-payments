@@ -1,0 +1,45 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Sorry, the service is unavalible
+      </h1>
+
+      <p class="govuk-body-l">
+        You will be able to use the service after 11am on Monday 19 November 2018.
+      </p>
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Submit a TechNow ticket</a> if you need help.
+      </p>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,280 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<nav id="app-navigation" class="app-navigation js-app-navigation govuk-clearfix" role="navigation"
+  aria-labelledby="app-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
+  <ul class="app-navigation__list app-width-container  nav-left">
+    <li class="app-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{daily}}">
+        Today
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-0"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-0">
+        Today
+      </button>
+    </li>
+    <li class="app-navigation__list-item  ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{weekly}}">
+        Thursday weekly summary
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-1"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-1">
+        Thursday weekly summary
+      </button>
+    </li>
+
+    <li class="app-navigation__list-item nav-active">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link"
+        href="{{search}}">
+        Search all data
+      </a>
+
+      <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-3"
+        aria-expanded="false" aria-controls="js-mobile-nav__subnav-3">
+        Search all data
+      </button>
+
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Payment data for citizens in CW12</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">You can <a href="{{search}}" class="govuk-link">clear your search</a>
+      and start again.</p>
+
+    <h2 class="govuk-heading-l">4 cold weather periods</h2>
+
+    <p class='govuk-body'>For each cold weather period, you can see when the benefit scans should happen and when the citizen should get paid.</p>
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Saturday 21 Jan 2023 to Friday 27 Jan 2023
+              <p class='govuk-body'>Additional qualifying days: 28 Jan to 29 Jan 2023</p>                 
+
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <p class='govuk-body'>This period was forecasted.</p>
+          <!-- <p class='govuk-body'>The following dates are when the scan happens for the benefit systems and when citizens get paid.</p> -->
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Scan and payment dates</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment system</th>
+                <th scope="col" class="govuk-table__header">Scan date</th>
+                <th scope="col" class="govuk-table__header">Payment date</th>
+      
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">UC</th>
+                <td class="govuk-table__cell govuk-table__cell">22 Jan</td>
+                <td class="govuk-table__cell govuk-table__cell">25 Jan</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">ISCS and JSAPS</th>
+                <td class="govuk-table__cell govuk-table__cell">27 Jan </td>
+                <td class="govuk-table__cell govuk-table__cell">1 Feb</td>
+              </tr>
+      
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Tax Credit System</th>
+                <td class="govuk-table__cell govuk-table__cell">1 Feb</td>
+                <td class="govuk-table__cell govuk-table__cell">6 Feb</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class='govuk-body'>There are AQD for this cold weather period. AQD are not included in the scans.</p>
+
+          
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+              Friday 13 Jan 2023 to Thursday 19 Jan 2023 
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+          <p class='govuk-body'>This period was forecasted.</p>
+          <!-- <p class='govuk-body'>The following dates are when the scan happens for the benefit systems and when citizens get paid.</p> -->
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Scan and payment dates</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment system</th>
+                <th scope="col" class="govuk-table__header">Scan date</th>
+                <th scope="col" class="govuk-table__header">Payment date</th>
+      
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">UC</th>
+                <td class="govuk-table__cell govuk-table__cell">13 Jan</td>
+                <td class="govuk-table__cell govuk-table__cell">18 Jan</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">ISCS and JSAPS</th>
+                <td class="govuk-table__cell govuk-table__cell">20 Jan </td>
+                <td class="govuk-table__cell govuk-table__cell">25 Jan</td>
+              </tr>
+      
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Tax Credit System</th>
+                <td class="govuk-table__cell govuk-table__cell">25 Jan</td>
+                <td class="govuk-table__cell govuk-table__cell">30 Jan</td>
+              </tr>
+            </tbody>
+          </table>
+
+         
+          
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+              Tuesday 3 Jan 2023 to Monday 9 Jan 2023 
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+
+          <p class='govuk-body'>This period was forecasted.</p>
+          <!-- <p class='govuk-body'>The following dates are when the scan happens for the benefit systems and when citizens get paid.</p> -->
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Scan and payment dates</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment system</th>
+                <th scope="col" class="govuk-table__header">Scan date</th>
+                <th scope="col" class="govuk-table__header">Payment date</th>
+      
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">UC</th>
+                <td class="govuk-table__cell govuk-table__cell">3 Jan</td>
+                <td class="govuk-table__cell govuk-table__cell">6 Jan</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">ISCS and JSAPS</th>
+                <td class="govuk-table__cell govuk-table__cell">6 Jan </td>
+                <td class="govuk-table__cell govuk-table__cell">11 Jan</td>
+              </tr>
+      
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Tax Credit System</th>
+                <td class="govuk-table__cell govuk-table__cell">11 Jan</td>
+                <td class="govuk-table__cell govuk-table__cell">15 Jan</td>
+              </tr>
+            </tbody>
+          </table>
+        
+        </div>
+      </div>
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              Tuesday 27 Dec 2022 to Monday 2 Jan 2023 
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+
+
+          <p class='govuk-body'>This period was recorded.</p>
+          <!-- <p class='govuk-body'>The following dates are when the scan happens for the benefit systems and when citizens get paid.</p> -->
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Scan and payment dates</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment system</th>
+                <th scope="col" class="govuk-table__header">Scan date</th>
+                <th scope="col" class="govuk-table__header">Payment date</th>
+      
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">UC</th>
+                <td class="govuk-table__cell govuk-table__cell">28 Dec</td>
+                <td class="govuk-table__cell govuk-table__cell">3 Jan</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">ISCS and JSAPS</th>
+                <td class="govuk-table__cell govuk-table__cell">6 Jan </td>
+                <td class="govuk-table__cell govuk-table__cell">11 Jan</td>
+              </tr>
+      
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Tax Credit System</th>
+                <td class="govuk-table__cell govuk-table__cell">11 Jan</td>
+                <td class="govuk-table__cell govuk-table__cell">15 Jan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+  {% endblock %}

@@ -1,0 +1,242 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+previous-data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }} -->
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check previous Cold Weather Payment data</h1>
+    <!-- <p class="govuk-body">You can also <a href="{{statusToday}}" class="govuk-link">see today's Cold Weather Payment data.</a></p> -->
+  </div>
+</div>
+
+<form class="form" action="" method="post">
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <div class="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Search</h2>
+        </div>
+      </div>
+      <div class="moj-filter__content">
+        <div class="moj-filter__options govuk-body  govuk-!-padding-bottom-0">
+
+
+
+          <!--DATE RANGE SEARCH-->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="date-range-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Date range
+                </h1>
+              </legend>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="date-range" name="date-range" type="radio" value="email"
+                    data-aria-controls="conditional-date-range">
+                  <label class="govuk-label govuk-radios__label" for="date-range">
+                    Search by date range
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-range">
+                  <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="date-range-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h1 class="govuk-fieldset__heading">
+                            Start date
+                          </h1>
+                        </legend>
+                        <div id="date-range-hint" class="govuk-hint">
+                          For example, 10 2 2023
+                        </div>
+                        <div class="govuk-date-input" id="start-date">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                id="start-date-day" name="start-date-day" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                id="start-date-month" name="start-date-month" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="date-range-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h1 class="govuk-fieldset__heading">
+                            End date
+                          </h1>
+                        </legend>
+                        <div id="date-range-hint" class="govuk-hint">
+                          For example, 16 2 2023
+                        </div>
+                        <div class="govuk-date-input" id="end-date">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="end-date-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-day"
+                                name="end-date-day" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="end-date-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                id="end-date-month" name="end-date-month" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="end-date-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year"
+                                name="end-date-year" type="text" inputmode="numeric">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="date-range-3" name="date-range" type="radio" value="phone"
+                    data-aria-controls="conditional-date-range-2">
+                  <label class="govuk-label govuk-radios__label" for="date-range-2">
+                    Search all 2022/2023 season
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+
+          <!--LOCATION SEARCH-->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="location-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Location
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="location" name="location" type="radio" value="email"
+                    data-aria-controls="conditional-location">
+                  <label class="govuk-label govuk-radios__label" for="location">
+                    Search by Postcode
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-location">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="enter-postcode">
+                      Enter postcode
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-quarter" id="enter-postcode" name="enter-postcode"
+                      type="email" spellcheck="false" autocomplete="email">
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="location-2" name="location" type="radio" value="phone"
+                    data-aria-controls="conditional-location-2">
+                  <label class="govuk-label govuk-radios__label" for="location-2">
+                    Search by Weather station
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-location-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="enter-weather-station">
+                      Enter weather station
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-quarter" id="enter-weather-station"
+                      name="enter-weather-station" type="tel" autocomplete="tel">
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="location-3" name="location" type="radio" value="phone"
+                    data-aria-controls="conditional-location-3">
+                  <label class="govuk-label govuk-radios__label" for="location-3">
+                    Search all locations
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+            <button class="govuk-button govuk-body govuk-!-margin-top-5" data-module="govuk-button">
+              Search
+            </button>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+  </div>
+
+
+
+
+
+
+</div>
+
+</form>
+
+
+
+
+
+{% endblock %}

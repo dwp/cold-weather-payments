@@ -1,0 +1,64 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Weekly summary of the latest data for the legacy payment scan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Summary of the latest weekly legacy payment scan</h1>
+  </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body govuk-!-margin-bottom-3">The weekly summary is not available yet because the Cold Weather Payment season has only just started. You'll be able to view the weekly summary on Thursday [DATE] November 2023. </p>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">This page will be updated every Thursday to show a summary of the previous week.</p>
+    </div>
+
+    <h2 class="govuk-heading-m">View previous trigger data</h2>
+
+    <p class="govuk-body">If you're looking for previous triggers, you can <a href="{{search}}" class="govuk-link">search all data</a>.</p>
+
+
+
+
+    
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+

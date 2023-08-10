@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Search for previous data by date and location – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<nav id="app-navigation" class="app-navigation js-app-navigation govuk-clearfix" role="navigation" aria-labelledby="app-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="app-navigation-heading">Menu</h2>
+  <ul class="app-navigation__list app-width-container nav-left">
+      <li class="app-navigation__list-item  ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{daily}}">
+          Today
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-0" aria-expanded="false" aria-controls="js-mobile-nav__subnav-0">
+            Today
+          </button>
+      </li>
+      <li class="app-navigation__list-item  ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{weekly}}">
+          Thursday weekly summary
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-1" aria-expanded="false" aria-controls="js-mobile-nav__subnav-1">
+            Thursday weekly summary
+          </button>
+      </li>
+
+      <li class="app-navigation__list-item nav-active ">
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline app-navigation__link js-app-navigation__link" href="{{search}}">
+          Search all data
+        </a>
+
+          <button hidden="" class="app-navigation__button js-app-navigation__button" id="js-mobile-nav-subnav-toggler-3" aria-expanded="false" aria-controls="js-mobile-nav__subnav-3">
+            Search all data
+          </button>
+
+      </li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#">Enter a postcode</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+
+        <form class="form" action="" method="post">
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="citizen-postcode">
+                Where does the citizen live?
+              </label>
+            </h1>
+            <div id="citizen-postcode-hint" class="govuk-hint">
+              Enter the first part of a postcode
+            </div>
+            <input class="govuk-input govuk-input--width-10" id="citizen-postcode" name="citizen-postcode" type="text" aria-describedby="citizen-postcode-hint">
+          </div>
+
+    
+
+    
+              <button class="govuk-button govuk-body govuk-!-margin-top-5" data-module="govuk-button">
+                Search
+              </button>
+    
+            </form>
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+  {{ dwpFooter({
+    meta: {
+    visuallyHiddenTitle: "Meta links",
+    items: [
+    {
+      href: "/manage-prototype/clear-data",
+      text: "Clear prototype data"
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    }
+    ]
+    }
+    }) }} 
+{% endblock %}
+
+
+
+

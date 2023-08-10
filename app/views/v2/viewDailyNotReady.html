@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Daily view – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check today's Cold Weather Payment trigger data
+      </h1>
+
+      <p class="govuk-body-l govuk-!-margin-bottom-4">
+        You cannot access today's trigger data yet, it should be available before midday.
+      </p>
+
+      <h2 class="govuk-heading-m">If it is not a normal working day</h2>
+
+      <p class="govuk-body">
+       You can access trigger data for a:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Saturday or Sunday on the following Monday</li>
+        <li>bank holiday on the next working day</li>
+      </ul>
+
+      <p class="govuk-body">You can <a href="{{search}}" class="govuk-link">view all previous trigger data since 1 November 2022</a></p>
+
+      <h2 class="govuk-heading-m">The latest trigger was on {{trigDay1}}</h2>
+
+      {% include "v2/includes/viewDailyCardOneTrigger.html" %}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
