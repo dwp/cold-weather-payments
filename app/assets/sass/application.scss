@@ -31,6 +31,12 @@
 
 // summary card actions
 
+.card-fill {
+    visibility: hidden;
+    height:0;
+
+}
+
 .govuk-summary-card__actions {
     @include govuk-font($size: 19, $weight: bold);
     display: -ms-flexbox;
@@ -92,8 +98,8 @@
   }
 
 .card {
-    max-width: 14rem;
-    min-width: 14rem;
+    max-width: 13rem;
+    min-width: 13rem;
     border: 2px solid transparent;
     padding: 2rem;
     background: #efefef;

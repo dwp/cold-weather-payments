@@ -306,6 +306,35 @@ module.exports = function (router) {
         });
     });
 
+    router.get('/' + version + "/weekly-views/w2b-week-with-triggers-NI", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = true;
+        searchActive = false;
+        res.render(version + "/weekly-views/w2b-week-with-triggers-NI", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/A1-about",
+            'daily': "/" + version + "/daily-views/D2b-daily-forecasted-and-recorded",
+            'weekly': "/" + version + "/weekly-views/w2b-week-with-triggers-NI",
+            'search': "/" + version + "/search/S-search-journey-select",
+            // Page links
+            'listStationsAll': "/" + version + "/location-lists/LW3-weather-multiple-days",
+            'listPostcodesAll': "/" + version + "/location-lists/LP3-postcodes-multiple-days",
+            'listStations1': "/" + version + "/location-lists/for-weekly/weather-daily-9-Feb",
+            'listPostcodes1': "/" + version + "/location-lists/for-weekly/postcodes-daily-9-Feb",
+            'listStations2': "/" + version + "/location-lists/for-weekly/weather-daily-8-Feb",
+            'listPostcodes2': "/" + version + "/location-lists/for-weekly/postcodes-daily-8-Feb",
+            'listStations3': "/" + version + "/location-lists/for-weekly/weather-daily-6-Feb",
+            'listPostcodes3': "/" + version + "/location-lists/for-weekly/postcodes-daily-6-Feb",
+        });
+    });
+
     router.get('/' + version + "/location-lists/for-weekly/weather-daily-9-Feb", function (req, res) {
         res.render(version + "/location-lists/for-weekly/weather-daily-9-Feb", {
             'version': version,
