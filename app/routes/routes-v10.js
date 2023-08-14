@@ -80,13 +80,13 @@ module.exports = function (router) {
         });
     });
 
-    router.get('/' + version + "/daily-views/D2c-daily-forecasted-NI", function (req, res) {
+    router.get('/' + version + "/daily-views/D2c-daily-forecasted-NI-option1", function (req, res) {
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
         weeklyActive = false;
         searchActive = false;
-        res.render(version + "/daily-views/D2c-daily-forecasted-NI", {
+        res.render(version + "/daily-views/D2c-daily-forecasted-NI-option1", {
             'version': version,
             // Navigation settings
             'aboutActive': aboutActive,
@@ -94,12 +94,12 @@ module.exports = function (router) {
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
             'about': "/" + version + "/A1-about",
-            'daily': "/" + version + "/daily-views/D2c-daily-forecasted-NI",
+            'daily': "/" + version + "/daily-views/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/weekly-views/w2-week-with-triggers",
             'search': "/" + version + "/search/S-search-journey-select",
             // Page links
-            'listStations': "/" + version + "/location-lists/LW2a-weather-daily-two-triggers",
-            'listPostcodes': "/" + version + "/location-lists/LP2-postcodes-daily-two-triggers",
+            'listStations': "/" + version + "/location-lists/LW1-weather-daily-NI",
+            'listPostcodes': "/" + version + "/location-lists/LP1-postcodes-daily-NI",
         });
     });
 
@@ -477,6 +477,15 @@ module.exports = function (router) {
             res.redirect('/' + version + "/search/SR1-citizen-postcode")
         } else {
             res.redirect('/' + version + "/search/SR1-citizen-postcode")
+        }
+    });
+
+    router.post('/' + version + "/postcode-checker/PC1-where", function (req, res) {
+        var citizenPostcode = req.session.data['citizen-postcode']
+        if (citizenPostcode == undefined) {
+            res.redirect('/' + version + "/postcode-checker/PC2-result")
+        } else {
+            res.redirect('/' + version + "/postcode-checker/PC2-result")
         }
     });
 
