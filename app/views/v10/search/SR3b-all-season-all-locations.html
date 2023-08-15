@@ -59,28 +59,28 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="card">
         <div class="card__inner">
           <h2>Estimated payments to citizens (not including UC)</h2>
-          <p class="card__visual">22,050</p>
+          <p class="card__visual">634,454</p>
 
         </div>
       </div>
       <div class="card">
         <div class="card__inner">
           <h2>Estimated total amount paid to citizens (not including UC)</h2>
-          <p class="card__visual">£551,250</p>
+          <p class="card__visual">£15,861,350</p>
 
         </div>
       </div>
       <div class="card ">
         <div class="card__inner">
           <h2>Weather stations triggered</h2>
-          <p class="card__visual">5</p>
+          <p class="card__visual">4</p>
           <p><a href="{{listStationsAll}}" class="govuk-link">View list</a></p>
         </div>
       </div>
       <div class="card ">
         <div class="card__inner">
           <h2>Postcode districts affected</h2>
-          <p class="card__visual">21</p>
+          <p class="card__visual">429</p>
           <p><a href="{{listPostcodesAll}}" class="govuk-link">View list</a></p>
         </div>
       </div>
@@ -93,10 +93,104 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
 
     <p class="govuk-body">There were 3 trigger days between Thursday 1 November 2022 and Thursday 16 February 2023. </p>
 
-    <!--CARD 1-->
+   
+      <!--CARD 1-->
+
+      <div class="govuk-summary-card ">
+        <div class="govuk-summary-card__title-wrapper ">
+          <h2 class="govuk-summary-card__title">Trigger day: Thursday 16 February</h2>
+        </div>
+        <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                Estimated payments to citizens (not including UC)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                350,606
+              </dd>
+              <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated total amount paid to citizens (not including UC)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £8,765,150 
+              </dd>
+              <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Cold weather period and trigger type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> 16 Feb 2023 to 22 Feb 2023 (forecasted)     </p>       
+              </dd>
+              <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Weather stations triggered
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  1
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="{{listStationsDay3}}">
+                  View list<span class="govuk-visually-hidden"> of weather stations</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Postcode districts affected
+              </dt>
+              <dd class="govuk-summary-list__value">
+                268
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="{{listPostcodesDay3}}">
+                  View list<span class="govuk-visually-hidden"> of postcodes</span>
+                </a>
+              </dd>
+            </div>
+  
+          </dl>
+  
+          <div class="govuk-summary-card__title-details-box ">
+            <details class="govuk-details " data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  When are benefit systems scanned and citizens paid?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">The following systems will be scanned on 17 February 2023:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Income Support Computer System (ISCS), for citizens on Income Support and Pension Credit</li>
+                  <li>Jobseeker's Allowance Payment System (JSAPS), for citizens on Jobseeker's Allowance (JSA) and Employment and Support Allowance (ESA)</li>
+                </ul>
+                <p class="govuk-body">These citizens should be paid 3 working days later on 22 February.</p>
+                <p class="govuk-body">The Tax Credit System will be scanned on 22 February. This scan finds citizens who've got a 
+                  disabled child but do not have this element included in their benefit claim. These citizens will be paid 3 working days later on 27 February.
+                </p>
+              </div>
+            </details>
+          </div>
+          
+        </div>
+      </div>  
+   
+   
+   
+    <!--CARD 2-->
     <div class="govuk-summary-card ">
       <div class="govuk-summary-card__title-wrapper ">
-        <h2 class="govuk-summary-card__title">Trigger day: Saturday 11 February</h2>
+        <h2 class="govuk-summary-card__title">Trigger day: Wednesday 8 February</h2>
       </div>
       <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
         <dl class="govuk-summary-list">
@@ -105,7 +199,8 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Estimated payments to citizens (not including UC)
             </dt>
             <dd class="govuk-summary-list__value">
-              2,150
+              133,848
+
             </dd>
             <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
             </dd>
@@ -115,7 +210,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Estimated total amount paid to citizens (not including UC)
             </dt>
             <dd class="govuk-summary-list__value">
-              £53,750
+              £3,346,200
             </dd>
             <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
             </dd>
@@ -125,7 +220,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Cold weather period and trigger type
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body"> </p> Feb 2023 to 17 Feb 2023 (forecasted)              
+              <p class="govuk-body"> </p> 8 Feb 2023 to 14 Feb 2023 (forecasted)           
             </dd>
             <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
           </dd>
@@ -135,7 +230,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Weather stations triggered
             </dt>
             <dd class="govuk-summary-list__value">
-                1
+                2
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="{{listStationsDay1}}">
@@ -148,7 +243,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Postcode districts affected
             </dt>
             <dd class="govuk-summary-list__value">
-              10
+              83
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="{{listPostcodesDay1}}">
@@ -183,10 +278,10 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
       </div>
     </div>
 
-     <!--CARD 2-->
+     <!--CARD 3-->
      <div class="govuk-summary-card ">
       <div class="govuk-summary-card__title-wrapper ">
-        <h2 class="govuk-summary-card__title">Trigger day: Tuesday 14 February</h2>
+        <h2 class="govuk-summary-card__title">Trigger day: Monday 6 February</h2>
       </div>
       <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
         <p class="govuk-body">There are 2 types of trigger, recorded and forecasted.</p>
@@ -197,7 +292,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Estimated payments to citizens (not including UC)
             </dt>
             <dd class="govuk-summary-list__value">
-              22,000
+              150,000
             </dd>
             <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
             </dd>
@@ -207,7 +302,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Estimated total amount paid to citizens (not including UC)
             </dt>
             <dd class="govuk-summary-list__value">
-              £550,000
+              £375,000
             </dd>
             <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
             </dd>
@@ -217,12 +312,12 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Cold weather period and trigger type
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body"> 14 Feb 2023 to 20 Feb 2023 (forecasted)                
+              <p class="govuk-body"> 6 Feb 2023 to 12 Feb 2023 (forecasted)                
                 <strong class="govuk-tag">
                 AQD
               </strong>  
             </p>              
-              <p class="govuk-body"> 7 Feb 2023 to 13 Feb 2023 (recorded)</p> 
+              <p class="govuk-body"> 30 Jan 2023 to 5 Feb 2023 (recorded)</p> 
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="{{aqd}}">
@@ -235,7 +330,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Weather stations triggered
             </dt>
             <dd class="govuk-summary-list__value">
-                3
+                2
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="{{listStationsDay2}}">
@@ -248,7 +343,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
               Postcode districts affected
             </dt>
             <dd class="govuk-summary-list__value">
-              8
+              76
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="{{listPostcodesDay2}}">
@@ -283,96 +378,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
       </div>
     </div>
 
-     <!--CARD 3-->
 
-     <div class="govuk-summary-card ">
-      <div class="govuk-summary-card__title-wrapper ">
-        <h2 class="govuk-summary-card__title">Trigger day: Thursday 16 February</h2>
-      </div>
-      <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-third">
-              Estimated payments to citizens (not including UC)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              5,000
-            </dd>
-            <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Estimated total amount paid to citizens (not including UC)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              £125,000
-            </dd>
-            <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Cold weather period and trigger type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body"> 16 Feb 2023 to 22 Feb 2023 (forecasted)     </p>       
-            </dd>
-            <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Weather stations triggered
-            </dt>
-            <dd class="govuk-summary-list__value">
-                1
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="{{listStationsDay3}}">
-                View list<span class="govuk-visually-hidden"> of weather stations</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Postcode districts affected
-            </dt>
-            <dd class="govuk-summary-list__value">
-              3
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="{{listPostcodesDay3}}">
-                View list<span class="govuk-visually-hidden"> of postcodes</span>
-              </a>
-            </dd>
-          </div>
-
-        </dl>
-
-        <div class="govuk-summary-card__title-details-box ">
-          <details class="govuk-details " data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                When are benefit systems scanned and citizens paid?
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <p class="govuk-body">The following systems will be scanned on 17 February 2023:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Income Support Computer System (ISCS), for citizens on Income Support and Pension Credit</li>
-                <li>Jobseeker's Allowance Payment System (JSAPS), for citizens on Jobseeker's Allowance (JSA) and Employment and Support Allowance (ESA)</li>
-              </ul>
-              <p class="govuk-body">These citizens should be paid 3 working days later on 22 February.</p>
-              <p class="govuk-body">The Tax Credit System will be scanned on 22 February. This scan finds citizens who've got a 
-                disabled child but do not have this element included in their benefit claim. These citizens will be paid 3 working days later on 27 February.
-              </p>
-            </div>
-          </details>
-        </div>
-        
-      </div>
-    </div>
 
   </div>
 </div>
