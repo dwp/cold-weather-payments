@@ -659,6 +659,10 @@ module.exports = function (router) {
             'daily': "/" + version + "/daily-views/D2b-daily-forecasted-and-recorded",
             'weekly': "/" + version + "/weekly-views/w2-week-with-triggers",
             'search': "/" + version + "/search/S-search-journey-select",
+
+            // Page links
+            'listStationsAll': "/" + version + "/location-lists/for-results/LW3-weather-multiple-days-forSR3b",
+            'listPostcodesAll': "/" + version + "/location-lists/for-results/LP3-postcodes-multiple-days-forSR3b",
         });
     });
 
