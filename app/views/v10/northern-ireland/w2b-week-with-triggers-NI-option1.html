@@ -42,7 +42,7 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
     </div>
     
         <h2 class="govuk-heading-m" id="overview">Overview for the week</h2>
-        <p class="govuk-!-margin-bottom-3">You can also <a href="#breakdown" class="govuk-link">view data by trigger day</a></p>
+        <p class="govuk-!-margin-bottom-3">You can also <a href="#data-by-trigger-day" class="govuk-link">view data by trigger day</a>.</p>
     
         <div class="card--wrapper">
 
@@ -89,20 +89,24 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
             <div class="card__inner">
               <h2>Weather stations triggered</h2>
               <p class="card__visual">4</p>
-              <p><a href="{{listStationsAll}}" class="govuk-link">View list</a></p>
+              <p><a href="{{listStationsAll}}" class="govuk-link">View list
+                <span class="govuk-visually-hidden"> of weather stations triggered</span>
+              </a></p>
             </div>
           </div>
           <div class="card ">
             <div class="card__inner">
               <h2>Postcode districts affected</h2>
               <p class="card__visual">364</p>
-              <p><a href="{{listPostcodesAll}}" class="govuk-link">View list</a></p>
+              <p><a href="{{listPostcodesAll}}" class="govuk-link">View list
+                <span class="govuk-visually-hidden"> of postcode districts affected</span>
+              </a></p>
             </div>
           </div>   
         </div>
 
      
-        <h2 class="govuk-heading-m govuk-!-padding-top-6" id="breakdown">Data by trigger day</h2>
+        <h2 class="govuk-heading-m govuk-!-padding-top-6" id="data-by-trigger-day">Data by trigger day</h2>
 
         <p class="govuk-body">There were 3 trigger days between Friday 3 February 2023 and Thursday 9 February 2023.</p>
         <!-- TRIGGER DAY 3 -->
@@ -138,27 +142,27 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Weather station triggered
+                  Weather stations triggered
                 </dt>
                 <dd class="govuk-summary-list__value">
                     1
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="{{listStations1}}">
-                    View list<span class="govuk-visually-hidden"> of weather stations</span>
+                    View list<span class="govuk-visually-hidden"> of weather stations triggered</span>
                   </a>
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Postcodes districts affected
+                  Postcode districts affected
                 </dt>
                 <dd class="govuk-summary-list__value">
                   73
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="{{listPostcodes1}}">
-                    View list<span class="govuk-visually-hidden"> of postcodes</span>
+                    View list<span class="govuk-visually-hidden"> of postcode districts affected</span>
                   </a>
                 </dd>
               </div>
@@ -228,27 +232,27 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Weather station triggered
+          Weather stations triggered
         </dt>
         <dd class="govuk-summary-list__value">
             2
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="{{listStations2}}">
-            View list<span class="govuk-visually-hidden"> of weather stations</span>
+            View list<span class="govuk-visually-hidden"> of weather stations triggered</span>
           </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Postcodes districts affected
+          Postcode districts affected
         </dt>
         <dd class="govuk-summary-list__value">
           76
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="{{listPostcodes2}}">
-            View list<span class="govuk-visually-hidden"> of postcodes</span>
+            View list<span class="govuk-visually-hidden"> of postcode districts affected</span>
           </a>
         </dd>
       </div>
@@ -315,14 +319,14 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Weather station triggered
+          Weather stations triggered
         </dt>
         <dd class="govuk-summary-list__value">
             1
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="{{listStations3}}">
-            View list<span class="govuk-visually-hidden"> of weather stations</span>
+            View list<span class="govuk-visually-hidden"> of weather stations triggered</span>
           </a>
         </dd>
       </div>
@@ -335,7 +339,7 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="{{listPostcodes3}}">
-            View list<span class="govuk-visually-hidden"> of postcodes</span>
+            View list<span class="govuk-visually-hidden"> of postcode districts affected</span>
           </a>
         </dd>
       </div>
@@ -380,3 +384,28 @@ Weekly summary of the latest data for the legacy payment scan – {{ serviceName
 
 {% endblock %}
 
+{% block footer %}
+  {{ dwpFooter({
+    meta: {
+    visuallyHiddenTitle: "Meta links",
+    items: [
+    {
+      href: "/v10/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
+      text: "Testing - Option 2"
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    }
+    ]
+    }
+    }) }} 
+{% endblock %}
