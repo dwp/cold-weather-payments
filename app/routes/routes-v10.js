@@ -1545,24 +1545,26 @@ module.exports = function (router) {
     //------------------
     // Views: NORTHERN IRELAND JOURNEYS
 
-    router.get('/' + version + "/northern-ireland/A1-about-NI", function (req, res) {
+    //OPTION 1
+
+    router.get('/' + version + "/northern-ireland/A1-about-NI-option1", function (req, res) {
 
         // Set active navigation tab
         aboutActive = true;
         dailyActive = false;
         weeklyActive = false;
         searchActive = false;
-        res.render(version + "/northern-ireland/A1-about-NI", {
+        res.render(version + "/northern-ireland/A1-about-NI-option1", {
             'version': version,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': "/" + version + "/northern-ireland/A1-about-NI",
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/northern-ireland/S-search-journey-select",
+            'search': "/" + version + "/not-available",
             // Page links
             'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
         });
@@ -1582,10 +1584,10 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': "/" + version + "/northern-ireland/A1-about-NI",
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/northern-ireland/S-search-journey-select",
+            'search': "/" + version + "/not-available",
             // Page links
             'listStations': "/" + version + "/northern-ireland/LW1-weather-daily-NI",
             'listPostcodes': "/" + version + "/northern-ireland/LP1-postcodes-daily-NI",
@@ -1607,10 +1609,10 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': "/" + version + "/northern-ireland/A1-about-NI",
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/search/S-search-journey-select",
+            'search': "/" + version + "/not-available",
             // Page links
             'listStationsAll': "/" + version + "/northern-ireland/LW3-weather-multiple-days-NI",
             'listPostcodesAll': "/" + version + "/northern-ireland/LP3-postcodes-multiple-days-NI",
@@ -1626,12 +1628,183 @@ module.exports = function (router) {
     router.get('/' + version + "/northern-ireland/LW3-weather-multiple-days-NI", function (req, res) {
         res.render(version + "/northern-ireland/LW3-weather-multiple-days-NI", {
             'version': version,
-            'about': "/" + version + "/northern-ireland/A1-about-NI",
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/search/S-search-journey-select",
+            'search': "/" + version + "/not-available",
         });
     });
+
+
+    //OPTION 2
+
+    router.get('/' + version + "/northern-ireland/A1-about-NI-option2", function (req, res) {
+
+        // Set active navigation tab
+        aboutActive = true;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/A1-about-NI-option2", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
+            'search': "/" + version + "/not-available",
+            // Page links
+            'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
+        });
+    });
+
+
+    router.get('/' + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
+            'search': "/" + version + "/not-available",
+            // Toggle
+            'toggle': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI",
+            // Page links
+            'listStations': "/" + version + "/location-lists/LW1-weather-daily",
+            'listPostcodes': "/" + version + "/location-lists/LP1-postcodes-daily",
+        });
+    });
+
+    router.get('/' + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
+            'search': "/" + version + "/not-available",
+            // Toggle
+            'toggle': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
+            // Page links
+            'listStations': "/" + version + "/northern-ireland/LW1-weather-daily-NI-option2",
+            'listPostcodes': "/" + version + "/northern-ireland/LP1-postcodes-daily-NI-option2",
+        });
+    });
+
+
+
+    router.get('/' + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = true;
+        searchActive = false;
+        res.render(version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG", {
+            'version': version,
+        // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
+            'search': "/" + version + "/not-available",
+        // Toggle
+        'toggle': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
+
+            // Page links
+            'listStationsAll': "/" + version + "/location-lists/LW3-weather-multiple-days",
+            'listPostcodesAll': "/" + version + "/location-lists/LP3-postcodes-multiple-days",
+            // 'listStations1': "/" + version + "/location-lists/for-weekly/weather-daily-9-Feb",
+            // 'listPostcodes1': "/" + version + "/location-lists/for-weekly/postcodes-daily-9-Feb",
+            // 'listStations2': "/" + version + "/location-lists/for-weekly/weather-daily-8-Feb",
+            // 'listPostcodes2': "/" + version + "/location-lists/for-weekly/postcodes-daily-8-Feb",
+            // 'listStations3': "/" + version + "/location-lists/for-weekly/weather-daily-6-Feb",
+            // 'listPostcodes3': "/" + version + "/location-lists/for-weekly/postcodes-daily-6-Feb",
+        });
+    });
+
+    router.get('/' + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = true;
+        searchActive = false;
+        res.render(version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
+            'search': "/" + version + "/not-available",
+            // Toggle
+            'toggle': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
+
+            // Page links
+            'listStationsAll': "/" + version + "/northern-ireland/LW3-weather-multiple-days-NI-option2",
+            'listPostcodesAll': "/" + version + "/northern-ireland/LP3-postcodes-multiple-days-NI-option2",
+            // 'listStations1': "/" + version + "/location-lists/for-weekly/weather-daily-9-Feb",
+            // 'listPostcodes1': "/" + version + "/location-lists/for-weekly/postcodes-daily-9-Feb",
+            // 'listStations2': "/" + version + "/location-lists/for-weekly/weather-daily-8-Feb",
+            // 'listPostcodes2': "/" + version + "/location-lists/for-weekly/postcodes-daily-8-Feb",
+            // 'listStations3': "/" + version + "/location-lists/for-weekly/weather-daily-6-Feb",
+            // 'listPostcodes3': "/" + version + "/location-lists/for-weekly/postcodes-daily-6-Feb",
+        });
+    });
+
+
+
+// LIST VIEW VARIATIONS NORTHERN IRELAND
+        //DAILY
+        router.get('/' + version + "/northern-ireland/LW1-weather-daily-NI", function (req, res) {
+            res.render(version + "/northern-ireland/LW1-weather-daily-NI", {
+                'version': version,
+                'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
+                'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
+                'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
+                'search': "/" + version + "/not-available",
+            });
+        });
+
+    router.get('/' + version + "/northern-ireland/LW3-weather-multiple-days-N2", function (req, res) {
+        res.render(version + "/northern-ireland/LW3-weather-multiple-days-N2", {
+            'version': version,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
+            'search': "/" + version + "/not-available",
+        });
+    });
+
+
+
+
 
 
 

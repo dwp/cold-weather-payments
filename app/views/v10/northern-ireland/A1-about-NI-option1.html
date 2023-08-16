@@ -41,7 +41,7 @@ About this service – {{ serviceName }} – GOV.UK Prototype Kit
   <li>any previous day this season</li>
 </ul>
 
-<p class="govuk-body">This service includes data from Northern Ireland. When there are triggers in Northern Ireland, the data will be separate from England and Wales.</p>
+<p class="govuk-body">This service includes data from Northern Ireland.</p>
 
 
 
@@ -88,24 +88,27 @@ About this service – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block footer %}
-{{ dwpFooter({
-meta: {
-visuallyHiddenTitle: "Meta links",
-items: [
-{
-href: "/manage-prototype/clear-data",
-text: "Clear prototype data"
-},
-
-{
-href: "",
-text: ""
-},
-{
-href: "",
-text: ""
-}
-]
-}
-}) }}
+  {{ dwpFooter({
+    meta: {
+    visuallyHiddenTitle: "Meta links",
+    items: [
+    {
+      href: "/v10/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
+      text: "Testing - Option 2"
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    }
+    ]
+    }
+    }) }} 
 {% endblock %}

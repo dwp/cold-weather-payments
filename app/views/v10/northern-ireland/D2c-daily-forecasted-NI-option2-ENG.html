@@ -17,6 +17,21 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- Back link (if applicable) -->
 {% block beforeContent %}
 
+      <nav class="hmrc-language-select" aria-label="Language switcher">
+        <ul class="hmrc-language-select__list">
+          <li class="hmrc-language-select__list-item">
+            <span aria-current="true">England and Wales</span>
+          </li>
+          <li class="hmrc-language-select__list-item">
+            <a href="{{toggle}}" class="govuk-link" >
+              <span class="govuk-visually-hidden"></span>
+              <span aria-hidden="true">Northern Ireland</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+
 {% endblock %}
 
 
@@ -26,13 +41,16 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      
+
       <h1 class="govuk-heading-l">
-        Check today's trigger data
+        Check today's trigger data in England and Wales
       </h1>
 
       <p class="govuk-body-l govuk-!-margin-bottom-4">
         There are forecasted triggers today (Tuesday 14 February 2023).
       </p>
+
 
       <div class="govuk-summary-card ">
         <div class="govuk-summary-card__title-wrapper ">
@@ -45,8 +63,8 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Estimated payments to citizens (not including UC) 
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">356,712 for England and Wales</p>
-                <p class="govuk-body">12,000 for Northern Ireland</p>
+                <p class="govuk-body">356,712 </p>
+
                 
               </dd>
             </div>
@@ -55,8 +73,8 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Estimated total amount paid to citizens (not including UC)
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">£8,917,800 for England and Wales</p>
-                <p class="govuk-body">£300,000 for Northern Ireland</p>
+                <p class="govuk-body">£8,917,800 </p>
+
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -72,7 +90,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Weather stations triggered
               </dt>
               <dd class="govuk-summary-list__value">
-                  3
+                  2
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="{{listStations}}">
@@ -85,7 +103,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Postcode districts affected
               </dt>
               <dd class="govuk-summary-list__value">
-                287
+                284
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="{{listPostcodes}}">
@@ -133,8 +151,8 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
     visuallyHiddenTitle: "Meta links",
     items: [
     {
-      href: "/v10/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
-      text: "Testing - Option 2"
+      href: "/v10/northern-ireland/D2c-daily-forecasted-NI-option1",
+      text: "Testing - Option 1"
     },
     {
       href: "",
