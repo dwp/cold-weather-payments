@@ -1,7 +1,8 @@
 module.exports = function (router) {
 
     const version = "v10";
-    let journeyType = "Regular"
+    let journeyType = "Regular";
+    let niJourney = 0;
 
     // Nav defaults
     let aboutActive = false;
@@ -1564,7 +1565,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
             // Page links
             'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
         });
@@ -1587,7 +1588,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
             // Page links
             'listStations': "/" + version + "/northern-ireland/LW1-weather-daily-NI",
             'listPostcodes': "/" + version + "/northern-ireland/LP1-postcodes-daily-NI",
@@ -1612,7 +1613,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
             // Page links
             'listStationsAll': "/" + version + "/northern-ireland/LW3-weather-multiple-days-NI",
             'listPostcodesAll': "/" + version + "/northern-ireland/LP3-postcodes-multiple-days-NI",
@@ -1631,7 +1632,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
         });
     });
 
@@ -1655,7 +1656,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
             // Page links
             'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
         });
@@ -1678,7 +1679,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
             // Toggle
             'toggle': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI",
             // Page links
@@ -1703,7 +1704,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
             // Toggle
             'toggle': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
             // Page links
@@ -1730,7 +1731,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
         // Toggle
         'toggle': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
 
@@ -1762,7 +1763,7 @@ module.exports = function (router) {
             'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-NI",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
-            'search': "/" + version + "/not-available",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
             // Toggle
             'toggle': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
 
@@ -1810,7 +1811,313 @@ module.exports = function (router) {
 
 
 
+    //------------------
+    // Views: NI SEARCH JOURNEYS
 
+    router.get('/' + version + "/northern-ireland/search/S-search-journey-select-option1", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = true;
+        res.render(version + "/northern-ireland/search/S-search-journey-select-option1", {
+            'error': req.query.error,
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
+        });
+
+    });
+
+    router.post('/' + version + "/northern-ireland/search/S-search-journey-select-option1", function (req, res) {
+        niJourney = 1;
+        var journey = req.session.data['journey-select'];
+        if (journey == undefined) {
+            res.redirect('/' + version + "/northern-ireland/search/S-search-journey-select-option1?error=true")
+        } else if (journey == "agent") {
+            res.redirect('/' + version + "/search/S1-search-citizen")
+        } else {
+            res.redirect('/' + version + "/northern-ireland/search/S2a-search-when")
+        }
+
+    });
+
+    router.get('/' + version + "/northern-ireland/search/S2a-search-when", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/search/S2a-search-when", {
+            'error1': req.query.error1,
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
+        });
+    });
+
+    router.post('/' + version + "/northern-ireland/search/S2a-search-when", function (req, res) {
+        var dateRange = req.session.data['date-range']
+
+        if (dateRange == undefined) {
+            res.redirect('/' + version + "/search/S1a-search-when?error1=true")
+        } else if (dateRange == "single") {
+            res.redirect('/' + version + "/search/SR2-single-day-all-locations")
+        } else {
+            if(niJourney === 1) {
+                res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option1")
+            }
+            res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option2")
+        }
+    });
+
+    
+
+    router.get('/' + version + "/northern-ireland/search/S2b-search-where-option1", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/search/S2b-search-where-option1", {
+            'error1': req.query.error1,
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
+        });
+    });
+
+    router.post('/' + version + "/northern-ireland/search/S2b-search-where-option1", function (req, res) {
+        var location = req.session.data['location']
+        var dateRange = req.session.data['date-range']
+        console.log("location= " + location);
+        console.log("Date=" + dateRange);
+
+        if (location == undefined) {
+            console.log("location= " + location);
+            res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option1?error1=true")
+        } else if (dateRange == "single" && location == "everywhere") {
+            res.redirect('/' + version + "/search/SR2-single-day-all-locations")
+        } else if (dateRange == "single" && location == "postcode") {
+            res.redirect('/' + version + "/search/SR3-single-day-postcode")
+        } else if (dateRange == "single" && location == "weatherStation") {
+            res.redirect('/' + version + "/search/SR4-single-day-weather")
+        } else if (dateRange == "range" && location == "everywhere") {
+            res.redirect('/' + version + "/search/SR3a-range-all-locations")
+        } else if (dateRange == "range" && location == "postcode") {
+            res.redirect('/' + version + "/search/SR5a-range-postcode")
+        } else if (dateRange == "range" && location == "weatherStation") {
+            res.redirect('/' + version + "/search/SR4a-range-weather-station")
+        } else if (dateRange == "whole" && location == "everywhere") {
+            res.redirect('/' + version + "/northern-ireland/search/SR3b-all-season-all-locations-option1")
+        } else if (dateRange == "whole" && location == "postcode") {
+            res.redirect('/' + version + "/search/SR5b-all-season-postcode")
+        } else if (dateRange == "whole" && location == "weatherStation") {
+            res.redirect('/' + version + "/search/SR4b-all-season-weather-station")
+        } else {
+            res.redirect('/' + version + "/search/gone-wrong")
+        }
+    });
+
+
+
+    router.get('/' + version + "/northern-ireland/search/SR3b-all-season-all-locations-option1", function (req, res) {
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/search/SR3b-all-season-all-locations-option1", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
+
+            // Page links
+            'listStationsAll': "/" + version + "/location-lists/for-results/LW3-weather-multiple-days-forSR3b",
+            'listPostcodesAll': "/" + version + "/location-lists/for-results/LP3-postcodes-multiple-days-forSR3b",
+        });
+    });
+
+
+
+
+
+
+//OPTION 2
+    router.get('/' + version + "/northern-ireland/search/S-search-journey-select-option2", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = true;
+        res.render(version + "/northern-ireland/search/S-search-journey-select-option2", {
+            'error': req.query.error,
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
+        });
+
+    });
+
+    router.post('/' + version + "/northern-ireland/search/S-search-journey-select-option2", function (req, res) {
+        niJourney = 2;
+        var journey = req.session.data['journey-select'];
+        if (journey == undefined) {
+            res.redirect('/' + version + "/northern-ireland/search/S-search-journey-select-option2?error=true")
+        } else if (journey == "agent") {
+            res.redirect('/' + version + "/search/S1-search-citizen")
+        } else {
+            res.redirect('/' + version + "/northern-ireland/search/S2a-search-when")
+        }
+
+    });
+
+
+    router.get('/' + version + "/northern-ireland/search/S2b-search-where-option2", function (req, res) {
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/search/S2b-search-where-option2", {
+            'error1': req.query.error1,
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
+        });
+    });
+
+    router.post('/' + version + "/northern-ireland/search/S2b-search-where-option2", function (req, res) {
+        var location = req.session.data['location']
+        var dateRange = req.session.data['date-range']
+        console.log("location= " + location);
+        console.log("Date=" + dateRange);
+
+        if (location == undefined) {
+            console.log("location= " + location);
+            res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option1?error1=true")
+        } else if (dateRange == "single" && location == "everywhere") {
+            res.redirect('/' + version + "/search/SR2-single-day-all-locations")
+        } else if (dateRange == "single" && location == "postcode") {
+            res.redirect('/' + version + "/search/SR3-single-day-postcode")
+        } else if (dateRange == "single" && location == "weatherStation") {
+            res.redirect('/' + version + "/search/SR4-single-day-weather")
+        } else if (dateRange == "range" && location == "everywhere") {
+            res.redirect('/' + version + "/search/SR3a-range-all-locations")
+        } else if (dateRange == "range" && location == "postcode") {
+            res.redirect('/' + version + "/search/SR5a-range-postcode")
+        } else if (dateRange == "range" && location == "weatherStation") {
+            res.redirect('/' + version + "/search/SR4a-range-weather-station")
+        } else if (dateRange == "whole" && location == "ENG") {
+            res.redirect('/' + version + "/northern-ireland/search/SR3b-all-season-all-locations-option2-ENG")
+        } else if (dateRange == "whole" && location == "NI") {
+            res.redirect('/' + version + "/northern-ireland/search/SR3b-all-season-all-locations-option2-NI")
+        } else if (dateRange == "whole" && location == "postcode") {
+            res.redirect('/' + version + "/search/SR5b-all-season-postcode")
+        } else if (dateRange == "whole" && location == "weatherStation") {
+            res.redirect('/' + version + "/search/SR4b-all-season-weather-station")
+        } else {
+            res.redirect('/' + version + "/search/gone-wrong")
+        }
+    });
+
+
+    router.get('/' + version + "/northern-ireland/search/SR3b-all-season-all-locations-option2-ENG", function (req, res) {
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/search/SR3b-all-season-all-locations-option2-ENG", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
+
+            // Page links
+            'listStationsAll': "/" + version + "/location-lists/for-results/LW3-weather-multiple-days-forSR3b",
+            'listPostcodesAll': "/" + version + "/location-lists/for-results/LP3-postcodes-multiple-days-forSR3b",
+        });
+    });
+
+
+    router.get('/' + version + "/northern-ireland/search/SR3b-all-season-all-locations-option2-NI", function (req, res) {
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/northern-ireland/search/SR3b-all-season-all-locations-option2-NI", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option2",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2",
+            'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
+
+            // Page links
+            'listStationsAll': "/" + version + "/location-lists/for-results/LW3-weather-multiple-days-forSR3b",
+            'listPostcodesAll': "/" + version + "/location-lists/for-results/LP3-postcodes-multiple-days-forSR3b",
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
