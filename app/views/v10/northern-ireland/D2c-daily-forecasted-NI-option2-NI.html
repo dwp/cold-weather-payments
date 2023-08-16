@@ -17,35 +17,21 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- Back link (if applicable) -->
 {% block beforeContent %}
 
-      <nav class="hmrc-language-select" aria-label="Language switcher">
-        <ul class="hmrc-language-select__list">
-          <li class="hmrc-language-select__list-item">
-            <span aria-current="true">England and Wales</span>
-          </li>
-          <li class="hmrc-language-select__list-item">
-            <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
-              <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-              <span aria-hidden="true">Northern Ireland</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <a href="{{toggle}}" class="govuk-link" >
+        <span class="govuk-visually-hidden"></span>
+        <span aria-hidden="true">England and Wales</span>
+      </a>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">Northern Ireland</span>
+    </li>
 
-      <!-- <nav class="hmrc-language-select" aria-label="Language switcher">
-        <ul class="hmrc-language-select__list">
-          
-          <li class="hmrc-language-select__list-item">
-            <a href="?cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg">
-            <span aria-hidden="true">England and Wales</span>
-          </a>
-          </li>
+  </ul>
+</nav>
 
-          <li class="hmrc-language-select__list-item">
-              <span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span>
-              <span aria-current="true">Northern Ireland</span>
-          </li>
-        </ul>
-      </nav> -->
 
 {% endblock %}
 
@@ -59,7 +45,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
       
 
       <h1 class="govuk-heading-l">
-        Check today's trigger data in England and Wales
+        Check today's trigger data in Northern Ireland
       </h1>
 
       <p class="govuk-body-l govuk-!-margin-bottom-4">
@@ -78,7 +64,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Estimated payments to citizens (not including UC) 
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">356,712 </p>
+                <p class="govuk-body">12,000 </p>
 
                 
               </dd>
@@ -88,7 +74,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Estimated total amount paid to citizens (not including UC)
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">£8,917,800 </p>
+                <p class="govuk-body">£300,000 </p>
 
               </dd>
             </div>
@@ -105,7 +91,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Weather stations triggered
               </dt>
               <dd class="govuk-summary-list__value">
-                  2
+                  1
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="{{listStations}}">
@@ -118,7 +104,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
                 Postcode districts affected
               </dt>
               <dd class="govuk-summary-list__value">
-                284
+                3
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="{{listPostcodes}}">
@@ -158,4 +144,30 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
+{% endblock %}
+
+{% block footer %}
+  {{ dwpFooter({
+    meta: {
+    visuallyHiddenTitle: "Meta links",
+    items: [
+    {
+      href: "/v10/northern-ireland/w2b-week-with-triggers-NI-option1",
+      text: "Testing - Option 1"
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    }
+    ]
+    }
+    }) }} 
 {% endblock %}
