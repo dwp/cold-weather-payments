@@ -387,7 +387,7 @@ module.exports = function (router) {
     router.post('/' + version + "/search/S-search-journey-select", function (req, res) {
         var journey = req.session.data['journey-select'];
         if (journey == undefined) {
-            res.redirect('/' + version + "/S-search-journey-select?error=true")
+            res.redirect('/' + version + "/search/S-search-journey-select?error=true")
         } else if (journey == "agent") {
             res.redirect('/' + version + "/search/S1-search-citizen")
         } else {
@@ -435,8 +435,8 @@ module.exports = function (router) {
 
     router.post('/' + version + "/search/S1-search-citizen", function (req, res) {
         var citizenPostcode = req.session.data['citizen-postcode']
-        if (citizenPostcode == undefined) {
-            res.redirect('/' + version + "/search/SR1-citizen-postcode")
+        if (citizenPostcode === undefined || citizenPostcode === "") {
+            res.redirect('/' + version + "/search/S1-search-citizen?error=true")
         } else {
             res.redirect('/' + version + "/search/SR1-citizen-postcode")
         }
