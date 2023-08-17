@@ -458,7 +458,7 @@ module.exports = function (router) {
         weeklyActive = false;
         searchActive = false;
         res.render(version + "/search/S2a-search-when", {
-            'error1': req.query.error1,
+            'error': req.query.error,
             'version': version,
             // Navigation settings
             'aboutActive': aboutActive,
@@ -476,7 +476,7 @@ module.exports = function (router) {
         var dateRange = req.session.data['date-range']
 
         if (dateRange == undefined) {
-            res.redirect('/' + version + "/search/S1a-search-when?error1=true")
+            res.redirect('/' + version + "/search/S2a-search-when?error=true")
         } else if (dateRange == "single") {
             res.redirect('/' + version + "/search/SR2-single-day-all-locations")
         } else {
