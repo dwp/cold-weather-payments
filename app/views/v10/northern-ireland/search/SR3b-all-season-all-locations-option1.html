@@ -45,8 +45,8 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="card">
         <div class="card__inner">
           <h2>Cold weather periods</h2>
-          <p class="card__visual">3</p>
-          <p>2 forecasted, 1 recorded</p>
+          <p class="card__visual">4</p>
+          <p>2 forecasted, 2 recorded</p>
         </div>
       </div> 
       <div class="card card-fill">
@@ -207,6 +207,9 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
       <p class="govuk-body">12,488 for <br> England and Wales</p>
       <p class="govuk-body">12,000 for <br> Northern Ireland</p>
     </dd>
+    <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
+
+    </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -219,12 +222,22 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
     </dd>
   </div>
   <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+    <dt class="govuk-summary-list__key ">
       Cold weather periods and trigger type
     </dt>
-    <dd class="govuk-summary-list__value govuk-!-width-one-half">
-      8 Feb 2023 to 14 Feb 2023  (forecasted)
+    <dd class="govuk-summary-list__value ">
+      <p class="govuk-body"> 8 Feb 2023 to 14 Feb 2023 (forecasted) <strong class="govuk-tag">
+        AQD
+      </strong>                
+     </p>
+      <p class="govuk-body"> 1 Feb 2023 to 7 Feb 2023 (recorded)</p>
+     
     </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="{{aqd}}"> 
+        View AQD
+      </a>
+  </dd>
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
