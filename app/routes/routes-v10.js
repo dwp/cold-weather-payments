@@ -1878,8 +1878,10 @@ module.exports = function (router) {
         } else {
             if(niJourney === 1) {
                 res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option1")
+            } else {
+                res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option2")
             }
-            res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option2")
+
         }
     });
 
