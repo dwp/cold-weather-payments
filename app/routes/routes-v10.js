@@ -1958,8 +1958,14 @@ module.exports = function (router) {
             'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option1",
 
             // Page links
-            'listStationsAll': "/" + version + "/location-lists/for-results/LW3-weather-multiple-days-forSR3b",
-            'listPostcodesAll': "/" + version + "/location-lists/for-results/LP3-postcodes-multiple-days-forSR3b",
+            'listStationsAll': "/" + version + "/northern-ireland/LW3-weather-multiple-days-NI",
+            'listPostcodesAll': "/" + version + "/northern-ireland/LP3-postcodes-multiple-days-NI",
+            'listStations1': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card1",
+            'listPostcodes1': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card1",
+            'listStations2':  "/" + version + "/northern-ireland/card-list-views/LW1-option1-card2-AQD",
+            'listPostcodes2':"/" + version + "/northern-ireland/card-list-views/LP3-option1-card2",
+            'listStations3':  "/" + version + "/northern-ireland/card-list-views/LW1-option1-card3",
+            'listPostcodes3': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card3",
         });
     });
 
