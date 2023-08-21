@@ -59,11 +59,18 @@ Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
             <span id="search-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter the first part of the postcode
             {% endif %}
-            <div id="citizen-postcode-hint" class="govuk-hint">
+
+
+            <label class="govuk-label" for="citizen-postcode">
               Enter the first part of a postcode
+            </label>
+            <div id="citizen-postcode-hint" class="govuk-hint">
+              For example, LS1.
             </div>
-            <input class="govuk-input govuk-input--width-10" id="citizen-postcode" name="citizen-postcode" type="text" aria-describedby="citizen-postcode-hint">
-          </div>
+            <input class="govuk-input govuk-input--width-5 govuk-input--extra-letter-spacing" id="citizen-postcode" name="citizen-postcode" type="text" spellcheck="false"  aria-describedby="citizen-postcode-hint">
+          
+
+             </div>
 
     
 

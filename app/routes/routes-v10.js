@@ -447,7 +447,7 @@ module.exports = function (router) {
         if (citizenPostcode == undefined) {
             res.redirect('/' + version + "/postcode-checker/PC2-result")
         } else {
-            res.redirect('/' + version + "/postcode-checker/PC2-result")
+            res.redirect('/' + version + "/postcode-checker/PC2-result-option1")
         }
     });
 
