@@ -1,0 +1,110 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Get a copy of who currently receives email updates – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="" method="post">
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="triggerSub-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+            <h1 class="govuk-fieldset__heading">
+              Download the current list of email addresses and subscription preferences
+            </h1>
+
+          </legend>
+
+          <p class="govuk-body">You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>see who is subscribed to which emails</li>
+            <li>make changes to the list</li>
+          </ul>
+
+          <h2 class="govuk-heading-m">If you need to make changes to the list
+          </h2>
+
+          <p class="govuk-body">Once you've downloaded the current list, you can open it and make your changes.</p>
+          <p class="govuk-body">You'll be asked to upload the updated list later.          </p>
+
+
+
+        </fieldset>
+      </div>
+      
+      <button class="govuk-button" data-module="govuk-button">
+        Download
+      </button>
+
+      </form>
+
+
+<!-- OPTION 2 -->
+      <!-- <div class="govuk-width-container">
+        <h1 class="govuk-heading-l">Confirm amount</h1>
+        <div class="govuk-inset-text">
+        £30
+        </div><button class="govuk-button" data-module="govuk-button">
+        Use this ammount
+        </button>
+        <p class="govuk-body"><a href="#" class="govuk-link">Enter a different amount</a></p>
+        </div>  -->
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+  {{ dwpFooter({
+    meta: {
+    visuallyHiddenTitle: "Meta links",
+    items: [
+    {
+      href: "/manage-prototype/clear-data",
+      text: "Clear prototype data"
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    },
+    {
+      href: "",
+      text: ""
+    }
+    ]
+    }
+    }) }} 
+{% endblock %}

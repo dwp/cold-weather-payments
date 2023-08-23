@@ -1,0 +1,115 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+How much should a Cold Weather Payment be? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if error%}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#amount">Eneter an amount</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <form class="form" action="" method="post">
+
+      <div class="govuk-form-group {%if error %} govuk-form-group--error {% endif %}">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="amount">
+            How much should a Cold Weather Payment be?
+          </label>
+        </h1>
+
+        <div id="amount-hint" class="govuk-hint">
+          The amount you enter will be the payment amount for all upcoming Cold Weather Payment seasons unless you change it again.  
+        </div>
+
+        {% if error %}
+        <span id="search-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Enter an amount
+        </span>
+        {% endif %}
+        
+        <div id="amount-hint" class="govuk-hint">
+          For example, £30 or £28.50.
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-10" id="amount" name="amount" type="text" spellcheck="false"
+            aria-describedby="amount-hint" value={{amount}}>
+        </div>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+href: "/manage-prototype/clear-data",
+text: "Clear prototype data"
+},
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+}
+]
+}
+}) }}
+{% endblock %}
