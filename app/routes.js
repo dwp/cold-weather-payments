@@ -18,6 +18,7 @@ require('./routes/routes-v7.js')(router);
 require('./routes/routes-v8.js')(router);
 require('./routes/routes-v9.js')(router);
 require('./routes/routes-v10.js')(router);
+require('./routes/routes-v11.js')(router);
 
 
 //inject the route data into the index page

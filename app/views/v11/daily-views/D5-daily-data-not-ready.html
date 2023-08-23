@@ -1,0 +1,51 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check today's trigger data
+      </h1>
+
+      <p class="govuk-body-l govuk-!-margin-bottom-4">
+        You cannot view today's trigger data yet. It should be available before midday.
+      </p>
+
+      <h2 class="govuk-heading-m">View previous trigger data</h2>
+
+      <p class="govuk-body govuk-!-margin-bottom-4">
+        This page updates every day to show today's trigger data.
+      </p>
+
+      <p class="govuk-body">If you're looking for previous triggers, you can <a href="{{search}}" class="govuk-link">search all data</a>.</p>
+
+
+    </div>
+  </div>
+
+
+
+{% endblock %}
