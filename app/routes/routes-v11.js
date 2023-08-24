@@ -1,85 +1,391 @@
 module.exports = function (router) {
 
     const version = "v11";
-    let journeyType = "Regular";
-    let niJourney = 0;
+    // let niJourney = 0;
 
     // Nav defaults
     let aboutActive = false;
     let dailyActive = false;
     let weeklyActive = false;
     let searchActive = false;
+    let triggerType = "forecasted";
+    // Default Nav links
+    let navAbout = "/" + version + "/check-cold-weather-payments/about-this-service-A1";
+    let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
+    let navWeekly = "/" + version + "/weekly-views/w1-weekly-no-triggers";
+    let navSearch = "/" + version + "/search/S-search-journey-select";
+
+
 
     //------------------
     // Views: TODAY
 
-    router.get('/' + version + "/daily-views/D1-daily-no-trigger", function (req, res) {
-        journeyType = "No Trigger";
-        console.log(journeyType);
+    // D1 no trigger
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D1", function (req, res) {
+        triggerType = "no trigger";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
         weeklyActive = false;
         searchActive = false;
-        res.render(version + "/daily-views/D1-daily-no-trigger", {
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
+            'triggerType': triggerType,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': "/" + version + "/A1-about",
-            'daily': "/" + version + "/daily-views/D1-daily-no-trigger",
-            'weekly': "/" + version + "/weekly-views/w1-weekly-no-triggers",
-            'search': "/" + version + "/search/S-search-journey-select",
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D1",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': false,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1",
         });
     });
 
-    router.get('/' + version + "/daily-views/D2a-daily-forecasted", function (req, res) {
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1", function (req, res) {
+        triggerType = "no trigger";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
         weeklyActive = false;
         searchActive = false;
-        res.render(version + "/daily-views/D2a-daily-forecasted", {
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
+            'triggerType': triggerType,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': "/" + version + "/A1-about",
-            'daily': "/" + version + "/daily-views/D2a-daily-forecasted",
-            'weekly': "/" + version + "/weekly-views/w2-week-with-triggers",
-            'search': "/" + version + "/search/S-search-journey-select",
-            // Page links
-            'listStations': "/" + version + "/location-lists/LW1-weather-daily",
-            'listPostcodes': "/" + version + "/location-lists/LP1-postcodes-daily",
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': true,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D1",
         });
     });
 
-    router.get('/' + version + "/daily-views/D2b-daily-forecasted-and-recorded", function (req, res) {
+    // D2a forecasted
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a", function (req, res) {
+        triggerType = "forecasted";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
         weeklyActive = false;
         searchActive = false;
-        res.render(version + "/daily-views/D2b-daily-forecasted-and-recorded", {
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
+            'triggerType': triggerType,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': "/" + version + "/A1-about",
-            'daily': "/" + version + "/daily-views/D2b-daily-forecasted-and-recorded",
-            'weekly': "/" + version + "/weekly-views/w2-week-with-triggers",
-            'search': "/" + version + "/search/S-search-journey-select",
-            // Page links
-            'listStations': "/" + version + "/location-lists/LW2a-weather-daily-two-triggers",
-            'listPostcodes': "/" + version + "/location-lists/LP2-postcodes-daily-two-triggers",
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': false,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
         });
     });
+
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a", function (req, res) {
+        triggerType = "forecasted";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': true,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+        });
+    });
+
+
+
+    // D2b forecasted and recorded
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b", function (req, res) {
+        triggerType = "both";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': false,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b",
+        });
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b", function (req, res) {
+        triggerType = "both";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': true,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
+        });
+    });
+
+    // D3 Non-working
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D3", function (req, res) {
+        triggerType = "non working";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D3",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': false,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3",
+        });
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3", function (req, res) {
+        triggerType = "non working";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': true,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D3",
+        });
+    });
+
+
+    // D4 Next working day
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D4", function (req, res) {
+        triggerType = "next working";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': false,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4",
+        });
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4", function (req, res) {
+        triggerType = "next working";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = true;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+            'version': version,
+            'triggerType': triggerType,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4",
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Country toggle
+            'NI': true,
+            'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
+        });
+    });
+
+        // D5 Data not ready
+        router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D5", function (req, res) {
+            triggerType = "not ready";
+            // Set active navigation tab
+            aboutActive = false;
+            dailyActive = true;
+            weeklyActive = false;
+            searchActive = false;
+            res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+                'version': version,
+                'triggerType': triggerType,
+                // Navigation settings
+                'aboutActive': aboutActive,
+                'dailyActive': dailyActive,
+                'weeklyActive': weeklyActive,
+                'searchActive': searchActive,
+                'about': navAbout,
+                'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D5",
+                'weekly': navWeekly,
+                'search': navSearch,
+                // Country toggle
+                'NI': false,
+                'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5",
+            });
+        });
+    
+        router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5", function (req, res) {
+            triggerType = "not ready";
+            // Set active navigation tab
+            aboutActive = false;
+            dailyActive = true;
+            weeklyActive = false;
+            searchActive = false;
+            res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
+                'version': version,
+                'triggerType': triggerType,
+                // Navigation settings
+                'aboutActive': aboutActive,
+                'dailyActive': dailyActive,
+                'weeklyActive': weeklyActive,
+                'searchActive': searchActive,
+                'about': navAbout,
+                'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5",
+                'weekly': navWeekly,
+                'search': navSearch,
+                // Country toggle
+                'NI': true,
+                'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D5",
+            });
+        });
+
+         // DW6 Season has ended
+         router.get('/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6", function (req, res) {
+            triggerType = "season ended";
+            // Set active navigation tab
+            aboutActive = false;
+            dailyActive = true;
+            weeklyActive = false;
+            searchActive = false;
+            res.render(version + "/check-cold-weather-payments/the-season-has-ended-DW6", {
+                'version': version,
+                'triggerType': triggerType,
+                // Navigation settings
+                'aboutActive': aboutActive,
+                'dailyActive': dailyActive,
+                'weeklyActive': weeklyActive,
+                'searchActive': searchActive,
+                'about': navAbout,
+                'daily': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6",
+                'weekly': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly",
+                'search': navSearch,
+            });
+        });
+
+        router.get('/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly", function (req, res) {
+            triggerType = "season ended";
+            // Set active navigation tab
+            aboutActive = false;
+            dailyActive = false;
+            weeklyActive = true;
+            searchActive = false;
+            res.render(version + "/check-cold-weather-payments/the-season-has-ended-DW6", {
+                'version': version,
+                'triggerType': triggerType,
+                // Navigation settings
+                'aboutActive': aboutActive,
+                'dailyActive': dailyActive,
+                'weeklyActive': weeklyActive,
+                'searchActive': searchActive,
+                'about': navAbout,
+                'daily': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6",
+                'weekly': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly",
+                'search': navSearch,
+            });
+        });
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -286,7 +592,7 @@ module.exports = function (router) {
         });
     });
 
-    
+
 
     router.get('/' + version + "/location-lists/for-weekly/weather-daily-9-Feb", function (req, res) {
         res.render(version + "/location-lists/for-weekly/weather-daily-9-Feb", {
@@ -1619,9 +1925,9 @@ module.exports = function (router) {
             'listPostcodesAll': "/" + version + "/northern-ireland/LP3-postcodes-multiple-days-NI",
             'listStations1': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card1",
             'listPostcodes1': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card1",
-            'listStations2':  "/" + version + "/northern-ireland/card-list-views/LW1-option1-card2",
-            'listPostcodes2':"/" + version + "/northern-ireland/card-list-views/LP3-option1-card2",
-            'listStations3':  "/" + version + "/northern-ireland/card-list-views/LW1-option1-card3",
+            'listStations2': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card2",
+            'listPostcodes2': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card2",
+            'listStations3': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card3",
             'listPostcodes3': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card3",
         });
     });
@@ -1723,7 +2029,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG", {
             'version': version,
-        // Navigation settings
+            // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
@@ -1732,17 +2038,17 @@ module.exports = function (router) {
             'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option2-ENG",
             'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-ENG",
             'search': "/" + version + "/northern-ireland/search/S-search-journey-select-option2",
-        // Toggle
-        'toggle': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
+            // Toggle
+            'toggle': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option2-NI",
 
             // Page links
             'listStationsAll': "/" + version + "/location-lists/LW3-weather-multiple-days",
             'listPostcodesAll': "/" + version + "/location-lists/LP3-postcodes-multiple-days",
             'listStations1': "/" + version + "/northern-ireland/card-list-views/LW1-option2-card1",
             'listPostcodes1': "/" + version + "/northern-ireland/card-list-views/LP3-option2-card1",
-            'listStations2':  "/" + version + "/northern-ireland/card-list-views/LW1-option2-card2",
-            'listPostcodes2':"/" + version + "/northern-ireland/card-list-views/LP3-option2-card2",
-            'listStations3':  "/" + version + "/northern-ireland/card-list-views/LW1-option2-card3",
+            'listStations2': "/" + version + "/northern-ireland/card-list-views/LW1-option2-card2",
+            'listPostcodes2': "/" + version + "/northern-ireland/card-list-views/LP3-option2-card2",
+            'listStations3': "/" + version + "/northern-ireland/card-list-views/LW1-option2-card3",
             'listPostcodes3': "/" + version + "/northern-ireland/card-list-views/LP3-option2-card3",
         });
     });
@@ -1777,17 +2083,17 @@ module.exports = function (router) {
 
 
 
-// LIST VIEW VARIATIONS NORTHERN IRELAND
-        //DAILY
-        router.get('/' + version + "/northern-ireland/LW1-weather-daily-NI", function (req, res) {
-            res.render(version + "/northern-ireland/LW1-weather-daily-NI", {
-                'version': version,
-                'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
-                'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
-                'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
-                'search': "/" + version + "/not-available",
-            });
+    // LIST VIEW VARIATIONS NORTHERN IRELAND
+    //DAILY
+    router.get('/' + version + "/northern-ireland/LW1-weather-daily-NI", function (req, res) {
+        res.render(version + "/northern-ireland/LW1-weather-daily-NI", {
+            'version': version,
+            'about': "/" + version + "/northern-ireland/A1-about-NI-option1",
+            'daily': "/" + version + "/northern-ireland/D2c-daily-forecasted-NI-option1",
+            'weekly': "/" + version + "/northern-ireland/w2b-week-with-triggers-NI-option1",
+            'search': "/" + version + "/not-available",
         });
+    });
 
     router.get('/' + version + "/northern-ireland/LW3-weather-multiple-days-N2", function (req, res) {
         res.render(version + "/northern-ireland/LW3-weather-multiple-days-N2", {
@@ -1876,7 +2182,7 @@ module.exports = function (router) {
         } else if (dateRange == "single") {
             res.redirect('/' + version + "/search/SR2-single-day-all-locations")
         } else {
-            if(niJourney === 1) {
+            if (niJourney === 1) {
                 res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option1")
             } else {
                 res.redirect('/' + version + "/northern-ireland/search/S2b-search-where-option2")
@@ -1885,7 +2191,7 @@ module.exports = function (router) {
         }
     });
 
-    
+
 
     router.get('/' + version + "/northern-ireland/search/S2b-search-where-option1", function (req, res) {
         // Set active navigation tab
@@ -1964,9 +2270,9 @@ module.exports = function (router) {
             'listPostcodesAll': "/" + version + "/northern-ireland/LP3-postcodes-multiple-days-NI",
             'listStations1': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card1",
             'listPostcodes1': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card1",
-            'listStations2':  "/" + version + "/northern-ireland/card-list-views/LW1-option1-card2-AQD",
-            'listPostcodes2':"/" + version + "/northern-ireland/card-list-views/LP3-option1-card2",
-            'listStations3':  "/" + version + "/northern-ireland/card-list-views/LW1-option1-card3",
+            'listStations2': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card2-AQD",
+            'listPostcodes2': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card2",
+            'listStations3': "/" + version + "/northern-ireland/card-list-views/LW1-option1-card3",
             'listPostcodes3': "/" + version + "/northern-ireland/card-list-views/LP3-option1-card3",
         });
     });
@@ -1976,7 +2282,7 @@ module.exports = function (router) {
 
 
 
-//OPTION 2
+    //OPTION 2
     router.get('/' + version + "/northern-ireland/search/S-search-journey-select-option2", function (req, res) {
         // Set active navigation tab
         aboutActive = false;
@@ -2125,7 +2431,7 @@ module.exports = function (router) {
 
 
 
-    
+
 
 
 
