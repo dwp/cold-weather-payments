@@ -15,7 +15,30 @@ module.exports = function (router) {
     let navWeekly = "/" + version + "/weekly-views/w1-weekly-no-triggers";
     let navSearch = "/" + version + "/search/S-search-journey-select";
 
+    //------------------
+    // Views: ABOUT THIS SERVICE
 
+    router.get('/' + version + "/check-cold-weather-payments/about-this-service-A1", function (req, res) {
+        // Set active navigation tab
+        aboutActive = true;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = false;
+        res.render(version + "/check-cold-weather-payments/about-this-service-A1", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Page links
+            'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
+        });
+    });
 
     //------------------
     // Views: TODAY
@@ -94,6 +117,23 @@ module.exports = function (router) {
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
+            // Page links
+            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F",
+            'listPostcodes': "/" + version + "/check-cold-weather-payments/",
+        });
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F", function (req, res) {
+        triggerType = "forecasted";
+        listType = "14-02-2023F";
+        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations", {
+            'version': version,
+            'triggerType': triggerType,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+            'weekly': navWeekly,
+            'search': navSearch,
+            'listType': listType,
         });
     });
 
@@ -119,6 +159,24 @@ module.exports = function (router) {
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+            // Page links
+            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F-NI",
+            'listPostcodes': "/" + version + "/check-cold-weather-payments/",
+        });
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F-NI", function (req, res) {
+        triggerType = "forecasted";
+        listType = "14-02-2023F";
+        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations", {
+            'version': version,
+            'triggerType': triggerType,
+            'about': navAbout,
+            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+            'weekly': navWeekly,
+            'search': navSearch,
+            'listType': listType,
+            'NI': true,
         });
     });
 
