@@ -9,7 +9,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- Header including navigation -->
 {% block header %}
 
-{% include "includes/header-nav.html" %}
+{% include version + "/includes/header-nav.html" %}
 
 {% endblock %}
 
@@ -74,7 +74,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
         There are no triggers today (Tuesday 14 February 2023).
       </p>
 
-      {% include version + "/includes/view-previous-triggers-today.html" %}
+      {% include version + "/includes/today-view-previous-triggers.html" %}
 
      <!-- D2b Forecasted and recorded -->
       {% elseif triggerType === "both" %}
@@ -148,7 +148,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 
           </dl>
 
-          {% include version + "/includes/payment-dates-today.html" %}
+          {% include version + "/includes/today-payment-dates-17-feb.html" %}
           
         </div>
       </div>
@@ -222,7 +222,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
           </dl>
 
 
-          {% include version + "/includes/payment-dates-today.html" %}
+          {% include version + "/includes/today-payment-dates-17-feb.html" %}
 
           
         </div>
@@ -238,7 +238,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
         There are no triggers today (Saturday 18 February 2023).
       </p>
       
-      {% include version + "/includes/view-previous-triggers-today.html" %}
+      {% include version + "/includes/today-view-previous-triggers.html" %}
 
       {% else %}
 
@@ -309,7 +309,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 
           </dl>
 
-          {% include version + "/includes/payment-dates-today.html" %}
+          {% include version + "/includes/today-payment-dates-24-feb.html" %}
           
         </div>
       </div>
@@ -331,7 +331,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
         </ul>
       </p>
 
-      {% include version + "/includes/view-previous-triggers-today.html" %}
+      {% include version + "/includes/today-view-previous-triggers.html" %}
 
       {% else  %}
 
@@ -406,7 +406,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 
           </dl>
 
-          {% include version + "/includes/payment-dates-today.html" %}
+          {% include version + "/includes/today-payment-dates-24-feb.html" %}
           
         </div>
       </div>
@@ -470,7 +470,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 
           </dl>
 
-          {% include version + "/includes/payment-dates-today.html" %}
+          {% include version + "/includes/today-payment-dates-17-feb.html" %}
           
         </div>
       </div>
@@ -483,7 +483,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
         You cannot view today's trigger data yet. It should be available before midday.
       </p>
 
-      {% include version + "/includes/view-previous-triggers-today.html" %}
+      {% include version + "/includes/today-view-previous-triggers.html" %}
       
       <!-- D2a forecasted -->
       {% else %}
@@ -491,10 +491,76 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
       {% if NI %}
 
       <p class="govuk-body-l govuk-!-margin-bottom-4">
-        There are no triggers today (Tuesday 14 February 2023).
+        There are forecasted triggers today (Tuesday 14 February 2023).
       </p>
 
-      {% include version + "/includes/view-previous-triggers-today.html" %}
+
+      <div class="govuk-summary-card ">
+        <div class="govuk-summary-card__title-wrapper ">
+          <h2 class="govuk-summary-card__title">Trigger day: Tuesday 14 February 2023</h2>
+        </div>
+        <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                Estimated payments to citizens (not including UC) 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">12,000 </p>
+
+                
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Estimated total amount paid to citizens (not including UC)
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">£300,000 </p>
+
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                Cold weather period and trigger type
+              </dt>
+              <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                14 Feb 2023 to 20 Feb 2023 (forecasted)
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Weather stations triggered
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  1
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="{{listStations}}">
+                  View list<span class="govuk-visually-hidden"> of weather stations</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Postcode districts affected
+              </dt>
+              <dd class="govuk-summary-list__value">
+                3
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="{{listPostcodes}}">
+                  View list<span class="govuk-visually-hidden"> of postcodes</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+
+          {% include version + "/includes/today-payment-dates-17-feb.html" %}
+          
+        </div>
+      </div>
 
       {% else %}
       <p class="govuk-body-l govuk-!-margin-bottom-4">
@@ -560,7 +626,7 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 
           </dl>
 
-          {% include version + "/includes/payment-dates-today.html" %}
+          {% include version + "/includes/today-payment-dates-17-feb.html" %}
           
         </div>
       </div>
@@ -575,5 +641,11 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
 
 
+
+{% endblock %}
+
+{% block footer %}
+
+{% include version + "/includes/today-footer.html" %}
 
 {% endblock %}

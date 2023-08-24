@@ -9,7 +9,7 @@ About this service – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- Header including navigation -->
 {% block header %}
 
-{% include "includes/header-nav.html" %}
+{% include version + "/includes/header-nav.html" %}
 
 {% endblock %}
 
@@ -83,29 +83,10 @@ About this service – {{ serviceName }} – GOV.UK Prototype Kit
   </div>
 </div>
 
-
-
 {% endblock %}
 
 {% block footer %}
-{{ dwpFooter({
-meta: {
-visuallyHiddenTitle: "Meta links",
-items: [
-{
-href: "/manage-prototype/clear-data",
-text: "Clear prototype data"
-},
 
-{
-href: "",
-text: ""
-},
-{
-href: "",
-text: ""
-}
-]
-}
-}) }}
+{% include version + "/includes/today-footer.html" %}
+
 {% endblock %}
