@@ -19,9 +19,11 @@ require('./routes/routes-v8.js')(router);
 require('./routes/routes-v9.js')(router);
 require('./routes/routes-v10.js')(router);
 require('./routes/routes-v11.js')(router);
+require('./routes/v11/today-routes.js')(router);
+require('./routes/v11/weekly-routes.js')(router);
 
 
-//inject the route data into the index page
+// inject the route data into the index page
 // router.get('/:version?', (req, res) => {
 
 //     //set the version to the latest
