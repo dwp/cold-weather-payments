@@ -1,28 +1,28 @@
-
 module.exports = function (router) {
 
     const version = "v11";
     console.log("Today routes");
-
-
 
     // Nav default statuses -----------------------------------
     let aboutActive = false;
     let dailyActive = false;
     let weeklyActive = false;
     let searchActive = false;
-    let triggerType = "forecasted";
+    let todayVariation = "forecasted";
     // Nav  default links ------------------------------
     let navAbout = "/" + version + "/check-cold-weather-payments/about-this-service-A1";
-    let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
-    let navWeekly = "/" + version + "/weekly-views/w1-weekly-no-triggers";
-    let navSearch = "/" + version + "/search/S-search-journey-select";
+    // let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
+    let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
+    let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
+
+
+
 
 
     //---------------------------------------------------------------------------------------------------------------
     // D1 no trigger
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D1", function (req, res) {
-        triggerType = "no trigger";
+        todayVariation = "no trigger";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -30,7 +30,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -47,7 +47,7 @@ module.exports = function (router) {
     });
 
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1", function (req, res) {
-        triggerType = "no trigger";
+        todayVariation = "no trigger";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -55,7 +55,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -75,7 +75,7 @@ module.exports = function (router) {
     //---------------------------------------------------------------------------------------------------------------
     // D2a forecasted
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a", function (req, res) {
-        triggerType = "forecasted";
+        todayVariation = "forecasted";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -83,7 +83,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -97,17 +97,27 @@ module.exports = function (router) {
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
             // Page links
-            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F",
-            'listPostcodes': "/" + version + "/check-cold-weather-payments/",
+            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023F",
+            'listPostcodes': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023F",
         });
     });
 
-                    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F", function (req, res) {
-                        triggerType = "forecasted";
+                    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023F", function (req, res) {
                         listType = "14-02-2023F";
-                        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations", {
+                        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations-on", {
                             'version': version,
-                            'triggerType': triggerType,
+                            'about': navAbout,
+                            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+                            'weekly': navWeekly,
+                            'search': navSearch,
+                            'listType': listType,
+                        });
+                    });
+
+                    router.get('/' + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023F", function (req, res) {
+                        listType = "14-02-2023F";
+                        res.render(version + "/check-cold-weather-payments/view-affected-postcodes-on", {
+                            'version': version,
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
@@ -117,7 +127,7 @@ module.exports = function (router) {
                     });
 
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a", function (req, res) {
-        triggerType = "forecasted";
+        todayVariation = "forecasted";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -125,7 +135,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -139,17 +149,28 @@ module.exports = function (router) {
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
             // Page links
-            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F-NI",
-            'listPostcodes': "/" + version + "/check-cold-weather-payments/",
+            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023F-NI",
+            'listPostcodes': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023F-NI",
         });
     });
 
-                    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-date-14-02-2023F-NI", function (req, res) {
-                        triggerType = "forecasted";
+                    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023F-NI", function (req, res) {
                         listType = "14-02-2023F";
-                        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations", {
+                        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations-on", {
                             'version': version,
-                            'triggerType': triggerType,
+                            'about': navAbout,
+                            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+                            'weekly': navWeekly,
+                            'search': navSearch,
+                            'listType': listType,
+                            'NI': true,
+                        });
+                    });
+
+                    router.get('/' + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023F-NI", function (req, res) {
+                        listType = "14-02-2023F";
+                        res.render(version + "/check-cold-weather-payments/view-affected-postcodes-on", {
+                            'version': version,
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
@@ -163,7 +184,7 @@ module.exports = function (router) {
     //---------------------------------------------------------------------------------------------------------------
     // D2b forecasted and recorded
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b", function (req, res) {
-        triggerType = "both";
+        todayVariation = "both";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -171,7 +192,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -184,11 +205,39 @@ module.exports = function (router) {
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b",
+            // Page links
+            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023FR",
+            'listPostcodes': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023FR",
         });
     });
 
+                    router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023FR", function (req, res) {
+                        listType = "14-02-2023FR";
+                        res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations-on", {
+                            'version': version,
+                            'about': navAbout,
+                            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
+                            'weekly': navWeekly,
+                            'search': navSearch,
+                            'listType': listType,
+                        });
+                    });
+
+                    router.get('/' + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023FR", function (req, res) {
+                        listType = "14-02-2023FR";
+                        res.render(version + "/check-cold-weather-payments/view-affected-postcodes-on", {
+                            'version': version,
+                            'about': navAbout,
+                            'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+                            'weekly': navWeekly,
+                            'search': navSearch,
+                            'listType': listType,
+                        });
+                    });
+
+
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b", function (req, res) {
-        triggerType = "both";
+        todayVariation = "both";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -196,7 +245,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -209,14 +258,43 @@ module.exports = function (router) {
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
+            // Page links
+            'listStations': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023FR-NI",
+            'listPostcodes': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023FR-NI",
         });
     });
+
+                        router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-14-02-2023FR-NI", function (req, res) {
+                            listType = "14-02-2023FR";
+                            res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations-on", {
+                                'version': version,
+                                'about': navAbout,
+                                'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
+                                'weekly': navWeekly,
+                                'search': navSearch,
+                                'listType': listType,
+                                'NI': true,
+                            });
+                        });
+
+                        router.get('/' + version + "/check-cold-weather-payments/view-affected-postcodes-on-14-02-2023FR-NI", function (req, res) {
+                            todayVariation = "forecasted";
+                            listType = "14-02-2023FR";
+                            res.render(version + "/check-cold-weather-payments/view-affected-postcodes-on", {
+                                'about': navAbout,
+                                'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
+                                'weekly': navWeekly,
+                                'search': navSearch,
+                                'listType': listType,
+                                'NI': true,
+                            });
+                        });
 
 
     //---------------------------------------------------------------------------------------------------------------
     // D3 Non-working
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D3", function (req, res) {
-        triggerType = "non working";
+        todayVariation = "non working";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -224,7 +302,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -241,7 +319,7 @@ module.exports = function (router) {
     });
 
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3", function (req, res) {
-        triggerType = "non working";
+        todayVariation = "non working";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -249,7 +327,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -269,7 +347,7 @@ module.exports = function (router) {
     //---------------------------------------------------------------------------------------------------------------
     // D4 Next working day
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D4", function (req, res) {
-        triggerType = "next working";
+        todayVariation = "next working";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -277,7 +355,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -294,7 +372,7 @@ module.exports = function (router) {
     });
 
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4", function (req, res) {
-        triggerType = "next working";
+        todayVariation = "next working";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -302,7 +380,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -321,7 +399,7 @@ module.exports = function (router) {
     //---------------------------------------------------------------------------------------------------------------
     // D5 Data not ready
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D5", function (req, res) {
-        triggerType = "not ready";
+        todayVariation = "not ready";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -329,7 +407,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -346,7 +424,7 @@ module.exports = function (router) {
     });
 
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5", function (req, res) {
-        triggerType = "not ready";
+        todayVariation = "not ready";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -354,7 +432,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -373,7 +451,7 @@ module.exports = function (router) {
     //---------------------------------------------------------------------------------------------------------------
     // DW6 Season has ended
     router.get('/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6", function (req, res) {
-        triggerType = "season ended";
+        todayVariation = "season ended";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = true;
@@ -381,7 +459,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/the-season-has-ended-DW6", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
@@ -395,7 +473,7 @@ module.exports = function (router) {
     });
 
     router.get('/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly", function (req, res) {
-        triggerType = "season ended";
+        todayVariation = "season ended";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = false;
@@ -403,7 +481,7 @@ module.exports = function (router) {
         searchActive = false;
         res.render(version + "/check-cold-weather-payments/the-season-has-ended-DW6", {
             'version': version,
-            'triggerType': triggerType,
+            'todayVariation': todayVariation,
             // Navigation settings
             'aboutActive': aboutActive,
             'dailyActive': dailyActive,
