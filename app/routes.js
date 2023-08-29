@@ -21,6 +21,9 @@ require('./routes/routes-v10.js')(router);
 require('./routes/routes-v11.js')(router);
 require('./routes/v11/today-routes.js')(router);
 require('./routes/v11/weekly-routes.js')(router);
+require('./routes/v11/search-routes.js')(router);
+require('./routes/v11/additional-routes.js')(router);
+// require('./routes/v11/global.js')(router);
 
 
 // inject the route data into the index page
