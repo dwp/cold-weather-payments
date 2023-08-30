@@ -9,7 +9,7 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- Header including navigation -->
 {% block header %}
 
-{% include "v8/includes/header-nav.html" %}
+{% include version + "/includes/header-nav.html" %}
 
 {% endblock %}
 
@@ -43,5 +43,11 @@ Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
+
+{% endblock %}
+
+{% block footer %}
+
+{% include version + "/includes/footer.html" %}
 
 {% endblock %}

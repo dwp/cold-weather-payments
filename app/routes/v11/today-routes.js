@@ -3,13 +3,9 @@ module.exports = function (router) {
     const version = "v11";
     console.log("Today routes");
 
-    // Nav default statuses -----------------------------------
-    let aboutActive = false;
-    let dailyActive = false;
-    let weeklyActive = false;
-    let searchActive = false;
+    // Set default variation ------------------------------
     let todayVariation = "forecasted";
-    // Nav  default links ------------------------------
+    // Set default nav links ------------------------------
     let navAbout = "/" + version + "/check-cold-weather-payments/about-this-service-A1";
     // let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
@@ -21,18 +17,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D1", function (req, res) {
         todayVariation = "no trigger";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D1",
             'weekly': navWeekly,
@@ -46,18 +36,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1", function (req, res) {
         todayVariation = "no trigger";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1",
             'weekly': navWeekly,
@@ -74,18 +58,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a", function (req, res) {
         todayVariation = "forecasted";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
             'weekly': navWeekly,
@@ -126,18 +104,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a", function (req, res) {
         todayVariation = "forecasted";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
             'weekly': navWeekly,
@@ -183,18 +155,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b", function (req, res) {
         todayVariation = "both";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
             'weekly': navWeekly,
@@ -236,18 +202,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b", function (req, res) {
         todayVariation = "both";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b",
             'weekly': navWeekly,
@@ -293,18 +253,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D3", function (req, res) {
         todayVariation = "non working";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D3",
             'weekly': navWeekly,
@@ -318,18 +272,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3", function (req, res) {
         todayVariation = "non working";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3",
             'weekly': navWeekly,
@@ -346,18 +294,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D4", function (req, res) {
         todayVariation = "next working";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
             'weekly': navWeekly,
@@ -371,18 +313,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4", function (req, res) {
         todayVariation = "next working";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4",
             'weekly': navWeekly,
@@ -398,18 +334,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D5", function (req, res) {
         todayVariation = "not ready";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D5",
             'weekly': navWeekly,
@@ -423,18 +353,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5", function (req, res) {
         todayVariation = "not ready";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/todays-trigger-data", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5",
             'weekly': navWeekly,
@@ -450,18 +374,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6", function (req, res) {
         todayVariation = "season ended";
         // Set active navigation tab
-        aboutActive = false;
         dailyActive = true;
-        weeklyActive = false;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/the-season-has-ended-DW6", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
             'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6",
             'weekly': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly",
@@ -472,18 +390,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly", function (req, res) {
         todayVariation = "season ended";
         // Set active navigation tab
-        aboutActive = false;
-        dailyActive = false;
         weeklyActive = true;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/the-season-has-ended-DW6", {
             'version': version,
             'todayVariation': todayVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
-            'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6",
             'weekly': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly",

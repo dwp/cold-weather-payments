@@ -18,11 +18,14 @@ require('./routes/routes-v7.js')(router);
 require('./routes/routes-v8.js')(router);
 require('./routes/routes-v9.js')(router);
 require('./routes/routes-v10.js')(router);
-require('./routes/routes-v11.js')(router);
+
+// Version 11
+require('./routes/v11/additional-routes.js')(router);
 require('./routes/v11/today-routes.js')(router);
 require('./routes/v11/weekly-routes.js')(router);
 require('./routes/v11/search-routes.js')(router);
-require('./routes/v11/additional-routes.js')(router);
+require('./routes/v11/notifications.js')(router);
+
 
 
 // inject the route data into the index page

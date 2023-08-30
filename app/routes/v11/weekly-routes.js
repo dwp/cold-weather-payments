@@ -3,36 +3,25 @@ module.exports = function (router) {
     const version = "v11";
     console.log("Weekly routes");
 
-    // Nav default statuses -----------------------------------
-    let aboutActive = false;
-    let dailyActive = false;
-    let weeklyActive = false;
-    let searchActive = false;
+    // Set default variation ------------------------------
     let weeklyVariation = "triggers";
-    // Nav  default links ------------------------------
+    // Set default nav links ------------------------------
     let navAbout = "/" + version + "/check-cold-weather-payments/about-this-service-A1";
     let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     // let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
-
-
+    
     //---------------------------------------------------------------------------------------------------------------
     // W1 no triggers
     router.get('/' + version + "/check-cold-weather-payments/weekly-summary-W1", function (req, res) {
         weeklyVariation = "no trigger";
         // Set active navigation tab
-        aboutActive = false;
-        dailyActive = false;
         weeklyActive = true;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/weekly-summary", {
             'version': version,
             'weeklyVariation': weeklyVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
-            'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
+           'weeklyActive': weeklyActive,
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W1",
@@ -41,31 +30,27 @@ module.exports = function (router) {
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W1",
         });
+
     });
 
     router.get('/' + version + "/check-cold-weather-payments/weekly-summary-NI-W1", function (req, res) {
         weeklyVariation = "no trigger";
         // Set active navigation tab
-        aboutActive = false;
-        dailyActive = false;
         weeklyActive = true;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/weekly-summary", {
             'version': version,
             'weeklyVariation': weeklyVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
-            'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
             'about': navAbout,
             'daily': navToday,
-            'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W1",
+            'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W1",
             'search': navSearch,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-W1",
         });
+
     });
 
 
@@ -74,18 +59,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/weekly-summary-W2", function (req, res) {
         weeklyVariation = "triggers";
         // Set active navigation tab
-        aboutActive = false;
-        dailyActive = false;
         weeklyActive = true;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/weekly-summary", {
             'version': version,
             'weeklyVariation': weeklyVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
-            'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
+           'weeklyActive': weeklyActive,
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
@@ -103,6 +82,7 @@ module.exports = function (router) {
              'listStations3': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-06-02-2023",
              'listPostcodes3': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-on-06-02-2023",
         });
+
     });
 
                         router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-between-03-02-2023-and-09-02-2023", function (req, res) {
@@ -205,18 +185,12 @@ module.exports = function (router) {
     router.get('/' + version + "/check-cold-weather-payments/weekly-summary-NI-W2", function (req, res) {
         weeklyVariation = "triggers";
         // Set active navigation tab
-        aboutActive = false;
-        dailyActive = false;
         weeklyActive = true;
-        searchActive = false;
         res.render(version + "/check-cold-weather-payments/weekly-summary", {
             'version': version,
             'weeklyVariation': weeklyVariation,
             // Navigation settings
-            'aboutActive': aboutActive,
-            'dailyActive': dailyActive,
-            'weeklyActive': weeklyActive,
-            'searchActive': searchActive,
+           'weeklyActive': weeklyActive,
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W2",
@@ -229,9 +203,8 @@ module.exports = function (router) {
             'listPostcodesAll': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-between-03-02-2023-and-09-02-2023-NI",
             'listStations1': "/" + version + "/check-cold-weather-payments/view-triggered-weather-stations-on-08-02-2023-NI",
             'listPostcodes1': "/" + version + "/check-cold-weather-payments/view-affected-postcodes-on-08-02-2023-NI",
-
-
         });
+
     });
 
                         router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-between-03-02-2023-and-09-02-2023-NI", function (req, res) {
@@ -287,6 +260,52 @@ module.exports = function (router) {
                                         'NI': true,
                                     });
                                 });
+
+
+    //---------------------------------------------------------------------------------------------------------------
+    // W3 start of season
+    router.get('/' + version + "/check-cold-weather-payments/weekly-summary-W3", function (req, res) {
+        weeklyVariation = "start of season";
+        // Set active navigation tab
+        weeklyActive = true;
+        res.render(version + "/check-cold-weather-payments/weekly-summary", {
+            'version': version,
+            'weeklyVariation': weeklyVariation,
+            // Navigation settings
+           'weeklyActive': weeklyActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W3",
+            'search': navSearch,
+            // Country toggle
+            'NI': false,
+            'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W3",
+        });
+
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/weekly-summary-NI-W3", function (req, res) {
+        weeklyVariation = "start of season";
+        // Set active navigation tab
+        weeklyActive = true;
+        res.render(version + "/check-cold-weather-payments/weekly-summary", {
+            'version': version,
+            'weeklyVariation': weeklyVariation,
+            // Navigation settings
+           'weeklyActive': weeklyActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W3",
+            'search': navSearch,
+            // Country toggle
+            'NI': true,
+            'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-W3",
+        });
+
+    });
+
+
+
 
 
 
