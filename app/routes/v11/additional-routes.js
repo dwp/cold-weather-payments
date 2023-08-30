@@ -16,6 +16,15 @@ module.exports = function (router) {
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
 
 
+    //------------------
+    // Views: INDEX
+
+    router.get('index', function (req, res) {
+        res.render('index', {
+            'version': version,
+        });
+    });
+
  //------------------
     // Views: ABOUT THIS SERVICE
 
