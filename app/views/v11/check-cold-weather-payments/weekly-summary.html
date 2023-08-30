@@ -81,6 +81,16 @@ Summary of the latest weekly legacy payment scan – {{ serviceName }} – GOV.U
 
     {% include version + "/includes/weekly-view-previous-triggers.html" %}
 
+    <!-- W3 No triggers -->
+    {% elseif weeklyVariation === "start of season" %}
+    <p class="govuk-body govuk-!-margin-bottom-3">The weekly summary is not available yet because the Cold Weather Payment season has only just started. You'll be able to view the weekly summary on Thursday [DATE] November 2023. </p>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">This page will be updated every Thursday to show a summary of the previous week.</p>
+    </div>
+
+    {% include version + "/includes/weekly-view-previous-triggers.html" %}
+
     <!-- W2 With triggers -->
     {% else %}
 

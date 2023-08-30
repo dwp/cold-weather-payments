@@ -3,13 +3,9 @@ module.exports = function (router) {
     const version = "v11";
     console.log("Search routes");
 
-    // Nav default statuses -----------------------------------
-    let aboutActive = false;
-    let dailyActive = false;
-    let weeklyActive = false;
-    let searchActive = false;
-    let searchVariation = "all";
-    // Nav  default links ------------------------------
+    
+    
+    // Set default nav links ------------------------------
     let navAbout = "/" + version + "/check-cold-weather-payments/about-this-service-A1";
     let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
@@ -312,6 +308,34 @@ module.exports = function (router) {
 
     router.get('/' + version + "/check-cold-weather-payments/search-previous-data-results-SR5b", function (req, res) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR5b", {
+            'version': version,
+            // Navigation settings
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
+    //---------------------------------------------------------------------------------------------------------------
+    // SR6: No results
+
+    router.get('/' + version + "/check-cold-weather-payments/search-previous-data-results-SR6", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR6", {
+            'version': version,
+            // Navigation settings
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
+    //---------------------------------------------------------------------------------------------------------------
+    // SR7: No results, Agent journey
+
+    router.get('/' + version + "/check-cold-weather-payments/search-previous-data-results-SR7", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR7", {
             'version': version,
             // Navigation settings
             'about': navAbout,
