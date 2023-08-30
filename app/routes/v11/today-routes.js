@@ -16,9 +16,6 @@ module.exports = function (router) {
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
 
 
-
-
-
     //---------------------------------------------------------------------------------------------------------------
     // D1 no trigger
     router.get('/' + version + "/check-cold-weather-payments/todays-trigger-data-D1", function (req, res) {
