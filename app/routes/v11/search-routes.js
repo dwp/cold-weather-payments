@@ -109,6 +109,30 @@ module.exports = function (router) {
                             }
                         });
 
+    router.get('/' + version + "/check-cold-weather-payments/search/search-by-time-period-S2a-error-example-1", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/search/search-by-time-period-S2a-error-example-1", {
+            'version': version,
+            'error': req.query.error,
+            // Navigation settings
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
+    router.get('/' + version + "/check-cold-weather-payments/search/search-by-time-period-S2a-error-example-2", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/search/search-by-time-period-S2a-error-example-2", {
+            'version': version,
+            'error': req.query.error,
+            // Navigation settings
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
     //---------------------------------------------------------------------------------------------------------------
     // S2b: Search by time period (Where)
 
