@@ -239,8 +239,23 @@ module.exports = function (router) {
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/search-previous-data-results-SR2",
+            // Additional Qualifying Days
+            'aqd': '/' + version + "/check-cold-weather-payments/aqd-summary-A1-NI",
         });
     });
+
+                        router.get('/' + version + "/check-cold-weather-payments/aqd-summary-A1-NI", function (req, res) {
+                            res.render(version + "/check-cold-weather-payments/search/aqd-summary-A1", {
+                                'version': version,
+                                // Navigation settings
+                                'about': navAbout,
+                                'daily': navToday,
+                                'weekly': navWeekly,
+                                'search': navSearch,
+                                'originalTriggerDayData': '/' + version + "/check-cold-weather-payments/search-previous-data-results-SR2",
+                                'NI': true,
+                            });
+                        });
 
     //---------------------------------------------------------------------------------------------------------------
     // SR3a & 3b: Range / Whole season, Everywhere
