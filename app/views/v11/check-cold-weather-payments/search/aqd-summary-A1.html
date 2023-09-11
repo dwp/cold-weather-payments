@@ -33,9 +33,31 @@ Additional qualifying days for the original cold weather period – {{ serviceNa
 
     <h1 class="govuk-heading-xl">Additional qualifying days for the original cold weather period</h1>
 
-    <p class="govuk-body">The original cold weather period was 14 February 2023 to 20 February 2023.</p>
+    {% if NI %}
 
-    <!-- <p class="govuk-body">You can also <a href="{{day}}" class="govuk-link">view the original data for this trigger.</a></p> -->
+    <p class="govuk-body">The original cold weather period was 14 February 2023 to 20 February 2023 in Northern Ireland.</p>
+
+    <table class="govuk-table">
+      <!-- <caption class="govuk-table__caption govuk-table__caption--l">Months and rates</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Weather stations affected</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Additional qualifying days</th>
+          <th scope="col" class="govuk-table__header">Postcodes affected</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">12 Katesbridge</td>
+          <td class="govuk-table__cell">21 Feb 2023</td>
+          <td class="govuk-table__cell"> BT1, BT2, BT3 </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {% else %}
+   
+    <p class="govuk-body">The original cold weather period was 14 February 2023 to 20 February 2023 in England and Wales.</p>
 
     <table class="govuk-table">
       <!-- <caption class="govuk-table__caption govuk-table__caption--l">Months and rates</caption> -->
@@ -60,6 +82,8 @@ Additional qualifying days for the original cold weather period – {{ serviceNa
         </tr>
       </tbody>
     </table>
+
+    {% endif %}
 
   </div>
 </div>
