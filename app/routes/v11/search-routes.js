@@ -133,8 +133,20 @@ module.exports = function (router) {
         });
     });
 
+    router.get('/' + version + "/check-cold-weather-payments/search-by-time-period-single-only", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/search/search-by-time-period-single-only", {
+            'version': version,
+            'error': req.query.error,
+            // Navigation settings
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
     //---------------------------------------------------------------------------------------------------------------
-    // S2b: Search by time period (Where)
+    // S2b: Search by location (Where)
 
     router.get('/' + version + "/check-cold-weather-payments/search-by-location", function (req, res) {
         res.render(version + "/check-cold-weather-payments/search/search-by-location-S2b", {
