@@ -55,10 +55,7 @@ Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
               </label>
             </h1>
 
-            {% if error %}
-            <span id="search-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the first part of the postcode
-            {% endif %}
+
 
 
             <!-- <label class="govuk-label" for="citizen-postcode">
@@ -67,6 +64,12 @@ Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
             <div id="citizen-postcode-hint" class="govuk-hint">
               For example, CW12.
             </div>
+
+            {% if error %}
+            <span id="search-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter the first part of the postcode
+            {% endif %} <br><br>
+
             <input class="govuk-input govuk-input--width-5 govuk-input--extra-letter-spacing" id="citizen-postcode" name="citizen-postcode" type="text" spellcheck="false"  aria-describedby="citizen-postcode-hint">
           
 
