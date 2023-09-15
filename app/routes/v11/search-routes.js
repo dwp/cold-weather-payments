@@ -396,6 +396,29 @@ module.exports = function (router) {
         });
     });
 
+        //---------------------------------------------------------------------------------------------------------------
+    // SR8: No trigger data
+
+    router.get('/' + version + "/check-cold-weather-payments/search-previous-data-results-SR8", function (req, res) {
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = true;
+        res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR8", {
+            'version': version,
+            // Navigation settings
+
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
 
 
 
