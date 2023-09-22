@@ -26,6 +26,15 @@ require('./routes/v11/weekly-routes.js')(router);
 require('./routes/v11/search-routes.js')(router);
 require('./routes/v11/notifications.js')(router);
 
+// No sprint 12 version required
+
+// Version 13
+require('./routes/v13/additional-routes.js')(router);
+require('./routes/v13/today-routes.js')(router);
+require('./routes/v13/weekly-routes.js')(router);
+require('./routes/v13/search-routes.js')(router);
+require('./routes/v13/notifications.js')(router);
+
 
 
 // inject the route data into the index page

@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-    const version = "v11";
+    const version = "v13";
     console.log("Weekly routes");
 
     // Set default variation ------------------------------
@@ -183,9 +183,9 @@ module.exports = function (router) {
                                 });
 
                         // Example long list
-                        router.get('/' + version + "/check-cold-weather-payments/view-triggered-weather-stations-all", function (req, res) {
+                        router.get('/' + version + "/check-cold-weather-payments/view-affected-postcodes-all", function (req, res) {
                             listType = "all";
-                            res.render(version + "/check-cold-weather-payments/view-triggered-weather-stations-between", {
+                            res.render(version + "/check-cold-weather-payments/view-affected-postcodes-between", {
                                 'version': version,
                                 'about': navAbout,
                                 'daily': navToday,
@@ -194,6 +194,7 @@ module.exports = function (router) {
                                 'listType': listType,
                             });
                         });
+
 
     router.get('/' + version + "/check-cold-weather-payments/weekly-summary-NI-W2", function (req, res) {
         weeklyVariation = "triggers";

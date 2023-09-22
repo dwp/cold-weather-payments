@@ -1,0 +1,72 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Payment data for citizens in CW12 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Your Cold Weather Payments</h1>
+
+    <p class="govuk-body-l">Results for CW12</p>
+
+
+
+    <h2 class="govuk-heading-l">If you're eligible, you get 4 Cold Weather Payments so far this season</h2>
+
+    <p class="govuk-body"> <a href="#" target="blank" class="govuk-link">Check if you meet the eligibility criteria to get Cold Weather Payments.</a></p>
+
+
+
+    <p class="govuk-body">The season runs annually from 1 November to 31 March.</p>
+
+    <p class="govuk-body">You get a £25 Cold Weather Payment for each of the following cold weather periods:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Saturday 21 January 2023 to Friday 29 January 2023 - updated to include 2 additional days of cold weather</li>
+      <li>Friday 13 January 2023 to Thursday 19 January 2023 </li>
+      <li>Tuesday 3 January 2023 to Monday 9 January 2023 </li>
+      <li>Tuesday 27 December 2022 to Monday 2 January 2023 </li>
+    </ul>
+
+    <p class="govuk-body govuk-!-font-size-16">Last updated 21 August 2023</p>
+
+    <h3 class="govuk-heading-m">Why you get Cold Weather Pyaments for these periods</h3>
+
+    <p class="govuk-body">The average temperature in your area was either recorded as, or forecast to be, zero degrees celsius or below over 7 consecutive days.</p>
+    <p class="govuk-body">The temperature in your area is measured at [weather station name].</p>
+    <p class="govuk-body">There are 72 Cold Weather Payment weather stations across England and Wales. The temperature at [weather station name] is the most similar to the temperature where you live.</p>
+
+
+
+
+
+
+  </div>
+
+
+
+
+  {% endblock %}
