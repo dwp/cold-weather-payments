@@ -4,6 +4,8 @@
 // 
 
 // Add extra styles here
+
+// Details component accessiblity fix
 .details-button {
     background-color: white;
     border-width: 0;
@@ -14,6 +16,19 @@
     font-size: 1.5rem;
 }
 
+// Custom H3 styling - tiles
+.tile-h3-medium-styling {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+// Custom H3 styling - cards
+.card-h3-medium-styling {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
 
 .govuk-summary-card__title-details-box {
     padding: govuk-spacing(3);
