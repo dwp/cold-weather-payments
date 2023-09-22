@@ -83,6 +83,26 @@ module.exports = function (router) {
     });
 
 
+    //------------------
+    // details-fix
+
+    router.get('/' + version + "/check-cold-weather-payments/details-fix", function (req, res) {
+        // Set active navigation tab
+        aboutActive = true;
+        res.render(version + "/check-cold-weather-payments/details-fix", {
+            'version': version,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+            // Page links
+            'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
+        });
+    });
+
+
 
 
 
