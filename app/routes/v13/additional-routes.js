@@ -102,6 +102,15 @@ module.exports = function (router) {
         });
     });
 
+    //------------------
+    // Accessibility statement
+
+    router.get('/' + version + "/check-cold-weather-payments/accessibility-statement", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/accessibility-statement", {
+            'version': version,
+        });
+    });
+
 
 
 
