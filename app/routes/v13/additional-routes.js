@@ -111,6 +111,21 @@ module.exports = function (router) {
         });
     });
 
+    //------------------
+    // Beta drafts 
+
+    router.get('/' + version + "/beta-drafts/select-season", function (req, res) {
+        res.render(version + "/beta-drafts/select-season", {
+            'version': version,
+        });
+    });
+
+    router.get('/' + version + "/beta-drafts/what-do-you-want-to-do-multiple-seasons", function (req, res) {
+        res.render(version + "/beta-drafts/what-do-you-want-to-do-multiple-seasons", {
+            'version': version,
+        });
+    });
+
 
 
 
