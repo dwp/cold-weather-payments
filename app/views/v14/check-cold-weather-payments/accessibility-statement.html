@@ -1,0 +1,205 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Accessibility statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include version + "/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Accessibility statement for Check Cold Weather Payments
+    </h1>
+    <p class="govuk-body">
+      This accessibility statement applies to the Check Cold Weather Payments
+      service. It is available to Department for Work and Pensions (DWP) staff.
+    </p>
+ 
+    <h2 class="govuk-heading-l">Using this service</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        This service is run by the Department for Work and Pensions (DWP). We
+        want as many people as possible to be able to use this service. For
+        example, that means you should be able to:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>change colours, contrast levels and fonts</li>
+        <li>
+          zoom in most content up to 300% without the text spilling off the
+          screen
+        </li>
+        <li>navigate all of the website using just a keyboard</li>
+        <li>navigate all of the website using speech recognition software</li>
+        <li>
+          listen to all of the website using a screen reader (including the most
+          recent versions of JAWS, NVDA and VoiceOver)
+        </li>
+      </ul>
+      <p class="govuk-body">
+        We've also made the content in the service as simple as possible to
+        understand.
+      </p>
+      <p class="govuk-body">
+        <a href=https://mcmw.abilitynet.org.uk/ class="govuk-link">AbilityNet</a
+        > has advice on making your device easier to use if you have a
+        disability.
+      </p>
+    </div>
+ 
+    <h2 class="govuk-heading-l">How accessible this service is</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        The service uses common styles, patterns and components from the
+        <a href=https://design-system.service.gov.uk/ class="govuk-link"
+          >GOV.UK Design System</a
+        >. They are widely regarded as accessible. However, we know that some
+        parts of this website are not fully accessible.
+      </p>
+      <p class="govuk-body">
+        The issues we know about from manual testing are that:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          hover text does not match the visible text when the lists of postcodes
+          are very long, if you're using Apple Zoom
+        </li>
+        <li>
+          the 'When are benefit systems scanned and citizens paid' component
+          that reveals detail is not interactive, if you're using Voice Control
+        </li>
+      </ul>
+    </div>
+ 
+    <h2 class="govuk-heading-l">Feedback and contact information</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        Email
+        <a href=mailto:cwp.hypercare@dwp.gov.uk>cwp.hypercare@dwp.gov.uk</a>
+        if you need information from this service in a different format. For
+        example:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>accessible PDF</li>
+        <li>large print</li>
+        <li>easy read</li>
+        <li>audio recording</li>
+        <li>braille email</li>
+      </ul>
+    </div>
+ 
+    <h2 class="govuk-heading-l">
+      Reporting accessibility problems with this service
+    </h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        We're always looking to improve the accessibility of this website. If
+        you find any problems not listed on this page or think we're not meeting
+        accessibility requirements, email
+        <a href=mailto:cwp.hypercare@dwp.gov.uk>cwp.hypercare@dwp.gov.uk</a>.
+      </p>
+    </div>
+ 
+    <h2 class="govuk-heading-l">Enforcement procedure</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        The Equality and Human Rights Commission (EHRC) is responsible for
+        enforcing the Public Sector Bodies (Websites and Mobile Applications)
+        (No. 2) Accessibility Regulations 2018 (the 'accessibility
+        regulations'). If you're not happy with how we respond to your
+        complaint, contact the:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href=https://www.equalityadvisoryservice.com/ class="govuk-link"
+            >Equality Advisory and Support Service (EASS) if you live in
+            England, Scotland or Wales</a
+          >
+        </li>
+        <li>
+          <a href=https://www.equalityni.org/contactus class="govuk-link"
+            >Equality Commission for Northern Ireland (ECNI) if you live in
+            Northern Ireland</a
+          >
+        </li>
+      </ul>
+    </div>
+ 
+    <h2 class="govuk-heading-l">
+      Technical information about this service's accessibility
+    </h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        The DWP is committed to making its service accessible, in accordance
+        with the Public Sector Bodies (Websites and Mobile Applications) (No. 2)
+        Accessibility Regulations 2018.
+      </p>
+    </div>
+ 
+    <h2 class="govuk-heading-l">Compliance status</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        This website is fully compliant with the
+        <a href=https://www.w3.org/TR/WCAG21/ class="govuk-link"
+          >Web Content Accessibility Guidelines versions 2.1 AA standard</a
+        >.
+      </p>
+    </div>
+ 
+    <h2 class="govuk-heading-l">What we're doing to improve accessibility</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        We will continue to iterate the design of the service, with
+        accessibility considerations built into each improvement.
+      </p>
+    </div>
+ 
+    <h2 class="govuk-heading-l">Preparation of this accessibility statement</h2>
+    <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-2">
+      <p class="govuk-body">
+        This page was prepared on 18 October 2023. It was last reviewed on 18
+        October 2023.
+      </p>
+      <p class="govuk-body">
+        The service was last tested on 13 October 2023 and was checked for
+        compliance with WCAG 2.1 AA. The service was manually tested by the Cold
+        Weather Payments team using ARC toolkit, Wave, Axe. Assistive technology
+        used for testing: screen reading software, voice recognition software
+        and screen magnification.
+      </p>
+      <p class="govuk-body">
+        Every page of the service was tested using instructions from the DWP
+        Accessibility team.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+
+
+{% endblock %}

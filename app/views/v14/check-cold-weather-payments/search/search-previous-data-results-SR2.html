@@ -1,0 +1,169 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include version + "/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+<!-- {% if NI %}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <a href="{{toggle}}" class="govuk-link" >
+        <span class="govuk-visually-hidden"></span>
+        <span aria-hidden="true">England and Wales</span>
+      </a>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">Northern Ireland</span>
+    </li>
+
+  </ul>
+</nav>
+{% else %}
+<nav class="hmrc-language-select" aria-label="Language switcher">
+  <ul class="hmrc-language-select__list">
+    <li class="hmrc-language-select__list-item">
+      <span aria-current="true">England and Wales</span>
+    </li>
+    <li class="hmrc-language-select__list-item">
+      <a href="{{toggle}}" class="govuk-link" >
+        <span class="govuk-visually-hidden"></span>
+        <span aria-hidden="true">Northern Ireland</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endif %} -->
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if NI %}
+    <h1 class="govuk-heading-l">There are no results for Tuesday 14 February 2023, everywhere in Northern Ireland</h1>
+    {% else %}
+    <h1 class="govuk-heading-l">Results for Tuesday 14 February 2023, everywhere in England and Wales</h1>
+    {% endif %}
+    <p class="govuk-body">You can <a href="{{search}}" class="govuk-link">clear your search</a> and start again.</p>
+
+
+    {% if NI %}
+
+
+    {% else %}
+    <div class="govuk-summary-card ">
+      <div class="govuk-summary-card__title-wrapper ">
+        <h2 class="govuk-summary-card__title">Trigger day: Tuesday 14 February 2013</h2>
+      </div>
+      <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+        <p class="govuk-body">There are 2 types of trigger, recorded and forecasted.</p>
+        <p class="govuk-body">There are additional qualifying days (AQD) for the forecasted trigger. </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Estimated payments to citizens (not including UC)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              22,000
+            </dd>
+            <dd class="govuk-summary-list__actions govuk-summary-list__row--no-actions">
+
+          </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated total amount paid to citizens (not including UC)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £550,000
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key ">
+              Cold weather period and trigger type
+            </dt>
+            <dd class="govuk-summary-list__value ">
+              <p class="govuk-body">14 Feb 2023 to 20 Feb 2023 (forecasted)              
+                <strong class="govuk-tag">
+                 AQD
+               </strong>
+              </p>
+              <p class="govuk-body">7 Feb 2023 to 13 Feb 2023 (recorded)</p>
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{aqd}}"> 
+                View AQD
+              </a>
+          </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Weather stations triggered
+            </dt>
+            <dd class="govuk-summary-list__value">
+                3
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{listStations}}">
+                View list<span class="govuk-visually-hidden"> of weather stations</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode districts affected
+            </dt>
+            <dd class="govuk-summary-list__value">
+              312
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="{{listPostcodes}}">
+                View list<span class="govuk-visually-hidden"> of postcodes</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        {% include version + "/includes/today-payment-dates-17-feb.html" %}
+        
+      </div>
+    </div>
+    {% endif %}
+        
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include version + "/includes/footer.html" %}
+
+{% endblock %}
