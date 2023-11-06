@@ -1,0 +1,206 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include version + "/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Results for Tuesday 1 November 2022 to Thursday 16 February 2023, in Heathrow</h1>
+
+    <p class="govuk-body">You can <a href="{{search}}" class="govuk-link">clear your search</a>
+      and start again.</p>
+
+    <h2 class="govuk-heading-m" id="overview">Overview</h2>
+
+    <p class="govuk-!-margin-bottom-3">You can also <a href="#breakdown" class="govuk-link">view data by trigger day</a>.</p>
+
+    <div class="card--wrapper">
+
+      <div class="card">
+        <div class="card__inner">
+          <h2>Cold weather periods</h2>
+          <p class="card__visual">2</p>
+          <p>1 forecasted, 1 recorded</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__inner">
+          <h2>Estimated payments to citizens (not including UC)</h2>
+          <p class="card__visual">32,800</p>
+
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__inner">
+          <h2>Estimated total amount paid to citizens (not including UC)</h2>
+          <p class="card__visual">£820,000</p>
+
+        </div>
+      </div>
+      <div class="card ">
+        <div class="card__inner">
+          <h2>Postcode districts affected</h2>
+          <p class="card__visual">278</p>
+          <p><a href="{{listPostcodes}}" class="govuk-link">View list</a></p>
+        </div>
+      </div>
+
+
+    </div>
+
+   
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-6" id="breakdown">Data by trigger day</h2>
+    <p class="govuk-body">There were 2 trigger days between Thursday 1 November 2022 and Thursday 16 February 2023.</p>
+
+    <div class="govuk-summary-card ">
+      <div class="govuk-summary-card__title-wrapper ">
+        <h2 class="govuk-summary-card__title">Trigger day: Saturday 10 December</h2>
+      </div>
+      <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Estimated payments to citizens (not including UC)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              16,400
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated total amount paid to citizens (not including UC)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £410,000
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+
+              Cold weather period and trigger type
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              <p class="govuk-body"> 10 Dec 2022 to 16 Dec 2022 (forecasted)</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="govuk-summary-card__title-details-box ">
+        <details class="govuk-details " data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              When are benefit systems scanned and citizens paid?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">A scan of the following systems will happen on 16 December 2022: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the Income Support Computer System (ISCS), for citizens on Income Support and Pension Credit </li>
+              <li>the Jobseeker's Allowance Payment System (JSAPS), for citizens on Jobseeker's Allowance (JSA) and Employment and Support Allowance (ESA) </li>
+            </ul>
+            <p class="govuk-body">These citizens should be paid 3 working days later, on 21 December 2022. </p>
+            <p class="govuk-body">A scan of the Tax Credit System will happen on 21 December 2022. This scan finds citizens who have a disabled child but do not have this 
+              element included in their benefit claim. These citizens will be paid 3 working days later, on 28 December 2022. 
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card ">
+      <div class="govuk-summary-card__title-wrapper ">
+        <h2 class="govuk-summary-card__title">Trigger day: Friday 9 December</h2>
+      </div>
+      <div class="govuk-summary-card__content govuk-!-padding-bottom-1">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+              Estimated payments to citizens (not including UC)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              16,400
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated total amount paid to citizens (not including UC)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £410,000
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+
+              Cold weather period and trigger type
+            </dt>
+            <dd class="govuk-summary-list__value govuk-!-width-one-half">
+              <p class="govuk-body"> 2 Dec 2022 to 8 Dec 2022 (recorded)</p>
+            </dd>
+          </div>
+        </dl>       
+      </div>
+      <div class="govuk-summary-card__title-details-box ">
+        <details class="govuk-details " data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              When are benefit systems scanned and citizens paid?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">A scan of the following systems will happen on 16 December 2022: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the Income Support Computer System (ISCS), for citizens on Income Support and Pension Credit </li>
+              <li>the Jobseeker's Allowance Payment System (JSAPS), for citizens on Jobseeker's Allowance (JSA) and Employment and Support Allowance (ESA) </li>
+            </ul>
+            <p class="govuk-body">These citizens should be paid 3 working days later, on 21 December 2022. </p>
+            <p class="govuk-body">A scan of the Tax Credit System will happen on 21 December 2022. This scan finds citizens who have a disabled child but do not have this 
+              element included in their benefit claim. These citizens will be paid 3 working days later, on 28 December 2022. 
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include version + "/includes/footer.html" %}
+
+{% endblock %}
