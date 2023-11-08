@@ -113,8 +113,8 @@ module.exports = function (router) {
                             }
                         });
 
-    router.get('/' + version + "/check-cold-weather-payments/search/search-by-time-period-S2a-error-example-1", function (req, res) {
-        res.render(version + "/check-cold-weather-payments/search/search-by-time-period-S2a-error-example-1", {
+    router.get('/' + version + "/check-cold-weather-payments/search/search-by-time-period-range-S2d-error-example", function (req, res) {
+        res.render(version + "/check-cold-weather-payments/search/search-by-time-period-range-S2d-error-example", {
             'version': version,
             'error': req.query.error,
             // Navigation settings
