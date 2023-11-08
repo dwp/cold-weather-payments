@@ -45,98 +45,88 @@ Enter a period of time you want to search by – {{ serviceName }} – GOV.UK Pr
 {% endif %}
 
 
-        <form class="form" action="" method="post">
-          <div class="govuk-form-group">
 
-            <h1 class="govuk-heading-l">Enter a period of time</h1>
-            <fieldset class="govuk-fieldset" role="group" aria-describedby="date-range-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <h1 class="govuk-fieldset__heading">
-                 From
-                </h1>
-              </legend>
-              <div id="date-range-hint" class="govuk-hint">
-                For example, 10 2 2024.
-              </div>
-              <div class="govuk-date-input" id="start-date">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="start-date-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                      id="start-date-day" name="start-date-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="start-date-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                      id="start-date-month" name="start-date-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="start-date-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                      id="start-date-year" name="start-date-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group" aria-describedby="date-range-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <h1 class="govuk-fieldset__heading">
-                  To
-                </h1>
-              </legend>
-              <div id="date-range-hint" class="govuk-hint">
-                For example, 16 2 2024.
-              </div>
-              <div class="govuk-date-input" id="end-date">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="end-date-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-day"
-                      name="end-date-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="end-date-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                      id="end-date-month" name="end-date-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="end-date-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year"
-                      name="end-date-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
 
-    
-              <button class="govuk-button govuk-body govuk-!-margin-top-5" data-module="govuk-button">
-                Continue
-              </button>
-    
-            </form>
+<h1 class="govuk-heading-l">What date range do you want to search for trigger days?</h1>
+<p class="govuk-body">Both dates must be from this 2023 to 2024 season.</p>
+          <form class="form" action="" method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  Start date
+                </legend>
+                <div id="expiry-hint" class="govuk-hint">
+                  For example, 10 2 2024.
+                </div>
+                <div class="govuk-date-input" id="expiry">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="expiry-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="expiry-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="expiry-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  End date
+                </legend>
+                <div id="expiry-hint" class="govuk-hint">
+                  For example, 16 2 2024.
+                </div>
+                <div class="govuk-date-input" id="expiry">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="expiry-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-day" name="expiry-day" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="expiry-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="expiry-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+          </form>
+
 
 
   </div>
