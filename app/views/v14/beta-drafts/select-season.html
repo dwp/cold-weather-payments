@@ -49,12 +49,12 @@
             <fieldset class="govuk-fieldset" aria-describedby="journey-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  [which Cold Weather Payment season do you want to look at?] 
+                  Which previous Cold Weather Payment season do you want to find data for? 
                 </h1>
               </legend>
-              <!-- <div id="journey-hint" class="govuk-hint">
-              optional
-              </div> -->
+              <div id="journey-hint" class="govuk-hint">
+                The Cold Weather Payment season runs annually from 1 November to 31 March.
+              </div>
 
               {% if error %}
               <span id="search-error" class="govuk-error-message">
@@ -65,25 +65,18 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="journey-select" name="journey-select" type="radio" value="agent" aria-describedby="journey-item-hint">
                   <label class="govuk-label govuk-radios__label" for="journey-select">
-                    2023/2024
+                    2023 to 2024
                   </label>
 
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="other" aria-describedby="journey-2-item-hint">
                   <label class="govuk-label govuk-radios__label" for="journey-select-2">
-                    2024/2025
+                    2024 to 2025
                   </label>
 
                 </div>
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="other" aria-describedby="journey-2-item-hint">
-                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
-                    2025/2026
-                  </label>
-
-                </div>
               </div>
             </fieldset>
           </div>
