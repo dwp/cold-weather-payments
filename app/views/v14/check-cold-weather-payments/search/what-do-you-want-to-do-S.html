@@ -68,22 +68,61 @@ What do you want to do? – {{ serviceName }} – GOV.UK Prototype Kit
                     Check if an eligible citizen should get payments
                   </label>
                 </div>
+
+
+
+<!--Year 1-->
+                {% if year === "year1" %}
+
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="current-year1" aria-describedby="journey-2-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
+                    Search trigger data from this 2024 to 2025 season
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="previous-year1" aria-describedby="journey-3-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
+                    Search trigger data from the previous 2023 to 2024 season
+                  </label>
+                </div>
+
+
+                
+
+<!--Year 2+-->
+                {% elseif year === "year2" %}
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="current-year2" aria-describedby="journey-3-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
+                    Search trigger data from this 2025 to 2026 season
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="previous-year2" aria-describedby="journey-3-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
+                    Search trigger data from a previous season
+                  </label>
+                </div>
+
+
+<!--This Year-->
+                {% else %}
+
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="current" aria-describedby="journey-2-item-hint">
                   <label class="govuk-label govuk-radios__label" for="journey-select-2">
                     Search trigger data from this 2023 to 2024 season
                   </label>
-                  <!-- <div id="journey-2-item-hint" class="govuk-hint govuk-radios__hint">
-                    You can search all data by location and date.
-                  </div> -->
                 </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="journey-select-2" name="journey-select" type="radio" value="previous" aria-describedby="journey-3-item-hint">
-                  <label class="govuk-label govuk-radios__label" for="journey-select-2">
-                    Search trigger data from a previous season
-                  </label>
 
-                </div>
+                {% endif %}
+
+
               </div>
             </fieldset>
           </div>

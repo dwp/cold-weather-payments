@@ -15,6 +15,8 @@ module.exports = function (router) {
     //---------------------------------------------------------------------------------------------------------------
     // S Start search journey
     router.get('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do", function (req, res) {
+        // Set search year
+        let year = "thisYear";
         // Set active navigation tab
         aboutActive = false;
         dailyActive = false;
@@ -32,6 +34,7 @@ module.exports = function (router) {
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'year': year,
         });
     });
 
@@ -47,6 +50,119 @@ module.exports = function (router) {
                                 res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
                             }
                         });
+
+    router.get('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do-year-1", function (req, res) {
+        // Set search year
+        let year = "year1";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = true;
+        res.render(version + "/check-cold-weather-payments/search/what-do-you-want-to-do-S", {
+            'version': version,
+            'error': req.query.error,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+            'year': year,
+        });
+    });
+                        router.post('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do-year-1", function (req, res) {
+                            var journey = req.session.data['journey-select'];
+                            if (journey == undefined) {
+                                res.redirect('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do?error=true")
+                            } else if (journey == "agent") {
+                                res.redirect('/' + version + "/check-cold-weather-payments/citizen-location")
+                            } else if (journey == "previous-year2") {
+                                res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
+                            } else {
+                                res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
+                            }
+                        });
+    
+
+    router.get('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do-year-2-radios", function (req, res) {
+        // Set search year
+        let year = "year2";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = true;
+        res.render(version + "/check-cold-weather-payments/search/what-do-you-want-to-do-S", {
+            'version': version,
+            'error': req.query.error,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+            'year': year,
+        });
+    });
+
+                        router.post('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do-year-2-radios", function (req, res) {
+                            var journey = req.session.data['journey-select'];
+                            if (journey == undefined) {
+                                res.redirect('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do?error=true")
+                            } else if (journey == "agent") {
+                                res.redirect('/' + version + "/check-cold-weather-payments/citizen-location")
+                            } else if (journey == "previous-year2") {
+                                res.redirect('/' + version + "/beta-drafts/select-season")
+                            } else {
+                                res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
+                            }
+                        });
+
+    router.get('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do-year-2-input", function (req, res) {
+        // Set search year
+        let year = "year2";
+        // Set active navigation tab
+        aboutActive = false;
+        dailyActive = false;
+        weeklyActive = false;
+        searchActive = true;
+        res.render(version + "/check-cold-weather-payments/search/what-do-you-want-to-do-S", {
+            'version': version,
+            'error': req.query.error,
+            // Navigation settings
+            'aboutActive': aboutActive,
+            'dailyActive': dailyActive,
+            'weeklyActive': weeklyActive,
+            'searchActive': searchActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+            'year': year,
+        });
+    });
+
+                        router.post('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do-year-2-input", function (req, res) {
+                            var journey = req.session.data['journey-select'];
+                            if (journey == undefined) {
+                                res.redirect('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do?error=true")
+                            } else if (journey == "agent") {
+                                res.redirect('/' + version + "/check-cold-weather-payments/citizen-location")
+                            } else if (journey == "previous-year2") {
+                                res.redirect('/' + version + "/beta-drafts/enter-season")
+                            } else {
+                                res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
+                            }
+                        });
+
+
 
     //---------------------------------------------------------------------------------------------------------------
     // S1 + SR1: Agent journey
