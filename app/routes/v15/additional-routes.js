@@ -1,7 +1,7 @@
 module.exports = function (router) {
 
     const version = "v15";
-    console.log("Additional routes");
+
 
 
 
