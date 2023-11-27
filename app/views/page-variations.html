@@ -1,0 +1,250 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "/"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Page variations
+      </h1>
+      <h2 class="govuk-heading-l">Today view</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/v14/check-cold-weather-payments/todays-trigger-data-D1" class="govuk-link">D1</a> Today: no triggers
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/todays-trigger-data-D2a" class="govuk-link">D2a</a> Today:
+          forecasted triggers
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/todays-trigger-data-D2b" class="govuk-link">D2b</a> Today:
+          forecasted and recorded triggers
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/todays-trigger-data-D3" class="govuk-link">D3</a> Today: non-working
+          day
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/todays-trigger-data-D4" class="govuk-link">D4</a> Today: next
+          working day
+        </li>
+        <li>
+          <a target=blank href="https://dwpgovuk.sharepoint.com/:w:/r/sites/ext-rbc/Shared%20Documents/Cold%20Weather%20Payments/Content/Baseline%20docs/Next%20working%20day%20(D4%20variations).docx?d=wd81516b907cb46fdb387636fe3394a72&csf=1&web=1&e=XzQjIl" class="govuk-link">D4 [Word .doc]</a> Today: next
+          working day variations
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/todays-trigger-data-D5" class="govuk-link">D5</a> Today: data not
+          ready
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/the-season-has-ended-DW6" class="govuk-link">DW6</a> Today: season
+          has ended
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Weekly view</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/v14/check-cold-weather-payments/weekly-summary-W1" class="govuk-link">W1</a> Weekly summary: No
+          triggers
+        </li>
+
+        <li>
+          <a href="/v14/check-cold-weather-payments/weekly-summary-W2" class="govuk-link">W2</a> Weekly summary: With
+          triggers
+        </li>
+
+        <li>
+          <a href="/v14/check-cold-weather-payments/weekly-summary-W3">W3</a> Weekly summary: Start of season
+        </li>
+
+      </ul>
+
+
+
+      <h2 class="govuk-heading-l">Search all data</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/v14/check-cold-weather-payments/what-do-you-want-to-do" class="govuk-link">S</a> Select search
+          journey: What do you want to do?
+        </li>
+
+        <h3 class="govuk-heading-s govuk-!-padding-top-2">Agent journey</h3>
+        <li>
+          <a href="/v114check-cold-weather-payments/citizen-location" class="govuk-link">S1</a> Agent journey: Where
+          does the citizen live?
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/payment-data-for-postcode" class="govuk-link">SR1</a> Agent search
+          result: Citizen eligibility by postcode
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR7" class="govuk-link">SR7</a> Agent
+          search result: No results
+        </li>
+
+        <h3 class="govuk-heading-s govuk-!-padding-top-2">Other search journeys</h3>
+
+        <li>
+          <s> <a href="/v11/check-cold-weather-payments/search-by-time-period-single-only" class="govuk-link">S2a</a>
+            Single Option - Day only</s>
+        </li>
+
+
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-by-time-period" class="govuk-link">S2a</a> Choose time period
+          type
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-by-time-period-range-S2d" class="govuk-link">S2d</a> Enter
+          time period
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search/search-by-time-period-range-S2d-error-example"
+            class="govuk-link">S2d</a> Enter time period: Error example
+        </li>
+
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-by-location" class="govuk-link">S2b</a> Choose location type
+          (all options)
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search/search-by-location-weather-station-S2e"
+            class="govuk-link">S2e</a> Enter weather station
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search/search-by-location-postcode-S2f" class="govuk-link">S2f</a>
+          Enter postcode
+        </li>
+
+        <h3 class="govuk-heading-s govuk-!-padding-top-2">Search results</h3>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3a" class="govuk-link">SR3a</a>
+          Result page: Date range, England and Wales
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3a-NI" class="govuk-link">SR3a-NI</a>
+          Result page: Date range, Northern Ireland
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3b" class="govuk-link">SR3b</a>
+          Result page: All season, England and Wales
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3b" class="govuk-link">SR3b-NI</a>
+          Result page: All season, Northern Ireland
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR4a" class="govuk-link">SR4a</a>
+          Result page: Date range, weather station
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR4b" class="govuk-link">SR4b</a>
+          Result page: All season, weather station
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR5a" class="govuk-link">SR5a</a>
+          Result page: Date range, postcode
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR5b" class="govuk-link">SR5b</a>
+          Result page: All season, postcode
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR2" class="govuk-link">SR2</a> Result
+          page: Single day, all locations (with AQDs)
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR6" class="govuk-link">SR6</a> No
+          results
+        </li>
+        <li>
+          <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR8" class="govuk-link">SR8</a> No
+          triggers this season
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-l">Location lists</h2>
+      <ul class="govuk-list govuk-list--bullet">
+
+        <h3 class="govuk-heading-s govuk-!-padding-top-2">Weather stations</h3>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LW1-weather-daily">LW1</a> Daily weather station list,
+          forecasted only
+        </li>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LW2a-weather-daily-two-triggers">LW2a</a> Daily weather station
+          list, forecasted and recorded
+        </li>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LW2b-weather-daily-two-triggers">LW2b</a> Daily edge case -
+          weather station triggers twice
+        </li>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LW3-weather-multiple-days">LW3</a> Weekly/Multiple day weather
+          station list
+        </li>
+
+        <h3 class="govuk-heading-s govuk-!-padding-top-2">Postcodes</h3>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LP1-postcodes-daily">LP1</a> Daily postcode list, forecasted
+          only
+        </li>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LP2-postcodes-daily-two-triggers">LP2</a> Daily postcode list,
+          forecasted and recorded
+        </li>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LP3-postcodes-multiple-days">LP3</a> Weekly/Multiple day
+          postcode list
+        </li>
+        <li>
+          <a class="govuk-link" href="/v8/location-lists/LP4-postcodes-weather-station-result">LP4</a> Weather station
+          search result listing affected postcodes
+        </li>
+      </ul>
+
+
+
+
+
+
+      <h2 class="govuk-heading-l">
+        Shutter pages
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/v11/check-cold-weather-payments/problem-with-the-service-7a" class="govuk-link">D7a</a> Problem with
+          the service data view
+        </li>
+        <li>
+          <a href="/v11/check-cold-weather-payments/service-unavailable-7b" class="govuk-link">D7b</a> Service
+          unavailable
+        </li>
+        <li>
+          <a href="/v11/check-cold-weather-payments/service-unavailable-7c">D7c</a> Service unavailable with timescale
+        </li>
+      </ul>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

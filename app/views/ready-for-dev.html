@@ -7,7 +7,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
-  href: "index"
+  href: "/"
 }) }} 
 {% endblock %}
 
@@ -76,8 +76,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Remove NI toggle <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR2" class="govuk-link">Single day result page (ref: SR2) </a>
       </li>
       <li>
-        Change bullet content <a href="/v14/check-cold-weather-payments/what-do-you-want-to-do" class="govuk-link">What do you want to do page (ref: S) </a>
-      </li>
+        Change bullet content <a href="/v14/check-cold-weather-payments/what-do-you-want-to-do" class="govuk-link">ref: S</a> Select search journey: What do you want to do?
+     </li>
     </ul>
 
     <h3 class="govuk-heading-s">
@@ -86,49 +86,59 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <ul class="govuk-list govuk-list--bullet">
       <li>
-       Time period radios (without conditional reveal) <a href="/v14/check-cold-weather-payments/search-by-time-period" class="govuk-link">Select time period (ref: S2a) </a>
-      </li>
-      <li>
-        Time period start and end dates input <a href="/v14/check-cold-weather-payments/search-by-time-period-range-S2d" class="govuk-link">Enter time period (ref: S2d) </a>
-      </li>
-      <li>
-        Error example <a href="/v14/check-cold-weather-payments/search/search-by-time-period-range-S2d-error-example" class="govuk-link">Enter time period (ref: S2d) </a>
-      </li>
+        <a href="/v14/check-cold-weather-payments/search-by-time-period" class="govuk-link">S2a</a> Choose time period type
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-by-time-period-range-S2d" class="govuk-link">S2d</a> Enter time period
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search/search-by-time-period-range-S2d-error-example" class="govuk-link">S2d</a> Enter time period: Error example
+       </li>
+ 
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-by-location" class="govuk-link">S2b</a> Choose location type (all options)
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search/search-by-location-weather-station-S2e" class="govuk-link">S2e</a> Enter weather station
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search/search-by-location-postcode-S2f" class="govuk-link">S2f</a> Enter postcode
+       </li>
 
+       <h2 class="govuk-heading-s govuk-!-padding-top-2">Search results</h2>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3a" class="govuk-link">SR3a</a> Result page: Date range, England and Wales
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3a-NI" class="govuk-link">SR3a-NI</a> Result page: Date range, Northern Ireland
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3b" class="govuk-link">SR3b</a> Result page: All season, England and Wales
+       </li>
+       <li>
+        <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3b" class="govuk-link">SR3b-NI</a> Result page: All season, Northern Ireland
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR4a" class="govuk-link">SR4a</a> Result page: Date range, weather station
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR4b" class="govuk-link">SR4b</a> Result page: All season, weather station
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR5a" class="govuk-link">SR5a</a> Result page: Date range, postcode
+       </li>
+       <li>
+         <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR5b" class="govuk-link">SR5b</a> Result page: All season, postcode
+       </li>
       <li>
-        Choose location radios (with conditional radios for range or whole season) <a href="/v14/check-cold-weather-payments/search-by-location" class="govuk-link">Enter time period (ref: S2b) </a>
+        <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR2" class="govuk-link">SR2</a> Result page: Single day, all locations (with AQDs)
       </li>
       <li>
-        Weather station input <a href="/v14/check-cold-weather-payments/search/search-by-location-weather-station-S2e" class="govuk-link">Enter weather station (ref: S2e) </a>
+        <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR6" class="govuk-link">SR6</a> No results
       </li>
       <li>
-        Postcode input <a href="/v14/check-cold-weather-payments/search/search-by-location-postcode-S2f" class="govuk-link">Enter postcode (ref: S2f) </a>
+        <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR8" class="govuk-link">SR8</a> No triggers this season
       </li>
-      <li>
-        Result page (ref: SR3a) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3a" class="govuk-link">Date range, England and Wales</a>
-      </li>
-      <li>
-        Result page (ref: SR3a-NI) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3a-NI" class="govuk-link">Date range, Northern Ireland</a>
-      </li>
-      <li>
-        Result page (ref: SR3b) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3b" class="govuk-link">All season, England and Wales</a>
-      </li>
-      <li>
-        Result page (ref: SR3b-NI) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR3b" class="govuk-link">All season,  Northern Ireland</a>
-      </li>
-      <li>
-        Result page (ref: SR4a) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR4a" class="govuk-link">Date range, weather station</a>
-      </li>
-      <li>
-        Result page (ref: SR4b) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR4b" class="govuk-link">All season, weather station</a>
-      </li>
-      <li>
-        Result page (ref: SR5a) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR5a" class="govuk-link">Date range, postcode</a>
-      </li>
-      <li>
-        Result page (ref: SR5b) <a href="/v14/check-cold-weather-payments/search-previous-data-results-SR5b" class="govuk-link">All season, postcode</a>
-      </li>
-
     </ul>
 
 
