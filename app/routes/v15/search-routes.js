@@ -1,7 +1,7 @@
 module.exports = function (router) {
 
     const version = "v15";
-    console.log("Search routes");
+
 
     
     
@@ -539,6 +539,8 @@ module.exports = function (router) {
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            // Location list
+            'listPostcodes': '/' + version + "/location-lists/LP4-postcodes-weather-station-result",
         });
     });
 
@@ -550,6 +552,8 @@ module.exports = function (router) {
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            // Location list
+            'listPostcodes': '/' + version + "/location-lists/LP4-postcodes-weather-station-result",
         });
     });
 
