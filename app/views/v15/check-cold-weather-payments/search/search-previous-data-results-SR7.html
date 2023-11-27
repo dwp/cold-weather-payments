@@ -1,0 +1,51 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Search previous data – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include version + "/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">This citizen does not get a payment </h1>
+
+    <p class="govuk-body-l govuk-!-margin-bottom-3">There have been no triggers in <strong>[postcode]</strong> this season.</p>
+
+
+    <p class="govuk-body">If you want to change your search, you can <a href="{{search}}" class="govuk-link">search all data</a> again.</p>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include version + "/includes/footer.html" %}
+
+{% endblock %}

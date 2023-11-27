@@ -42,6 +42,13 @@ require('./routes/v14/weekly-routes.js')(router);
 require('./routes/v14/search-routes.js')(router);
 require('./routes/v14/notifications.js')(router);
 
+// Version 15
+require('./routes/v15/additional-routes.js')(router);
+require('./routes/v15/today-routes.js')(router);
+require('./routes/v15/weekly-routes.js')(router);
+require('./routes/v15/search-routes.js')(router);
+require('./routes/v15/notifications.js')(router);
+
 
 
 // inject the route data into the index page
