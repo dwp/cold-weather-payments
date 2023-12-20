@@ -47,7 +47,7 @@ module.exports = function (router) {
             'weekly': navWeekly,
             'search': navSearch,
             // Page links
-            'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
+            'enterEmail': "/" + version + "/notifications/N5-enter-email-address",
         });
     });
 
