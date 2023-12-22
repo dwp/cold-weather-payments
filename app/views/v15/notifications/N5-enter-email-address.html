@@ -3,7 +3,7 @@
 
 <!-- Page title -->
 {% block pageTitle %}
-[enter email address] – {{ serviceName }} – GOV.UK Prototype Kit
+Enter an email address – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 <!-- Header including navigation -->
@@ -50,11 +50,16 @@
 
           <div class="govuk-form-group {%if error %} govuk-form-group--error {% endif %}">
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l" for="weather-station">
-                [enter an email address]
+              <label class="govuk-label govuk-label--l" for="email-address">
+                Enter an email address
               </label>
             </h1>
-            <div id="weather-station-hint" class="govuk-hint">
+
+            <p class="govuk-body">You can manage email subscriptions for yourself or someone else. </p>
+
+            <p class="govuk-body">If you've never received email updates about Cold Weather Payments, you can enter your email address to register. </p>
+
+            <div id="email-address-hint" class="govuk-hint">
               For example, first.last@dwp.gov.uk
             </div>
 
@@ -62,7 +67,7 @@
             <span id="search-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter a valid email address
             {% endif %} 
-            <input class="govuk-input govuk-input--width-10" id="weather-station" name="postcode" type="text" spellcheck="false" aria-describedby="weather-station-hint" inputmode="numeric">
+            <input class="govuk-input govuk-input--width-10" id="email-address" name="email" type="text" spellcheck="false" aria-describedby="email-address-hint" inputmode="numeric">
           </div>
 
   
