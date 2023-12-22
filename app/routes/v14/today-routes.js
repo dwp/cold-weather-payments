@@ -1,7 +1,7 @@
 module.exports = function (router) {
 
     const version = "v14";
-    console.log("Today routes");
+
 
     // Set default variation ------------------------------
     let todayVariation = "forecasted";

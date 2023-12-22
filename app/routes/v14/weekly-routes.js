@@ -1,7 +1,7 @@
 module.exports = function (router) {
 
     const version = "v14";
-    console.log("Weekly routes");
+
 
     // Set default variation ------------------------------
     let weeklyVariation = "triggers";
