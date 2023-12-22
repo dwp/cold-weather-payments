@@ -77,7 +77,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
             Trigger updates
           </dt>
           <dd class="govuk-summary-list__value">
@@ -95,10 +95,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            [countries]
+            When you get updates
           </dt>
           <dd class="govuk-summary-list__value">
-            [Northern Ireland only]
+            Only when there are triggers in Northern Ireland
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="{{directChangeCountry}}">
@@ -123,10 +123,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         {% elseif triggerStatusView %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            [countries]
+            When you get updates
           </dt>
           <dd class="govuk-summary-list__value">
-            [everywhere]
+            Every time there are triggers in England, Wales or Northern Ireland
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="{{directChangeCountry}}">
@@ -178,7 +178,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
             Weekly update
           </dt>
           <dd class="govuk-summary-list__value">
@@ -194,10 +194,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         {% if (weeklyStatusView === true) and (weeklyCountry === "NI") %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            [countries]
+            When you get updates
           </dt>
           <dd class="govuk-summary-list__value">
-            [Northern Ireland only]
+            Only when there are triggers in Northern Ireland
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="{{directChangeWeeklyCountry}}">
@@ -210,10 +210,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         {% elseif weeklyStatusView %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            [countries]
+            When you get updates
           </dt>
           <dd class="govuk-summary-list__value">
-            [everywhere]
+            Every time there are triggers in England, Wales or Northern Ireland
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="{{directChangeWeeklyCountry}}">
@@ -254,7 +254,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
             Additional qualifying days update
           </dt>
           <dd class="govuk-summary-list__value">
@@ -270,11 +270,11 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         {% if (aqdStatus === "Subscribed") and (aqdCountry === "NI") %}
 
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            [countries]
+          <dt class="govuk-summary-list__key">
+            [When you get updates about AQDs]
           </dt>
           <dd class="govuk-summary-list__value">
-            [Northern Ireland only]
+            [only when they impact Northern Ireland]
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="{{changeaqdcountry}}">
@@ -287,10 +287,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            [countries]
+            [When you get updates about AQDs]
           </dt>
           <dd class="govuk-summary-list__value">
-            [england and wales]
+            [only when they impact England or Wales]
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="{{changeaqdcountry}}">
