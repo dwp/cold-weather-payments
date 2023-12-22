@@ -12,6 +12,12 @@ module.exports = function (router) {
 
     //------------------
     // Notification self-serve
+
+    let subCount = 0;
+    let success = false;
+    
+
+
     router.get("/" + version + "/notifications/N5-enter-email-address", function (req, res) {
         res.render(version + "/notifications/N5-enter-email-address", {
             'error': req.query.error,
@@ -24,7 +30,16 @@ module.exports = function (router) {
     });
 
     router.post('/' + version + "/notifications/N5-enter-email-address", function (req, res) {
-        res.redirect('/' + version + "/notifications/N6-check-emails")
+        // Reset subscription data
+        subCount = 0;
+        success = false
+        req.session.data['triggerSub'] = undefined;
+        req.session.data['triggerCountry'] = undefined;
+        req.session.data['weeklyCountry'] = undefined;
+        req.session.data['aqdCountry'] = undefined;
+        req.session.data['weeklySub'] = undefined;
+        req.session.data['aqdSub'] = undefined;
+        res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
     });
 
     router.get('/' + version + "/notifications/N6-check-emails", function (req, res) {
@@ -37,27 +52,27 @@ module.exports = function (router) {
         });
     });
 
-    // From v8 Prototoype
-
      //------------------
     // Views: MANAGE SUBSCRIPTIONS
 
-    let subCount = 0;
-    let success = false;
+
 
     router.get('/' + version + "/notifications/N1-manage-subscriptions", function (req, res) {
-        success = false;
         // Trigger updates
         console.log(subCount);
         let triggerSub = req.session.data['triggerSub'];
         let triggerStatus;
         let triggerStatusViewSettings;
-        console.log("Trigger Status " + triggerStatus)
+        let country = req.session.data['triggerCountry'];
+        let weeklyCountry = req.session.data['weeklyCountry'];
+        let aqdCountry = req.session.data['aqdCountry'];
+
         if (triggerSub === "yes") {
             triggerStatus = "Subscribed"
             triggerStatusAction = "Unsubscribe"
             triggerStatusRoute = '/' + version + "/notifications/N2b-trigger-unsubscribe"
             triggerStatusViewSettings = true
+
             var triggerFile = req.session.data['triggerFile']
             if (triggerFile !== "Yes") {
                 triggerFile = "No"
@@ -69,15 +84,15 @@ module.exports = function (router) {
         } else {
             triggerStatus = "Unsubscribed"
             triggerStatusAction = "Subscribe"
-            triggerStatusRoute = '/' + version + "/notifications/N2a-trigger-subscribe"
+            triggerStatusRoute = '/' + version + "/notifications/N2a-trigger-country"
             triggerStatusViewSettings = false
         }
+        console.log("Trigger Status = " + triggerStatus)
 
         // Weekly summary 
         let weeklySub = req.session.data['weeklySub'];
         let weeklyStatus;
         let weeklyStatusViewSettings;
-        console.log("Weekly Status " + weeklyStatus)
         if (weeklySub === "yes") {
             weeklyStatus = "Subscribed"
             weeklyStatusAction = "Unsubscribe"
@@ -93,6 +108,7 @@ module.exports = function (router) {
             weeklyStatusRoute = '/' + version + "/notifications/N3a-weekly-subscribe"
             weeklyStatusViewSettings = false
         }
+        console.log("Weekly Status = " + weeklyStatus)
 
         // AQD summary 
         let aqdSub = req.session.data['aqdSub'];
@@ -106,6 +122,7 @@ module.exports = function (router) {
             aqdStatusAction = "Subscribe"
             aqdStatusRoute = '/' + version + "/notifications/N4a-aqd-subscribe"
         }
+        console.log("AQD Status = " + aqdStatus)
 
         if (subCount > 0) {
             success = true;
@@ -120,26 +137,33 @@ module.exports = function (router) {
             'weekly': navWeekly,
             'search': navSearch,
             'back': "/" + version + "/A1-about",
+            'changeEmail': "/" + version + "/notifications/N5-enter-email-address", 
             //Trigger updates
             'triggerStatus': triggerStatus,
             'triggerStatusAction': triggerStatusAction,
             'changeTrigger': triggerStatusRoute,
             'triggerStatusView': triggerStatusViewSettings,
+            'country' : country,
             'triggerFile': triggerFile,
             'noTrigger': noTrigger,
             'directChangeTriggerFile': '/' + version + "/notifications/N2c-trigger-file-YN",
+            'directChangeCountry': '/' + version + "/notifications/N2a-trigger-country",
             //Weekly summary
             'weeklyStatus': weeklyStatus,
             'weeklyStatusAction': weeklyStatusAction,
             'changeWeekly': weeklyStatusRoute,
             'weeklyStatusView': weeklyStatusViewSettings,
+            'weeklyCountry' : weeklyCountry,
             'weeklyFile': weeklyFile,
             'directChangeWeeklyFile': '/' + version + "/notifications/N3c-weekly-file-YN",
             'directChangeNoTrigger': '/' + version + "/notifications/N2d-trigger-no-YN",
+            'directChangeWeeklyCountry': '/' + version + "/notifications/N3d-weekly-country",
             //AQD
             'aqdStatus': aqdStatus,
             'aqdStatusAction': aqdStatusAction,
             'changeaqd': aqdStatusRoute,
+            'aqdCountry' : aqdCountry,
+            'changeaqdcountry': '/' + version + "/notifications/N4c-aqd-country",
 
 
             // Success banner
@@ -154,8 +178,8 @@ module.exports = function (router) {
 
 
     // Daily trigger subscribe journey
-    router.get('/' + version + "/notifications/N2a-trigger-subscribe", function (req, res) {
-        res.render(version + "/notifications/N2a-trigger-subscribe", {
+    router.get('/' + version + "/notifications/N2a-trigger-country", function (req, res) {
+        res.render(version + "/notifications/N2a-trigger-country", {
             'error': req.query.error,
             'version': version,
             'about': navAbout,
@@ -165,14 +189,16 @@ module.exports = function (router) {
         });
     });
 
-    router.post('/' + version + "/notifications/N2a-trigger-subscribe", function (req, res) {
-        var triggerSub = req.session.data['triggerSub']
-        if (triggerSub === "yes") {
+    router.post('/' + version + "/notifications/N2a-trigger-country", function (req, res) {
+        var triggerCountry = req.session.data['triggerCountry']
+        if (triggerCountry === "everywhere") {
+            req.session.data["triggerSub"] = "yes"
             res.redirect('/' + version + "/notifications/N2c-trigger-file-YN")
-        } else if (triggerSub === "no") {
-            res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
+        } else if (triggerCountry === "NI") {
+            req.session.data["triggerSub"] = "yes"
+            res.redirect('/' + version + "/notifications/N2d-trigger-no-YN")
         } else {
-            res.redirect('/' + version + "/notifications/N2a-trigger-subscribe?error=true")
+            res.redirect('/' + version + "/notifications/N2a-trigger-country?error=true")
         }
     });
 
@@ -259,11 +285,33 @@ module.exports = function (router) {
         if (weeklySub === "yes") {
             subCount++;
             console.log(subCount);
-            res.redirect('/' + version + "/notifications/N3c-weekly-file-YN")
+            res.redirect('/' + version + "/notifications/N3d-weekly-country")
         } else if (weeklySub === "no") {
             res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
         } else {
             res.redirect('/' + version + "/notifications/N3a-weekly-subscribe?error=true")
+        }
+    });
+
+    router.get('/' + version + "/notifications/N3d-weekly-country", function (req, res) {
+        res.render(version + "/notifications/N3d-weekly-country", {
+            'error': req.query.error,
+            'version': version,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
+    router.post('/' + version + "/notifications/N3d-weekly-country", function (req, res) {
+        var weeklyCountry = req.session.data['weeklyCountry'];
+        if (weeklyCountry === "everywhere") {
+            res.redirect('/' + version + "/notifications/N3c-weekly-file-YN")
+        } else if (weeklyCountry === "NI") {
+            res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
+        } else {
+            res.redirect('/' + version + "/notifications/N3d-weekly-country?error=true")
         }
     });
 
@@ -327,11 +375,31 @@ module.exports = function (router) {
         if (aqdSub === "yes") {
             subCount++;
             console.log(subCount);
-            res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
+            res.redirect('/' + version + "/notifications/N4c-aqd-country")
         } else if (aqdSub === "no") {
             res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
         } else {
             res.redirect('/' + version + "/notifications/N4a-aqd-subscribe?error=true")
+        }
+    });
+
+    router.get('/' + version + "/notifications/N4c-aqd-country", function (req, res) {
+        res.render(version + "/notifications/N4c-aqd-country", {
+            'error': req.query.error,
+            'version': version,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+        });
+    });
+
+    router.post('/' + version + "/notifications/N4c-aqd-country", function (req, res) {
+        var aqdCountry = req.session.data['aqdCountry'];
+        if (aqdCountry === "everywhere" || aqdCountry === "NI") {
+            res.redirect('/' + version + "/notifications/N1-manage-subscriptions")
+        } else {
+            res.redirect('/' + version + "/notifications/N4c-aqd-country?error=true")
         }
     });
 

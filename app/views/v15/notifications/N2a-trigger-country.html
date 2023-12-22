@@ -3,7 +3,7 @@
 
 <!-- Page title -->
 {% block pageTitle %}
-Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
+When do you need trigger update email? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 <!-- Header including navigation -->
@@ -53,7 +53,7 @@ Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
             <h1 class="govuk-fieldset__heading">
-              [when do you want to be notified]
+              When do you need trigger update email?
             </h1>
 
           </legend>
@@ -70,15 +70,15 @@ Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
           </div> -->
           <div class="govuk-radios govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="triggerCountry" name="triggerCountry" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="triggerCountry" name="triggerCountry" type="radio" value="everywhere">
               <label class="govuk-label govuk-radios__label" for="triggerCountry">
-                [when there are triggers anywhere in England, Wales or Northern Ireland]
+                When there are triggers anywhere in England, Wales or Northern Ireland
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="triggerCountry-2" name="triggerCountry" type="radio" value="No">
+              <input class="govuk-radios__input" id="triggerCountry-2" name="triggerCountry" type="radio" value="NI">
               <label class="govuk-label govuk-radios__label" for="triggerCountry-2">
-                [only when there are triggers in Northern ireland]
+                Only when there are triggers in Northern Ireland
               </label>
             </div>
           </div>

@@ -3,7 +3,7 @@
 
 <!-- Page title -->
 {% block pageTitle %}
-Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
+When do you need weekly summaries of triggers? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 <!-- Header including navigation -->
@@ -38,7 +38,7 @@ Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#weeklyFile">Select an option</a>
+            <a href="#weeklyCountry">Select an option</a>
           </li>
         </ul>
       </div>
@@ -49,39 +49,36 @@ Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
     <form class="form" action="" method="post">
 
       <div class="govuk-form-group {%if error %} govuk-form-group--error {% endif %}">
-        <fieldset class="govuk-fieldset" aria-describedby="weeklyFile-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="weeklyCountry-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
             <h1 class="govuk-fieldset__heading">
-              Do you need a trigger data file every week there are a triggers?
+              [when do you need weekly summaries of triggers?]
             </h1>
 
           </legend>
 
-          <p class="govuk-body">You'll only need this weekly trigger data file if you're: </p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>running the Jobseeker's Allowance Payment System (JSAPS) payment scan</li>
-            <li>running the Income Support Computer System (ISCS) payment scan</li>
-            <li>working in Data and Analytics (D&A)</li>
-          </ul>
-          
+
           {% if error %}
           <span id="search-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Select an option
           </span>
           {% endif %}
 
+          <!-- <div id="weeklyCountry-hint" class="govuk-hint">
+            This includes changing your last name or spelling your name differently.
+          </div> -->
           <div class="govuk-radios govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="weeklyFile" name="weeklyFile" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="weeklyFile">
-                Yes
+              <input class="govuk-radios__input" id="weeklyCountry" name="weeklyCountry" type="radio" value="everywhere">
+              <label class="govuk-label govuk-radios__label" for="weeklyCountry">
+                When there are triggers anywhere in England, Wales or Northern Ireland
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="weeklyFile-2" name="weeklyFile" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="weeklyFile-2">
-                No
+              <input class="govuk-radios__input" id="weeklyCountry-2" name="weeklyCountry" type="radio" value="NI">
+              <label class="govuk-label govuk-radios__label" for="weeklyCountry-2">
+                Only when there are triggers in Northern Ireland
               </label>
             </div>
           </div>
@@ -90,7 +87,7 @@ Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
 
 
       <button class="govuk-button" data-module="govuk-button">
-        Submit
+        Continue
       </button>
 
     </form>
@@ -103,27 +100,27 @@ Do you need a trigger data file – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block footer %}
-  {{ dwpFooter({
-    meta: {
-    visuallyHiddenTitle: "Meta links",
-    items: [
-    {
-      href: "/manage-prototype/clear-data",
-      text: "Clear prototype data"
-    },
-    {
-      href: "",
-      text: ""
-    },
-    {
-      href: "",
-      text: ""
-    },
-    {
-      href: "",
-      text: ""
-    }
-    ]
-    }
-    }) }} 
+{{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+href: "/manage-prototype/clear-data",
+text: "Clear prototype data"
+},
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+}
+]
+}
+}) }}
 {% endblock %}
