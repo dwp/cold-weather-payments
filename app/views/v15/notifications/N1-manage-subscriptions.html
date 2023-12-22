@@ -41,7 +41,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
           <h3 class="govuk-notification-banner__heading">
             Email subscriptions updated
           </h3>
-          <!-- <p class="govuk-body"> Description of change</p> -->
+          <p class="govuk-body"> Description of change</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
       <h1 class="govuk-heading-l">Manage your email subscriptions</h1>
 
       <p class="govuk-body">Subscriptions for <strong>first.last@engingeering.digital.dwp.gov.uk</strong></p>
-      <p class="govuk-body"><a href="#" class="govuk-link">Change email address</a></p>
+      <p class="govuk-body"><a href="{{changeEmail}}" class="govuk-link">Change email address</a></p>
 
       {% if (triggerStatus === "Unsubscribed") and (weeklyStatus === "Unsubscribed") and (aqdStatus === "Unsubscribed")  %}
       <div class="govuk-inset-text">
@@ -91,9 +91,49 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
 
+        {% if (triggerStatusView === true) and (country === "NI") %}
 
-        {% if triggerStatusView %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            [countries]
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [Northern Ireland only]
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeCountry}}">
+              Change<span class="govuk-visually-hidden"> country</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Need emails confirming no trigger days
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{noTrigger}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeNoTrigger}}">
+              Change<span class="govuk-visually-hidden"> no trigger</span>
+            </a>
+          </dd>
+        </div>
 
+        {% elseif triggerStatusView %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            [countries]
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [everywhere]
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeCountry}}">
+              Change<span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Need trigger file attached
@@ -122,6 +162,8 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         {% endif %}
+
+
       </dl>
 
 
@@ -149,8 +191,37 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
           </dd>
         </div>
 
-        {% if weeklyStatusView %}
+        {% if (weeklyStatusView === true) and (weeklyCountry === "NI") %}
         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            [countries]
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [Northern Ireland only]
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeWeeklyCountry}}">
+              Change<span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+
+
+        {% elseif weeklyStatusView %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            [countries]
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [everywhere]
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeWeeklyCountry}}">
+              Change<span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Need trigger file attached
           </dt>
@@ -163,7 +234,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+
         {% endif %}
+
+
       </dl>
 
 
@@ -175,6 +249,8 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         You subscribed to get an email every time additional qualifying days are recorded.
       </div>
       {% endif %}
+
+
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -190,7 +266,49 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
             </a>
           </dd>
         </div>
+
+        {% if (aqdStatus === "Subscribed") and (aqdCountry === "NI") %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            [countries]
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [Northern Ireland only]
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeaqdcountry}}">
+              Change <span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+
+        {% elseif (aqdStatus === "Subscribed") %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            [countries]
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [england and wales]
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeaqdcountry}}">
+              Change <span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+        
       </dl>
+
+      
+
+
+
+     
 
 
 
