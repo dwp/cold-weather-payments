@@ -41,7 +41,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
           <h3 class="govuk-notification-banner__heading">
             Email subscriptions updated
           </h3>
-          <p class="govuk-body"> Description of change</p>
+          <!-- <p class="govuk-body"> Description of change</p> -->
         </div>
       </div>
 
@@ -61,7 +61,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
 
       <h2 class="govuk-heading-m">Trigger updates</h2>
-            {% if (triggerStatus === "Subscribed") and (noTrigger === "Yes") %}
+            <!-- {% if (triggerStatus === "Subscribed") and (noTrigger === "Yes") %}
             <div id="trigger-updates-hint" class="govuk-hint">
               You subscribed to get a trigger update email everyday, including when there are no triggers.
             </div>
@@ -71,7 +71,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
             <div id="trigger-updates-hint" class="govuk-hint">
               You subscribed to get an email every time there is a trigger.
             </div>
-            {% endif %}
+            {% endif %} -->
 
 
 
@@ -169,12 +169,12 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
 
       <h2 class="govuk-heading-m">Weekly summary of triggers</h2>
-
+<!-- 
       {% if (weeklyStatus === "Subscribed")%}
       <div id="trigger-updates-hint" class="govuk-hint">
         You subscribed to get a summary of the previous week's triggers every Thursday.
       </div>
-      {% endif %}
+      {% endif %} -->
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -244,11 +244,11 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
       <h2 class="govuk-heading-m">Additional qualifying days</h2>
 
-      {% if (aqdStatus === "Subscribed")%}
+      <!-- {% if (aqdStatus === "Subscribed")%}
       <div id="trigger-updates-hint" class="govuk-hint">
         You subscribed to get an email every time additional qualifying days are recorded.
       </div>
-      {% endif %}
+      {% endif %} -->
 
 
 
