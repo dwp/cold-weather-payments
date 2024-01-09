@@ -82,7 +82,7 @@ module.exports = function (router) {
                 noTrigger = "No"
             }
         } else {
-            triggerStatus = "Unsubscribed"
+            triggerStatus = "Not subscribed"
             triggerStatusAction = "Subscribe"
             triggerStatusRoute = '/' + version + "/notifications/N2a-trigger-country"
             triggerStatusViewSettings = false
@@ -103,7 +103,7 @@ module.exports = function (router) {
                 weeklyFile = "No"
             }
         } else {
-            weeklyStatus = "Unsubscribed"
+            weeklyStatus = "Not subscribed"
             weeklyStatusAction = "Subscribe"
             weeklyStatusRoute = '/' + version + "/notifications/N3a-weekly-subscribe"
             weeklyStatusViewSettings = false
@@ -118,7 +118,7 @@ module.exports = function (router) {
             aqdStatusAction = "Unsubscribe"
             aqdStatusRoute = '/' + version + "/notifications/N4b-aqd-unsubscribe"
         } else {
-            aqdStatus = "Unsubscribed"
+            aqdStatus = "Not subscribed"
             aqdStatusAction = "Subscribe"
             aqdStatusRoute = '/' + version + "/notifications/N4a-aqd-subscribe"
         }
