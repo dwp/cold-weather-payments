@@ -16,7 +16,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
 <!-- Back link (if applicable) -->
 {% block beforeContent %}
-
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
 {% endblock %}
 
 
