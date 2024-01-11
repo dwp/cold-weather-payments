@@ -38,7 +38,7 @@ Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#">Enter the first part of the postcode</a>
+            <a href="#">Enter the first part of a real postcode in England or Wales.</a>
           </li>
         </ul>
       </div>
@@ -53,7 +53,9 @@ Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-label--l" for="citizen-postcode">
                 What is the first part of the citizen's postcode?
               </label>
+
             </h1>
+            <p class="govuk-body">The citizen must live in England or Wales.</p>
 
 
 
@@ -61,15 +63,16 @@ Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
             <!-- <label class="govuk-label" for="citizen-postcode">
               Enter the first part of a postcode
             </label> -->
-            <div id="citizen-postcode-hint" class="govuk-hint">
-              For example, CW12.
-            </div>
+
 
             {% if error %}
             <span id="search-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the first part of the postcode
-            {% endif %} <br><br>
+              <span class="govuk-visually-hidden">Error:</span> Enter the first part of a real postcode in England or Wales.
+            {% endif %} 
 
+            <div id="citizen-postcode-hint" class="govuk-hint">
+              For example, CW12.
+            </div>
             <input class="govuk-input govuk-input--width-5 govuk-input--extra-letter-spacing" id="citizen-postcode" name="citizen-postcode" type="text" spellcheck="false"  aria-describedby="citizen-postcode-hint">
           
 
