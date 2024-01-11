@@ -10,6 +10,7 @@ module.exports = function (router) {
     let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
+    let navSettings = "/" + version + "/notifications/N5-enter-email-address";
 
 
 
@@ -26,12 +27,33 @@ module.exports = function (router) {
         } else if (protoJourney == "baselines") {
             res.redirect('ready-for-dev')
         } else if (protoJourney == "landing") {
-            res.redirect('/' + version + "/check-cold-weather-payments/about-this-service-A1")
+            res.redirect("/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a")
         } else if (protoJourney == "variations") {
             res.redirect('page-variations')
         }
     });
 
+    //------------------
+    // Email settings
+
+    router.get('/' + version + "/check-cold-weather-payments/email-settings", function (req, res) {
+        // Set active navigation tab
+        settingsActive = true;
+        res.render(version + "/check-cold-weather-payments/email-settings", {
+            'version': version,
+            // Navigation settings
+            'settingsActive': settingsActive,
+            'about': navAbout,
+            'daily': navToday,
+            'weekly': navWeekly,
+            'search': navSearch,
+            'settings': navSettings,
+            // Page links
+            'enterEmail': "/" + version + "/notifications/N5-enter-email-address",
+        });
+    });
+    
+    
     //------------------
     // A1 About this Service
 
@@ -46,6 +68,7 @@ module.exports = function (router) {
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             // Page links
             'enterEmail': "/" + version + "/notifications/N5-enter-email-address",
         });
@@ -64,7 +87,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
-            'search': navSearch,
+            'search': navSearch, 
+            'settings': navSettings,
         });
     });
 
@@ -81,7 +105,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
-            'search': navSearch,
+            'search': navSearch, 
+            'settings': navSettings,
         });
     });
 
@@ -99,7 +124,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
-            'search': navSearch,
+            'search': navSearch, 
+            'settings': navSettings,
         });
     });
 
@@ -117,7 +143,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
-            'search': navSearch,
+            'search': navSearch, 
+            'settings': navSettings,
             // Page links
             'changeEmails': "/" + version + "/notifications/E3-change-email-upload-only",
         });

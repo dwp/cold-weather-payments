@@ -10,6 +10,7 @@ module.exports = function (router) {
     let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
+    let navSettings = "/" + version + "/notifications/N5-enter-email-address";
 
 
     //---------------------------------------------------------------------------------------------------------------
@@ -30,10 +31,11 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'year': year,
         });
     });
@@ -67,10 +69,11 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'year': year,
         });
     });
@@ -104,10 +107,11 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'year': year,
         });
     });
@@ -141,10 +145,11 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'year': year,
         });
     });
@@ -172,10 +177,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -192,10 +198,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/payment-data-for-postcode-SR1", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -208,10 +215,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -234,10 +242,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -246,10 +255,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -258,10 +268,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -274,10 +285,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -298,10 +310,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'range' : range
         });
     });
@@ -366,10 +379,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -392,10 +406,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -425,10 +440,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR2", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': northernIreland,
             'toggle': '/' + version + "/check-cold-weather-payments/search-previous-data-results-NI-SR2",
@@ -454,10 +470,11 @@ module.exports = function (router) {
             'version': version,
             'error': req.query.error,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/search-previous-data-results-SR2",
@@ -486,10 +503,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR3a", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -497,10 +515,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR3a", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'NI': true,
         });
     });
@@ -509,10 +528,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR3b", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -520,10 +540,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR3b", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'NI': true,
         });
     });
@@ -535,10 +556,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR4a", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             // Location list
             'listPostcodes': '/' + version + "/location-lists/LP4-postcodes-weather-station-result",
         });
@@ -548,10 +570,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR4b", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             // Location list
             'listPostcodes': '/' + version + "/location-lists/LP4-postcodes-weather-station-result",
         });
@@ -564,10 +587,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR5a", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -575,10 +599,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR5b", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -589,10 +614,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR6", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -603,10 +629,11 @@ module.exports = function (router) {
         res.render(version + "/check-cold-weather-payments/search/search-previous-data-results-SR7", {
             'version': version,
             // Navigation settings
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -626,10 +653,11 @@ module.exports = function (router) {
             'dailyActive': dailyActive,
             'weeklyActive': weeklyActive,
             'searchActive': searchActive,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 

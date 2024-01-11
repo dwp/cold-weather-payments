@@ -10,6 +10,7 @@ module.exports = function (router) {
     let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     // let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
+    let navSettings = "/" + version + "/notifications/N5-enter-email-address";
     
     //---------------------------------------------------------------------------------------------------------------
     // W1 no triggers
@@ -25,7 +26,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W1",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W1",
@@ -45,7 +47,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W1",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-W1",
@@ -68,7 +71,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W2",
@@ -92,7 +96,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': navToday,
                                 'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                             });
                         });
@@ -104,7 +109,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': navToday,
                                 'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                             });
                         });
@@ -117,7 +123,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                     });
                                 });
@@ -129,7 +136,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                     });
                                 });
@@ -141,7 +149,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                     });
                                 });
@@ -153,7 +162,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                     });
                                 });
@@ -165,7 +175,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                     });
                                 });
@@ -177,7 +188,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                     });
                                 });
@@ -190,7 +202,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': navToday,
                                 'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                             });
                         });
@@ -208,7 +221,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W2",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
@@ -228,7 +242,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': navToday,
                                 'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                                 'NI': true,
                             });
@@ -241,7 +256,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': navToday,
                                 'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                                 'NI': true,
                             });
@@ -255,7 +271,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                         'NI': true,
                                     });
@@ -269,7 +286,8 @@ module.exports = function (router) {
                                         'about': navAbout,
                                         'daily': navToday,
                                         'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W2",
-                                        'search': navSearch,
+                                         'search': navSearch,
+            'settings': navSettings,
                                         'listType': listType,
                                         'NI': true,
                                     });
@@ -290,7 +308,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-W3",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W3",
@@ -310,7 +329,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': navToday,
             'weekly': '/' + version + "/check-cold-weather-payments/weekly-summary-NI-W3",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/weekly-summary-W3",
