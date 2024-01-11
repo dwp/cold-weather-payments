@@ -10,6 +10,7 @@ module.exports = function (router) {
     // let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
+    let navSettings = "/" + version + "/notifications/N5-enter-email-address";
 
 
     //---------------------------------------------------------------------------------------------------------------
@@ -26,7 +27,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D1",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1",
@@ -45,7 +47,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D1",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D1",
@@ -67,7 +70,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
@@ -84,7 +88,8 @@ module.exports = function (router) {
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
-                            'search': navSearch,
+                             'search': navSearch,
+            'settings': navSettings,
                             'listType': listType,
                         });
                     });
@@ -96,7 +101,8 @@ module.exports = function (router) {
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
-                            'search': navSearch,
+                             'search': navSearch,
+            'settings': navSettings,
                             'listType': listType,
                         });
                     });
@@ -113,7 +119,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2a",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
@@ -130,7 +137,8 @@ module.exports = function (router) {
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
-                            'search': navSearch,
+                             'search': navSearch,
+            'settings': navSettings,
                             'listType': listType,
                             'NI': true,
                         });
@@ -143,7 +151,8 @@ module.exports = function (router) {
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
-                            'search': navSearch,
+                             'search': navSearch,
+            'settings': navSettings,
                             'listType': listType,
                             'NI': true,
                         });
@@ -164,7 +173,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b",
@@ -181,7 +191,8 @@ module.exports = function (router) {
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
                             'weekly': navWeekly,
-                            'search': navSearch,
+                             'search': navSearch,
+            'settings': navSettings,
                             'listType': listType,
                         });
                     });
@@ -193,7 +204,8 @@ module.exports = function (router) {
                             'about': navAbout,
                             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                             'weekly': navWeekly,
-                            'search': navSearch,
+                             'search': navSearch,
+            'settings': navSettings,
                             'listType': listType,
                         });
                     });
@@ -211,7 +223,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D2b",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
@@ -228,7 +241,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2b",
                                 'weekly': navWeekly,
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                                 'NI': true,
                             });
@@ -241,7 +255,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D2a",
                                 'weekly': navWeekly,
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                                 'NI': true,
                             });
@@ -262,7 +277,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D3",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3",
@@ -281,7 +297,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D3",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D3",
@@ -303,7 +320,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
             // 'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4",
@@ -321,7 +339,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
                                 // 'weekly': navWeekly,
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                                 'NI': false,
                             });
@@ -334,7 +353,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
                                 // 'weekly': navWeekly,
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                                 'NI': false,
                             });
@@ -347,7 +367,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
                                 // 'weekly': navWeekly,
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                             });
                         });
@@ -359,7 +380,8 @@ module.exports = function (router) {
                                 'about': navAbout,
                                 'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
                                 // 'weekly': navWeekly,
-                                'search': navSearch,
+                                 'search': navSearch,
+            'settings': navSettings,
                                 'listType': listType,
                             });
                         });
@@ -376,7 +398,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D4",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D4",
@@ -397,7 +420,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D5",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': false,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5",
@@ -416,7 +440,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/todays-trigger-data-NI-D5",
             'weekly': navWeekly,
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
             // Country toggle
             'NI': true,
             'toggle': '/' + version + "/check-cold-weather-payments/todays-trigger-data-D5",
@@ -437,7 +462,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6",
             'weekly': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -453,7 +479,8 @@ module.exports = function (router) {
             'about': navAbout,
             'daily': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6",
             'weekly': '/' + version + "/check-cold-weather-payments/the-season-has-ended-DW6-weekly",
-            'search': navSearch,
+             'search': navSearch,
+            'settings': navSettings,
         });
     });
 

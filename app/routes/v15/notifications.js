@@ -8,6 +8,7 @@ module.exports = function (router) {
     let navToday = "/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a";
     let navWeekly = "/" + version + "/check-cold-weather-payments/weekly-summary-W2";
     let navSearch = "/" + version + "/check-cold-weather-payments/what-do-you-want-to-do";
+    let navSettings = "/" + version + "/notifications/N5-enter-email-address";
 
 
     //------------------
@@ -19,13 +20,16 @@ module.exports = function (router) {
 
 
     router.get("/" + version + "/notifications/N5-enter-email-address", function (req, res) {
+        settingsActive = true;
         res.render(version + "/notifications/N5-enter-email-address", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+            'settingsActive': settingsActive,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -45,10 +49,11 @@ module.exports = function (router) {
     router.get('/' + version + "/notifications/N6-check-emails", function (req, res) {
         res.render(version + "/notifications/N6-check-emails", {
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -132,10 +137,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N1-manage-subscriptions", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
             'back': "/" + version + "/A1-about",
             'changeEmail': "/" + version + "/notifications/N5-enter-email-address", 
             //Trigger updates
@@ -182,10 +188,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N2a-trigger-country", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -208,10 +215,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N2c-trigger-file-YN", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -229,10 +237,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N2d-trigger-no-YN", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -251,10 +260,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N2b-trigger-unsubscribe", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -273,10 +283,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N3a-weekly-subscribe", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -297,10 +308,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N3d-weekly-country", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -319,10 +331,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N3c-weekly-file-YN", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -341,10 +354,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N3b-weekly-unsubscribe", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -363,10 +377,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N4a-aqd-subscribe", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -387,10 +402,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N4c-aqd-country", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -409,10 +425,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/N4b-aqd-unsubscribe", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -435,10 +452,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E1-change-email-download", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -450,10 +468,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E2-change-email-YN", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -473,10 +492,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E3-change-email-upload", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -490,10 +510,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E3-change-email-upload-only", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -508,10 +529,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E4-change-email-confirm", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -523,10 +545,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E5-change-email-success", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
@@ -538,10 +561,11 @@ module.exports = function (router) {
         res.render(version + "/notifications/E6-change-email-problem", {
             'error': req.query.error,
             'version': version,
-            'about': navAbout,
+           'about': navAbout,
             'daily': navToday,
             'weekly': navWeekly,
             'search': navSearch,
+            'settings': navSettings,
         });
     });
 
