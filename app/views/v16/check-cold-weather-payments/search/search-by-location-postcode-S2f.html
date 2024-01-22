@@ -1,0 +1,96 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Where does the citizen live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include version + "/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#">Enter a postcode</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+
+        <form class="form" action="" method="post">
+
+          <div class="govuk-form-group {%if error %} govuk-form-group--error {% endif %}">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="postcode">
+                Which postcode do you want to search by? 
+              </label>
+            </h1>
+            <div id="postcode-hint" class="govuk-hint">
+              For example, CW12.
+            </div>
+
+            {% if error %}
+            <span id="search-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Enter a postcode
+            {% endif %} 
+            <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" spellcheck="false" aria-describedby="postcode-hint" inputmode="numeric">
+          </div>
+
+  
+    
+              <button class="govuk-button govuk-body govuk-!-margin-top-5" data-module="govuk-button">
+                Search
+              </button>
+    
+            </form>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include version + "/includes/footer.html" %}
+
+{% endblock %}
+
+
+
+
