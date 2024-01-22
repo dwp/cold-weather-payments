@@ -1,0 +1,356 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include version + "/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="" method="post">
+
+      {% if success %}
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Email subscriptions updated
+          </h3>
+          <!-- <p class="govuk-body"> Description of change</p> -->
+        </div>
+      </div>
+
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l">Manage email subscriptions</h1>
+
+      <p class="govuk-body">Subscriptions for <strong>{{email}}</strong></p>
+      <p class="govuk-body"><a href="{{changeEmail}}" class="govuk-link">Manage email subscriptions for someone else</a>.</p>
+
+      {% if (triggerStatus === "Unsubscribed") and (weeklyStatus === "Unsubscribed") and (aqdStatus === "Unsubscribed")  %}
+      <div class="govuk-inset-text">
+        You’re not currently getting updates about Cold Weather Payment triggers.
+      </div>
+      {% endif %}
+
+
+      <h2 class="govuk-heading-m">Trigger updates</h2>
+            <!-- {% if (triggerStatus === "Subscribed") and (noTrigger === "Yes") %}
+            <div id="trigger-updates-hint" class="govuk-hint">
+              You subscribed to get a trigger update email everyday, including when there are no triggers.
+            </div>
+            {% endif %}
+
+            {% if (triggerStatus === "Subscribed") and (noTrigger === "No") %}
+            <div id="trigger-updates-hint" class="govuk-hint">
+              You subscribed to get an email every time there is a trigger.
+            </div>
+            {% endif %} -->
+
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Trigger updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{triggerStatus}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeTrigger}}">
+              {{triggerStatusAction}}<span class="govuk-visually-hidden"> from trigger email</span>
+            </a>
+          </dd>
+        </div>
+
+
+        {% if (triggerStatusView === true) and (country === "NI") %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When you get updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Only when there are triggers in Northern Ireland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeCountry}}">
+              Change<span class="govuk-visually-hidden"> country</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Need emails confirming no trigger days
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{noTrigger}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeNoTrigger}}">
+              Change<span class="govuk-visually-hidden"> no trigger</span>
+            </a>
+          </dd>
+        </div>
+
+        {% elseif triggerStatusView %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When you get updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Every time there are triggers in England, Wales or Northern Ireland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeCountry}}">
+              Change<span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Need trigger file attached
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{triggerFile}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeTriggerFile}}">
+              Change<span class="govuk-visually-hidden"> trigger file</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Need emails confirming no trigger days
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{noTrigger}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeNoTrigger}}">
+              Change<span class="govuk-visually-hidden"> no trigger</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Weekly summary of triggers</h2>
+<!-- 
+      {% if (weeklyStatus === "Subscribed")%}
+      <div id="trigger-updates-hint" class="govuk-hint">
+        You subscribed to get a summary of the previous week's triggers every Thursday.
+      </div>
+      {% endif %} -->
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Weekly update
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{weeklyStatus}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeWeekly}}">
+              {{weeklyStatusAction}}<span class="govuk-visually-hidden"> from weekly notifications</span>
+            </a>
+          </dd>
+        </div>
+
+        {% if (weeklyStatusView === true) and (weeklyCountry === "NI") %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When you get updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Only when there are triggers in Northern Ireland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeWeeklyCountry}}">
+              Change<span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+
+
+        {% elseif weeklyStatusView %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When you get updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Every time there are triggers in England, Wales or Northern Ireland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeWeeklyCountry}}">
+              Change<span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Need trigger file attached
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{weeklyFile}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{directChangeWeeklyFile}}">
+              Change<span class="govuk-visually-hidden"> trigger file for weekly summary</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %}
+
+
+      </dl>
+
+
+
+      <h2 class="govuk-heading-m">Additional qualifying days</h2>
+
+      <!-- {% if (aqdStatus === "Subscribed")%}
+      <div id="trigger-updates-hint" class="govuk-hint">
+        You subscribed to get an email every time additional qualifying days are recorded.
+      </div>
+      {% endif %} -->
+
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
+            Additional qualifying days update
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{aqdStatus}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeaqd}}">
+              {{aqdStatusAction}}<span class="govuk-visually-hidden"> from additional qualifying days notification</span>
+            </a>
+          </dd>
+        </div>
+<!-- Temporarily remove location options -->
+        <!-- {% if (aqdStatus === "Subscribed") and (aqdCountry === "NI") %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When you get updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            When there are additional qualifying days in Northern Ireland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeaqdcountry}}">
+              Change <span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+
+        {% elseif (aqdStatus === "Subscribed") %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            When you get updates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            When there are additional qualifying days in England or Wales
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="{{changeaqdcountry}}">
+              Change <span class="govuk-visually-hidden"> countries</span>
+            </a>
+          </dd>
+        </div>
+
+        {% endif %} -->
+
+        
+      </dl>
+
+      
+
+
+
+     
+
+
+
+
+      <!-- <button class="govuk-button" data-module="govuk-button">
+        Confirm
+      </button> -->
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+href: "/manage-prototype/clear-data",
+text: "Clear prototype data"
+},
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+}
+]
+}
+}) }}
+{% endblock %}

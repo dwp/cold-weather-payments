@@ -1,0 +1,104 @@
+<!-- Main layout file -->
+{% extends "layouts/main.html" %}
+
+<!-- Page title -->
+{% block pageTitle %}
+Check the start and end dates – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+<!-- Header including navigation -->
+{% block header %}
+
+{% include "v8/includes/header-nav.html" %}
+
+{% endblock %}
+
+
+<!-- Back link (if applicable) -->
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }} 
+{% endblock %}
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">Check the start and end dates of the Cold Weather Payment season</h1>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Season start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{start}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="{{changeStart}}">
+            Change<span class="govuk-visually-hidden"> start date</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Season end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{end}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="{{changeEnd}}">
+            Change<span class="govuk-visually-hidden"> end date</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+    <form action="" method="post" novalidate>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Confirm
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ dwpFooter({
+meta: {
+visuallyHiddenTitle: "Meta links",
+items: [
+{
+  href: "/v8/manage/M4a-manage-notification-preferences",
+  text: "Notification preferences"
+  },
+{
+href: "/manage-prototype/clear-data",
+text: "Clear prototype data"
+},
+
+{
+href: "",
+text: ""
+},
+{
+href: "",
+text: ""
+}
+]
+}
+}) }}
+{% endblock %}
