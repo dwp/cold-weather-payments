@@ -3,7 +3,7 @@
 
 <!-- Page title -->
 {% block pageTitle %}
-Enter an email address – {{ serviceName }} – GOV.UK Prototype Kit
+Enter your email address – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 <!-- Header including navigation -->
@@ -38,7 +38,7 @@ Enter an email address – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="email-error">[enter a valid email address]</a>
+            <a href="email-error">Enter an email address in the correct format</a>
           </li>
         </ul>
       </div>
@@ -51,13 +51,19 @@ Enter an email address – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group {%if error %} govuk-form-group--error {% endif %}">
             <h1 class="govuk-label-wrapper">
               <label class="govuk-label govuk-label--l" for="email-address">
-                Enter an email address
+                Enter your email address to manage email subscriptions
               </label>
             </h1>
 
-            <p class="govuk-body">You can manage email subscriptions for yourself or someone else. </p>
+            <p class="govuk-body">Your email subscriptions determine the emails you get about Cold Weather Payments. </p>
 
-            <p class="govuk-body">If you've never received email updates about Cold Weather Payments, you can enter your email address to register. </p>
+            <p class="govuk-body">You can either:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>make changes to your current subscriptions</li>
+              <li>subscribe to get emails if you've never had them before</li>
+            </ul>
+
+            <p class="govuk-body">To manage email subscriptions for someone else, enter their email address instead.</p>
 
             <div id="email-address-hint" class="govuk-hint">
               For example, first.last@dwp.gov.uk
@@ -66,7 +72,7 @@ Enter an email address – {{ serviceName }} – GOV.UK Prototype Kit
             {% if error %}
             <p id="national-insurance-number-error" class="govuk-error-message">
               <span id="email-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> [enter a valid email address]
+                <span class="govuk-visually-hidden">Error:</span> Enter an email address in the correct format
             </p>
             {% endif %} 
 
@@ -76,7 +82,7 @@ Enter an email address – {{ serviceName }} – GOV.UK Prototype Kit
   
     
               <button class="govuk-button govuk-body govuk-!-margin-top-5" data-module="govuk-button">
-                Submit
+                Continue
               </button>
     
             </form>
