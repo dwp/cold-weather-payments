@@ -16,10 +16,10 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
 
 <!-- Back link (if applicable) -->
 {% block beforeContent %}
-{{ govukBackLink({
+<!-- {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
-}) }} 
+}) }}  -->
 {% endblock %}
 
 
@@ -54,7 +54,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
       <h1 class="govuk-heading-l">Manage email subscriptions</h1>
 
       <p class="govuk-body">Subscriptions for <strong>{{email}}</strong></p>
-      <p class="govuk-body"><a href="{{changeEmail}}" class="govuk-link">Manage email subscriptions for someone else</a>.</p>
+      <p class="govuk-body">Manage <a href="{{changeEmail}}" class="govuk-link">email subscriptions</a> for someone else.</p>
 
       {% if (triggerStatus === "Unsubscribed") and (weeklyStatus === "Unsubscribed") and (aqdStatus === "Unsubscribed")  %}
       <div class="govuk-inset-text">
@@ -63,7 +63,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
       {% endif %}
 
 
-      <h2 class="govuk-heading-m">Trigger updates</h2>
+      <h2 class="govuk-heading-m">Daily trigger updates</h2>
             <!-- {% if (triggerStatus === "Subscribed") and (noTrigger === "Yes") %}
             <div id="trigger-updates-hint" class="govuk-hint">
               You subscribed to get a trigger update email everyday, including when there are no triggers.
@@ -81,7 +81,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
-            Trigger updates
+            Daily trigger updates
           </dt>
           <dd class="govuk-summary-list__value">
             {{triggerStatus}}
@@ -111,7 +111,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Need emails confirming no trigger days
+            Gets an email every day that there are no triggers
           </dt>
           <dd class="govuk-summary-list__value">
             {{noTrigger}}
@@ -139,7 +139,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Need trigger file attached
+            Gets a trigger data file
           </dt>
           <dd class="govuk-summary-list__value">
             {{triggerFile}}
@@ -152,7 +152,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Need emails confirming no trigger days
+            Gets an email every day that there are no triggers
           </dt>
           <dd class="govuk-summary-list__value">
             {{noTrigger}}
@@ -182,7 +182,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-quarter">
-            Weekly update
+            Weekly summary of trigger updates
           </dt>
           <dd class="govuk-summary-list__value">
             {{weeklyStatus}}
@@ -226,7 +226,7 @@ Manage your email subscriptions – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
           <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Need trigger file attached
+            Gets a trigger data file
           </dt>
           <dd class="govuk-summary-list__value">
             {{weeklyFile}}
