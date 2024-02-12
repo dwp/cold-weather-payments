@@ -38,7 +38,7 @@ Is the email address correct – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#emailCheck">Select an option</a>
+            <a href="#emailCheck">Select if the email address is correct </a>
           </li>
         </ul>
       </div>
@@ -53,7 +53,7 @@ Is the email address correct – {{ serviceName }} – GOV.UK Prototype Kit
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
             <h1 class="govuk-fieldset__heading">
-              [is the following email address correct?]
+              Is this the correct email address?
             </h1>
 
           </legend>
@@ -65,7 +65,7 @@ Is the email address correct – {{ serviceName }} – GOV.UK Prototype Kit
 
           {% if error %}
           <span id="search-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select an option
+            <span class="govuk-visually-hidden">Error:</span> Select if the email address is correct 
           </span>
           {% endif %}
 
@@ -82,7 +82,7 @@ Is the email address correct – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="emailCheck-2" name="emailCheck" type="radio" value="No">
               <label class="govuk-label govuk-radios__label" for="emailCheck-2">
-                [no, I want to change it]
+                No, I want to change it
               </label>
             </div>
           </div>
