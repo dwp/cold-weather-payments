@@ -20,18 +20,18 @@ module.exports = function (router) {
     // index
 
 
-    router.post('/', function (req, res) {
-        var protoJourney = req.session.data['protoJourney'];
-        if (protoJourney == undefined) {
-            res.redirect('/' + version + "/check-cold-weather-payments/about-this-service-A1")
-        } else if (protoJourney == "baselines") {
-            res.redirect('ready-for-dev')
-        } else if (protoJourney == "landing") {
-            res.redirect("/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a")
-        } else if (protoJourney == "variations") {
-            res.redirect('page-variations')
-        }
-    });
+    // router.post('/', function (req, res) {
+    //     var protoJourney = req.session.data['protoJourney'];
+    //     if (protoJourney == undefined) {
+    //         res.redirect('/' + version + "/check-cold-weather-payments/about-this-service-A1")
+    //     } else if (protoJourney == "baselines") {
+    //         res.redirect('ready-for-dev')
+    //     } else if (protoJourney == "landing") {
+    //         res.redirect("/" + version + "/check-cold-weather-payments/todays-trigger-data-D2a")
+    //     } else if (protoJourney == "variations") {
+    //         res.redirect('page-variations')
+    //     }
+    // });
 
     //------------------
     // Email settings
