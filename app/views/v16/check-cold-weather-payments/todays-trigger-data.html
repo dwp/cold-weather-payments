@@ -18,27 +18,27 @@ Check today's trigger data – {{ serviceName }} – GOV.UK Prototype Kit
 {% block beforeContent %}
 
 {% if NI %}
-<nav class="hmrc-language-select" aria-label="Language switcher">
-  <ul class="hmrc-language-select__list">
-    <li class="hmrc-language-select__list-item">
+<nav class="dwp-language-toggle" aria-label="Country toggle">
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item">
       <a href="{{toggle}}" class="govuk-link" >
         <span class="govuk-visually-hidden"></span>
         <span aria-hidden="true">England and Wales</span>
       </a>
     </li>
-    <li class="hmrc-language-select__list-item">
+    <li class="dwp-language-toggle__list-item">
       <span aria-current="true">Northern Ireland</span>
     </li>
 
   </ul>
 </nav>
 {% else %}
-<nav class="hmrc-language-select" aria-label="Language switcher">
-  <ul class="hmrc-language-select__list">
-    <li class="hmrc-language-select__list-item">
+<nav class="dwp-language-toggle" aria-label="Country toggle">
+  <ul class="dwp-language-toggle__list">
+    <li class="dwp-language-toggle__list-item">
       <span aria-current="true">England and Wales</span>
     </li>
-    <li class="hmrc-language-select__list-item">
+    <li class="dwp-language-toggle__list-item">
       <a href="{{toggle}}" class="govuk-link" >
         <span class="govuk-visually-hidden"></span>
         <span aria-hidden="true">Northern Ireland</span>
