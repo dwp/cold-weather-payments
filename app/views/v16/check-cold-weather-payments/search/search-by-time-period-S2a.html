@@ -65,27 +65,42 @@ Which time period do you want to search for trigger days? – {{ serviceName }} 
 
 
 
-                    
+                    {% if year2 %}
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date-range-3" name="date-range" type="radio" value="whole"
+                      <input class="govuk-radios__input" id="date-range" name="date-range" type="radio" value="whole"
                         data-aria-controls="conditional-date-range-2">
-                      <label class="govuk-label govuk-radios__label" for="date-range-2">
+                      <label class="govuk-label govuk-radios__label" for="date-range">
+                        The whole 2024 to 2025 season
+                      </label>
+                    </div>
+
+                    {% else %}
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="date-range" name="date-range" type="radio" value="whole"
+                        data-aria-controls="conditional-date-range-2">
+                      <label class="govuk-label govuk-radios__label" for="date-range">
                         The whole 2023 to 2024 season
                       </label>
                     </div>
 
+                    {% endif %}
+
+
+
+
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="date-range" name="date-range" type="radio" value="range"
+                      <input class="govuk-radios__input" id="date-range-2" name="date-range" type="radio" value="range"
                         data-aria-controls="conditional-date-range">
-                      <label class="govuk-label govuk-radios__label" for="date-range">
+                      <label class="govuk-label govuk-radios__label" for="date-range-2">
                         Between two dates from this season
                       </label>
                     </div>
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="single-day" name="date-range" type="radio" value="single"
+                      <input class="govuk-radios__input" id="date-range-3" name="date-range" type="radio" value="single"
                         data-aria-controls="conditional-single-day">
-                      <label class="govuk-label govuk-radios__label" for="single-day">
+                      <label class="govuk-label govuk-radios__label" for="date-range-3">
                         A single date from this season
                       </label>
 
