@@ -83,8 +83,8 @@ module.exports = function (router) {
                                 res.redirect('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do?error=true")
                             } else if (journey == "agent") {
                                 res.redirect('/' + version + "/check-cold-weather-payments/citizen-location")
-                            } else if (journey == "previous-year2") {
-                                res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
+                            } else if (journey == "previous") {
+                                res.redirect('/' + version + "/beta-drafts/select-season")
                             } else {
                                 res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
                             }
@@ -122,7 +122,7 @@ module.exports = function (router) {
                                 res.redirect('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do?error=true")
                             } else if (journey == "agent") {
                                 res.redirect('/' + version + "/check-cold-weather-payments/citizen-location")
-                            } else if (journey == "previous-year2") {
+                            } else if (journey == "previous") {
                                 res.redirect('/' + version + "/beta-drafts/select-season")
                             } else {
                                 res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
@@ -160,7 +160,7 @@ module.exports = function (router) {
                                 res.redirect('/' + version + "/check-cold-weather-payments/what-do-you-want-to-do?error=true")
                             } else if (journey == "agent") {
                                 res.redirect('/' + version + "/check-cold-weather-payments/citizen-location")
-                            } else if (journey == "previous-year2") {
+                            } else if (journey == "previous") {
                                 res.redirect('/' + version + "/beta-drafts/enter-season")
                             } else {
                                 res.redirect('/' + version + "/check-cold-weather-payments/search-by-time-period")
