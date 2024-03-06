@@ -211,6 +211,15 @@ module.exports = function (router) {
     // S2a: Search by time period (When)
 
     router.get('/' + version + "/check-cold-weather-payments/search-by-time-period", function (req, res) {
+        let year1 = true;
+        let year2 = false;
+        let year3plus = false;
+        let selectYear = req.session.data["journey-select"];
+        console.log(selectYear);
+        if (selectYear === "2425") {
+            year1 = false;
+            year2 = true;
+        }
         res.render(version + "/check-cold-weather-payments/search/search-by-time-period-S2a", {
             'version': version,
             'error': req.query.error,
@@ -220,6 +229,10 @@ module.exports = function (router) {
             'weekly': navWeekly,
             'search': navSearch,
             'settings': navSettings,
+            // Dates
+            'year1': year1,
+            'year2': year2,
+            'year3plus': year3plus,
         });
     });
 
